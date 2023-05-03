@@ -1,24 +1,26 @@
 .pick-up-order {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   &-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 10px;
-    gap: 0 60px;
+    gap: 0 55px;
     &-note {
       width: 100%;
+      textarea{
+        min-height: 40px;
+      }
     }
     &-wrapper {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      width: calc(63% - 20px);
+      gap:10px 8px;
+      width: calc(100% - 205px);
       &:nth-child(2) {
-        width: calc(37% - 30px);
-        max-width: 150px;
+        width: 150px;
       }
     }
     &-price {
@@ -27,8 +29,8 @@
         justify-content: flex-start;
         align-items: center;
         gap: 9px;
-        span {
-          padding: 0.6mm 0 0.6mm 1.8mm !important;
+        input {
+          padding: 1mm 0 1mm 1.8mm !important;
           display: block;
           width: 86px;
           box-sizing: border-box;
@@ -46,16 +48,14 @@
       }
     }
     &-note {
-      span {
-        height: 40px;
+      input {
+        min-height: 40px;
       }
     }
     .container {
-      label {
-        font-weight: bold;
-      }
-      span {
-        padding: $input-padding;
+      input,
+      textarea {
+        padding: 1.7mm 2mm;
       }
     }
     .input {
@@ -86,7 +86,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-items: flex-end;
+      align-items:center;
       padding: 2mm 0;
     }
     &-condition {
@@ -94,7 +94,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 5px;
+      gap: 10px 5px;
       .wrapper {
         width: calc(33.3% - 5px);
         .checkBox {
@@ -114,12 +114,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: calc(70% - 20px);
+      width: calc(80% - 20px);
       &-image {
         display: flex;
         align-items: center;
         justify-content: center;
-        max-width: 298px;
+        max-width: 350px;
         img {
           width: 100%;
           object-fit: contain;
@@ -130,11 +130,14 @@
       display: flex;
       flex-direction: column;
       gap: 5px;
-      width: 30%;
+      width: 20%;
+      h3 {
+        font-weight: normal;
+      }
     }
     .container {
       gap: 5px;
-      span {
+      input {
         padding: 0.7mm 1.5mm;
         font-size: $font-size-paragraph;
         line-height: 10px;
@@ -160,7 +163,7 @@
         padding: 1.5mm 3mm 4mm;
         background: $white;
         border-radius: 1.5mm;
-        gap: 5px;
+        gap: 15px 5px;
         .wrapper {
           width: calc(25% - 5px);
         }
@@ -187,9 +190,8 @@
           }
         }
         &-signature {
-          width: calc(100% + 10px);
-          margin: 0 -5px;
-          min-height: 85px;
+          width: 100%;
+          min-height: 100px;
           border: 1px solid $primary;
           border-radius: 1.5mm;
           display: flex;
@@ -219,6 +221,10 @@
     flex-wrap: wrap;
     gap: 10px;
     padding: 1.4mm 2mm 3mm;
+    h2{
+      color: $primary;
+      font-size: $font-size-title;
+    }
   }
   &-purchase-price {
     width: 100%;
@@ -230,10 +236,11 @@
       h3 {
         font-weight: normal;
       }
-      span {
+      input {
         padding: 0.6mm 1.8mm 0.6mm 1.8mm !important;
         color: $primary;
         font-weight: bold;
+        max-width: 50px;
       }
     }
     &-body {
@@ -245,7 +252,7 @@
     }
   }
   &-vehicle {
-    padding: 2.2mm 8.3mm 2.7mm 2.7mm;
+    padding: 2.2mm 2.7mm 2.7mm 2.7mm;
     background: $white;
     border-radius: 1.5mm;
     &-body {
@@ -267,6 +274,7 @@
         }
         h3 {
           font-size: 6pt;
+          font-weight: bold !important;
         }
         label {
           font-size: 5.3pt;
@@ -285,14 +293,13 @@
       align-items: center;
       justify-content: space-between;
       gap: 5px;
-      span {
+      input {
         width: calc(100% - 113px);
       }
     }
     &-brand {
-      span {
+      input {
         width: calc(100% - 105px);
-        max-width: 435px;
       }
       &.container {
         width: 100%;
@@ -306,19 +313,19 @@
       margin-bottom: 5px;
       width: 100%;
     }
+    h3 {
+      font-weight: normal;
+    }
   }
   .wrapper {
-    width: calc(50% - 10px);
+    width: calc(50% - 60px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 8px;
   }
-  h2 {
-    color: $primary;
-  }
-  span {
-    padding: 1.2mm 2.8mm;
+  input {
+    padding: 1.7mm 2.8mm;
   }
   &Details {
     &__body {
@@ -357,7 +364,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        min-height: 85px;
+        min-height: 95px;
       }
       .title {
         margin-bottom: 10px;
@@ -384,7 +391,7 @@
       margin-bottom: 15px;
     }
     .container {
-      span {
+      textarea {
         min-height: 140px;
         padding: 2.7mm 1.5mm;
         white-space: unset;
@@ -393,178 +400,5 @@
   }
 }
 
-.container {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  span {
-    border: 1px solid $primary;
-    background: $white;
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: $font-size;
-    border-radius: 1.5mm;
-  }
-}
-.input {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  position: relative;
-  input {
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    cursor: pointer;
-    position: absolute;
-    &:checked + .circle {
-      border-color: $primary;
-      &::before {
-        opacity: 1;
-      }
-    }
-  }
-  .circle {
-    width: 12px;
-    height: 12px;
-    border: 1px solid $gray;
-    border-radius: 50%;
-    box-sizing: border-box;
-    position: relative;
-    background: $white;
-    &::before {
-      content: "";
-      width: 70%;
-      height: 70%;
-      background: $primary;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      transition: 0.3s linear;
-      opacity: 0;
-    }
-    &.check {
-      &::before {
-        border-top: 1px solid $primary;
-        border-right: 1px solid $primary;
-        top: 30%;
-        left: 30%;
-        width: 40%;
-        height: 20%;
-        border-radius: unset;
-        transform: rotate(130deg);
-        background: unset;
-      }
-    }
-  }
-  &--radio {
-  }
- 
-}
-.checkBox {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  &__body {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-  }
-  &--border {
-    padding-left: 15px;
-    border-left: 1px solid $gray;
-  }
-}
-.title {
-  padding-bottom: 1.5mm;
-  border-bottom: 1px solid $gray;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  h2 {
-    color: $primary;
-    font-size: $font-size-title;
-  }
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: $white;
-  padding: 3mm 2.5mm;
-  border-radius: 1.5mm;
-  h2 {
-    color: $orange;
-    font-size: 9pt;
-  }
-  p {
-    font-size: 10pt;
-  }
-  &__logo {
-    width: 96px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      width: 100%;
-      object-fit: contain;
-    }
-  }
-}
 
-@mixin index-620{
-  .pick-up-order {
-    &-info {
-      gap: 0 15px;
-      &-wrapper {
-        width: calc(63% - 7px);
-        max-width: 350px;
-        &:nth-child(2) {
-          width: calc(37% - 8px);
-        }
-      }
-    }
-    &-assessment {
-      &-graphic {
-        width: calc(75% - 20px);
-      }
-      &-paints {
-        max-width: 102px;
-        width: 25%;
-      }
-    }
-  }
-  .contract {
-    &__body {
-      .wrapper {
-        max-width: 214px;
-      }
-    }
-    &-vehicle {
-      &-brand {
-        max-width: unset !important;
-      }
-      .container {
-        max-width: 270px;
-        .span {
-          max-width: 150px;
-        }
-      }
-    }
-  }
-  .contractDetails {
-    &-signatures {
-      &-row {
-        max-width: 250px;
-        width: calc(50% - 10px);
-      }
-    }
-  }
-}
+
