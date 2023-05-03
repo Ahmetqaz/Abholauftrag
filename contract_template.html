@@ -1,0 +1,1910 @@
+  <!doctype html>
+<html lang="de">
+ <head> 
+  <meta charset="UTF-8"> 
+  <title>Contract View</title> 
+  <style type="text/css">
+		body.nav {
+			display: grid;
+			grid-template-columns: 1fr 200px;
+		}
+
+		body.nav nav {
+			display: block;
+		}
+
+		nav {
+			display: none;
+			font-size: 16px;
+			font-weight: bold;
+			text-transform: uppercase;
+			border-left: 2px solid #e5e5e5;
+			padding: 40px 20px;
+		}
+
+		nav ul {
+			margin: 0;
+			padding: 0;
+			position: fixed;
+		}
+
+		nav ul li {
+			list-style: none;
+		}
+
+		nav ul li a {
+			padding: 5px 15px;
+			display: inline-block;
+			font-family: 'Monda', sans-serif;
+			transition: background-color .1s, color .2s;
+		}
+
+		nav ul li a:hover {
+			cursor: pointer;
+			color: var(--primary-color);
+		}
+
+		nav ul li a.active {
+			background-color: var(--primary-color);
+			color: white;
+		}
+
+		@media screen and (max-width: 1200px) {
+			html body.nav {
+				grid-template-columns: 1fr;
+				grid-template-rows: 80px auto;
+			}
+
+			html body.nav nav {
+				grid-row: 1;
+				top: 0;
+				right: 0;
+				left: 0;
+				padding: 40px 20px 20px 20px;
+			}
+
+			html body.nav nav ul {
+				position: static;
+				display: flex;
+				justify-content: center;
+			}
+		}
+
+		/*  Design "Oldschool"
+            ---------------------------------------------------------------------------------------------------- */
+		.design-oldschool {
+			--section-gap: 0 2mm;
+
+			--wrapper-border: 0px solid transparent;
+
+			--container-border: 0px solid transparent;
+
+			--headline-border: 0;
+			--headline-color: white;
+			--headline-background: black;
+
+			--price-marking: visible;
+			/* underline: visible / hidden */
+			--price-marking-color: yellow;
+			/* underline: visible / hidden */
+			--price-underline: hidden;
+			/* underline: visible / hidden */
+			--price-stroked: hidden;
+
+			--price-font-size: 24pt;
+			--price-padding: 0;
+			--price-font-weight: 400;
+			--price-font-family: 'Permanent Marker', serif;
+			--price-color: black;
+		}
+
+		.design-oldschool h2 {
+			border-radius: 2px;
+		}
+
+		.design-oldschool .signature {
+			border: 1px solid black;
+		}
+
+		/*  Design "Elegant"
+            ---------------------------------------------------------------------------------------------------- */
+		.design-elegant {
+			--section-gap: 0 2mm;
+
+			--wrapper-border: 0px solid transparent;
+			--wrapper-margin: 1mm 0;
+			--wrapper-gap: 0 2mm;
+
+			--container-border: 0px solid transparent;
+
+			--title-padding: 0 0 10mm 0;
+
+			--headline-border: 0;
+			--headline-background: transparent;
+			--headline-padding: 1mm 0;
+
+			--label-padding: 1mm 0;
+
+			--price-marking: hidden;
+			/* underline: visible / hidden */
+			--price-underline: hidden;
+			/* underline: visible / hidden */
+			--price-circle: visible;
+			/* underline: visible / hidden */
+			--price-circle-color: #c70315;
+			/* underline: visible / hidden */
+			--price-font-size: 24pt;
+			--price-padding: 0;
+			--price-font-weight: 400;
+			--price-font-family: 'Caveat Brush', serif;
+			--price-color: black;
+		}
+
+		.design-elegant h2 {
+			border-bottom: 1px solid black !important;
+			margin-bottom: 4px !important;
+		}
+
+		.design-elegant .signature {
+			background-color: #eee;
+			border: none;
+		}
+
+		/*  Font "Corporate"
+            ---------------------------------------------------------------------------------------------------- */
+		.font-corporate {
+			--font-size-title: 14pt;
+			--font-size-headline: 10pt;
+			--font-family: 'Monda', 'Arial', serif;
+			--font-family-input: 'Monda', 'Arial', serif;
+			--font-family-headline: 'Monda', 'Arial', serif;
+		}
+
+		/*  Font "Modern"
+            ---------------------------------------------------------------------------------------------------- */
+		.font-modern {
+			--font-size-title: 14pt;
+			--font-size-headline: 10pt;
+			--font-family: 'Roboto', 'Arial', serif;
+			--font-family-input: 'Roboto', 'Arial', serif;
+			--font-family-headline: 'Roboto Condensed', 'Arial Condensed', 'Arial', serif;
+		}
+
+		/*  Font "Classic"
+            ---------------------------------------------------------------------------------------------------- */
+		.font-classic {
+			--font-size-title: 14pt;
+			--font-size-headline: 10pt;
+			--font-family: 'Merriweather', 'Georgia', serif;
+			--font-family-input: 'Merriweather', 'Georgia', serif;
+			--font-family-headline: 'Merriweather', 'Georgia', serif;
+		}
+
+		/*  Font "Retro"
+            ---------------------------------------------------------------------------------------------------- */
+		.font-retro {
+			--font-size-title: 16pt;
+			--font-size-headline: 10pt;
+			--font-family: 'Consolas', 'New Courier', monospace;
+			--font-family-input: 'Consolas', 'New Courier', monospace;
+			--font-family-headline: 'Consolas', 'New Courier', monospace;
+		}
+
+		/*  Base template
+            ---------------------------------------------------------------------------------------------------- */
+		:root {
+			--primary-color: #4e7ba2;
+
+			--color: #000;
+			--color-headline: #000;
+			--font-size: 8pt;
+			--font-size-title: 16pt;
+			--font-size-headline: 10pt;
+			--font-family: 'Roboto', sans-serif;
+			--font-family-input: 'Roboto', sans-serif;
+			--font-family-headline: 'Roboto', serif;
+
+			--title-padding: 0 0 10mm 3mm;
+			--title-margin: 0;
+
+			--section-gap: 0;
+
+			--wrapper-gap: 0;
+			--wrapper-padding: 0;
+			--wrapper-margin: 4px;
+			--wrapper-border: 1px solid #eee;
+
+			--container-gap: 0;
+			--container-padding: 0;
+			--container-margin: 0;
+			--container-border: 1px solid #eee;
+			--container-background: white;
+			--container-columns: 46% 54%;
+			--container-columns-double: 23% 77%;
+			--container-columns: 46% 54%;
+			--container-columns-double: 23% 77%;
+
+			--headline-padding: 1mm 2mm;
+			--headline-margin: 0;
+			--headline-border: 1px solid #eee;
+			--headline-background: #eee;
+
+			--label-padding: var(--headline-padding);
+			--label-margin: 0;
+
+			--input-padding: var(--headline-padding);
+			--input-margin: 0;
+			--input-background: white;
+			--input-weight: 700;
+
+			--checkbox-margin: 1mm 2mm;
+			--checkbox-border: 1px solid #aaa;
+			--checkbox-background: transparent;
+
+			--tax-font-size: 8pt;
+			--tax-padding: 0;
+			--tax-font-weight: 700;
+			--tax-font-family: var(--font-family-headline);
+			--tax-color: var(--color);
+
+			--price-marking: hidden;
+			/* underline: visible / hidden */
+			--price-marking-color: yellow;
+			/* underline: visible / hidden */
+			--price-circle: hidden;
+			/* underline: visible / hidden */
+			--price-circle-color: #c70315;
+			/* underline: visible / hidden */
+			--price-underline: hidden;
+			/* underline: visible / hidden */
+			--price-underline-color: #c70315;
+			--price-font-size: 32pt;
+			--price-padding: 0;
+			--price-font-weight: 700;
+			--price-font-family: 'Caveat', sans-serif;
+			--price-color: #c70315;
+		}
+
+		body:not(.pick-up-order) section.pick-up-order {
+			display: none !important;
+		}
+
+		body:not(.mwst) div.contract-purchase-taxfree.container {
+			display: none !important;
+		}
+
+		body:not(.mwst) div.contract-purchase-tax.container {
+			display: none !important;
+		}
+
+		body:not(.contract-signatures) div.contract-signatures.wrapper {
+			display: none !important;
+		}
+
+
+		/*  Fonts
+            ---------------------------------------------------------------------------------------------------- */
+		@font-face {
+			font-family: 'Roboto';
+			src: url('fonts/Roboto-Regular.ttf') format('truetype');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'Roboto';
+			src: url('fonts/Roboto-Italic.ttf') format('truetype');
+			font-weight: 400;
+			font-style: italic;
+		}
+
+		@font-face {
+			font-family: 'Roboto';
+			src: url('fonts/Roboto-Bold.ttf') format('truetype');
+			font-weight: 700;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'Roboto Condensed';
+			src: url('fonts/RobotoCondensed-Regular.ttf') format('truetype');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'Roboto Condensed';
+			src: url('fonts/RobotoCondensed-Italic.ttf') format('truetype');
+			font-weight: 400;
+			font-style: italic;
+		}
+
+		@font-face {
+			font-family: 'Roboto Condensed';
+			src: url('fonts/RobotoCondensed-Bold.ttf') format('truetype');
+			font-weight: 700;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'Roboto Mono';
+			src: url('fonts/RobotoMono-Regular.ttf') format('truetype');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'Roboto Mono';
+			src: url('fonts/RobotoMono-Italic.ttf') format('truetype');
+			font-weight: 400;
+			font-style: italic;
+		}
+
+		@font-face {
+			font-family: 'Roboto Mono';
+			src: url('fonts/RobotoMono-Bold.ttf') format('truetype');
+			font-weight: 700;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'Merriweather';
+			src: url('fonts/Merriweather-Regular.ttf') format('truetype');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'Merriweather';
+			src: url('fonts/Merriweather-Italic.ttf') format('truetype');
+			font-weight: 400;
+			font-style: italic;
+		}
+
+		@font-face {
+			font-family: 'Merriweather';
+			src: url('fonts/Merriweather-Bold.ttf') format('truetype');
+			font-weight: 700;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'Permanent Marker';
+			src: url('fonts/PermanentMarker-Regular.ttf') format('truetype');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'Caveat';
+			src: url('fonts/Caveat-Regular.ttf') format('truetype');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'Caveat Brush';
+			src: url('fonts/CaveatBrush-Regular.ttf') format('truetype');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'Monda';
+			src: url('fonts/Monda-Regular.ttf') format('truetype');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'Monda';
+			src: url('fonts/Monda-Bold.ttf') format('truetype');
+			font-weight: 700;
+			font-style: normal;
+		}
+
+
+		/*  Screen only
+            ---------------------------------------------------------------------------------------------------- */
+		@media screen {
+			html {
+				background: #eee;
+				padding: 0;
+				margin: 0 0;
+				cursor: default;
+				outline: none;
+			}
+
+			body {
+				margin: 0;
+			}
+
+			body section {
+				grid-column: 1;
+			}
+
+			body section {
+				width: 100%;
+				max-width: 210mm;
+				min-height: 291mm;
+				padding: 10mm;
+				margin: 10mm auto;
+				background: white;
+				border-radius: .5mm;
+				box-shadow: 1px 1px 4px #ccc;
+				border: 1px solid #eee;
+			}
+
+			input[onclick="window.print()"] {
+				position: fixed;
+				background: black;
+				color: white;
+				padding: 5px 15px;
+				border: none;
+				margin: auto;
+				bottom: 40px;
+				right: 40px;
+				font-size: 16px;
+				font-weight: bold;
+				text-transform: uppercase;
+				font-family: 'Monda', sans-serif;
+			}
+
+			input[onclick="window.print()"]:hover {
+				cursor: pointer;
+				background: #333;
+			}
+
+			span[contenteditable="true"]:hover {
+				cursor: text;
+			}
+
+			input[onclick="window.print()"]:active {
+				background: #111;
+			}
+
+			section.pick-up-order {
+				position: relative;
+				margin-bottom: 10mm;
+				padding-bottom: 10mm;
+			}
+
+			/* section.pick-up-order:after {
+                content: '';
+                position: absolute;
+                border-bottom: 2px solid #eee;
+                right: -12mm; bottom: 0; left: -12mm;
+            }
+            section.pick-up-order:before {
+                content: '';
+                position: absolute;
+                border-bottom: 2px solid #ddd;
+                right: -10mm; bottom: 2px; left: -10mm;
+            } */
+		}
+
+		/*  Print only
+            ---------------------------------------------------------------------------------------------------- */
+		@media print {
+			html {
+				height: 99%;
+			}
+			body {
+				max-width: none;
+				min-width: none;
+				max-height: none;
+				min-height: none;
+				padding: 0;
+				margin: 0;
+				box-shadow: none;
+				border-radius: 0;
+				border: none;
+				height: 99%;
+				-webkit-print-color-adjust: exact;
+				color-adjust: exact;
+			}
+
+			body.nav {
+				display: block;
+				min-height: 300mm;
+			}
+
+			nav {
+				display: none !important;
+			}
+
+			body:after {
+				content: '';
+				position: absolute;
+				z-index: 1;
+				background: white;
+				height: 210mm;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+
+			section,
+			div,
+			span {
+				break-inside: avoid !important;
+				overflow: visible !important;
+			}
+
+			div.container {
+				overflow: visible !important;
+			}
+
+			.contract-vehicle-details.wrapper,
+			.contract-vehicle-details.wrapper * {
+				overflow: visible !important;
+				display: block !important;
+				break-inside: auto !important;
+				overflow: visible !important;
+			}
+
+			section.pick-up-order {
+				position: relative;
+				z-index: 2;
+			}
+
+			section.contract {
+				position: relative;
+			}
+
+			section.contract div:not(.contract-signatures) {
+					position: relative;
+					z-index: 2;
+			}
+/* 			
+			section.contract div.contract-signatures {
+					position: fixed;
+					bottom: 10mm;
+					width: calc(100% - 1.5mm * 2 - 20mm);
+					z-index: 0;
+			} */
+
+			/* From here on, page break fuck up */
+			.contract {
+				display: block !important;
+			}
+			.contract > * {
+				display: block;
+			}
+			.contract > h1 {
+				display: block !important;
+				width: 100% !important;
+				padding-top: 80px !important;
+			}
+			.contract > .contract-logo {
+				display: block !important;
+				position: absolute !important;
+				right: 0 !important;
+				top: 30px !important;
+			}
+			.contract > .contract-buyer {
+				float: left;
+			}
+			.contract > .contract-seller {
+				float: right;
+			}
+			.contract > .contract-buyer,
+			.contract > .contract-seller {
+				display: block;
+				width: calc(50% - 8px);
+			}
+			.contract > .contract-purchase {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		/*  Defaults
+            ---------------------------------------------------------------------------------------------------- */
+		body {
+			font-size: var(--font-size);
+			font-family: var(--font-family);
+		}
+
+		h1 {
+			font-size: var(--font-size-title);
+		}
+
+		h2 {
+			font-size: var(--font-size-headline);
+		}
+
+		h3 {
+			font-size: var(--font-size-headline) * .9;
+		}
+
+		h4 {
+			font-size: var(--font-size-headline) * .8;
+		}
+
+		h5 {
+			font-size: var(--font-size-headline) * .7;
+		}
+
+		h6 {
+			font-size: var(--font-size-headline) * .6;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-family: var(--font-family-headline);
+		}
+
+		section {
+			gap: var(--section-gap);
+		}
+
+		div.wrapper {
+			grid-column: span 2;
+			gap: var(--wrapper-gap);
+			padding: var(--wrapper-padding);
+			margin: var(--wrapper-margin);
+			position: relative;
+			background: var(--wrapper-background);
+			border: var(--wrapper-border);
+			box-sizing: border-box;
+			align-content: flex-start;
+			align-self: flex-start;
+		}
+
+		div.wrapper h2 {
+			padding: var(--headline-padding);
+			margin: var(--headline-margin);
+			position: relative;
+			color: var(--headline-color);
+			background: var(--headline-background);
+			border: var(--headline-border);
+		}
+
+		div.container {
+			overflow: hidden;
+			display: grid;
+			grid-template-columns: var(--container-columns);
+			gap: var(--container-gap);
+			padding: var(--container-padding);
+			margin: var(--container-margin);
+			background: var(--container-background);
+			border: var(--container-border);
+			box-sizing: border-box;
+		}
+
+		div.box {
+			display: grid;
+			gap: var(--container-gap);
+			padding: var(--container-padding);
+			background: var(--container-background);
+		}
+
+		div.container label {
+			display: block;
+			padding: var(--label-padding);
+			margin: var(--label-margin);
+			font-size: var(--font-size);
+		}
+
+		div.container p {
+			padding: var(--label-padding);
+			margin: var(--label-margin);
+			font-size: var(--font-size);
+		}
+
+		div.container input[type="radio"]+label,
+		div.container span[contenteditable="true"],
+		div.container strong {
+			align-self: flex-start;
+			display: inline-block;
+			padding: var(--input-padding);
+			margin: var(--input-margin);
+			border: none;
+			border-radius: 0;
+			background: var(--input-background);
+			font-size: var(--font-size);
+			font-weight: var(--input-weight);
+			font-family: var(--font-family-input);
+		}
+
+		div.container input[type="checkbox"],
+		div.container input[type="radio"] {
+			margin: var(--checkbox-margin);
+		}
+
+		div.container div[contenteditable="true"] {
+			padding: var(--input-padding);
+			margin: var(--input-margin);
+			border: none;
+			border-radius: 0;
+			background: var(--input-background);
+			font-size: var(--font-size);
+			font-weight: var(--input-weight);
+			font-family: var(--font-family-input);
+		}
+
+		.signature {
+			border-bottom: 1px solid black;
+		}
+
+		div.container textarea{
+            		position: relative;
+            		align-self: flex-start;
+            		padding: var(--input-padding);
+            		margin: var(--input-margin);
+            		border: var(--input-border);
+            		border-width: var(--input-border-width);
+            		border-style: var(--input-border-style);
+            		border-color: var(--input-border-color);
+            		border-radius: 0;
+            		color: var(--input-color);
+            		background: var(--input-background);
+            		font-size: var(--input-font-size);
+            		font-weight: var(--input-weight);
+            		font-family: var(--font-family-input);
+            		transition: background-color .2s, color .1s;
+            		line-height: 125%;
+            }
+            /*  Pick-Up Order
+
+            ---------------------------------------------------------------------------------------------------- */
+		section.pick-up-order {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			align-items: flex-start;
+		}
+
+		section.pick-up-order h1 {
+			align-self: flex-end;
+			margin: var(--wrapper-margin);
+			margin-left: calc(var(--wrapper-margin) * 3);
+			margin-bottom: calc(var(--wrapper-margin) * 2);
+			padding: 0;
+			grid-column: span 6;
+		}
+
+		section.pick-up-order div.pick-up-order-logo {
+			grid-column: span 6;
+			display: none;
+		}
+
+		section.pick-up-order div.pick-up-order-logo img {
+			max-height: 20mm;
+			width: auto;
+			float: right;
+			padding-bottom: 10mm;
+		}
+
+		div.pick-up-order-info.wrapper {
+			grid-column: 1 / span 12;
+			grid-row: 2;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+      grid-row-gap: 7px;
+		}
+
+    div.pick-up-order-info.wrapper label{
+      background: var(--headline-background);
+		}
+
+		div.pick-up-order-info div.container {
+			grid-template-columns: 60px auto;
+		}
+
+		div.pick-up-order-info-note.container {
+			grid-template-columns: 60px auto;
+			grid-column: span 3;
+		}
+
+		div.pick-up-order-rail-connection.wrapper {
+			grid-column: 1 / span 12;
+			grid-row: 3;
+		}
+
+		div.pick-up-order-rail-connection.container {
+			display: block !important;
+		}
+
+		div.pick-up-order-rail-connection.container table {
+			border-spacing: 0;
+		}
+
+		div.pick-up-order-rail-connection.container h3 {
+			margin-bottom: 0;
+		}
+
+		div.pick-up-order-rail-connection.container h3,
+		div.pick-up-order-rail-connection.container table th,
+		div.pick-up-order-rail-connection.container table td {
+			padding: var(--input-padding);
+		}
+
+		div.pick-up-order-rail-connection.container img {
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+		}
+
+		div.pick-up-order-info.container h1,
+		div.pick-up-order-info.container div.pick-up-order-note,
+		div.pick-up-order-info.container h2,
+		div.pick-up-order-info.container div.pick-up-order-rail-connection {
+			grid-column: span 1;
+		}
+
+		div.pick-up-order-assessment-graphic {
+			grid-column: span 6;
+			grid-row: span 3;
+		}
+
+		div.pick-up-order-assessment-graphic img {
+			max-width: 100%;
+			width: auto;
+			height: auto;
+			grid-column: span 2;
+		}
+
+		div.pick-up-order-assessment-graphic p {
+			grid-column: span 2;
+		}
+
+		div.pick-up-order-assessment-condition {
+			grid-column: span 6;
+			grid-row: 4;
+		}
+
+		div.pick-up-order-assessment-condition-damages.container,
+		div.pick-up-order-assessment-condition-glass.container,
+		div.pick-up-order-assessment-condition-timing-belt.container,
+		div.pick-up-order-assessment-condition-lights.container {
+			grid-template-columns: 24px calc(25% - 16px) 24px auto;
+		}
+
+		div.pick-up-order-assessment-condition-damages.container p,
+		div.pick-up-order-assessment-condition-glass.container p,
+		div.pick-up-order-assessment-condition-timing-belt.container p,
+		div.pick-up-order-assessment-condition-lights.container p {
+			grid-column: span 6;
+		}
+
+		div.pick-up-order-assessment-condition-visual.container,
+		div.pick-up-order-assessment-condition-technical.container {
+			grid-template-columns: 24px auto 24px auto 24px auto 24px auto;
+		}
+
+		div.pick-up-order-assessment-condition-visual p,
+		div.pick-up-order-assessment-condition-technical p {
+			grid-column: span 8;
+		}
+
+		div.pick-up-order-assessment-paint {
+			grid-column: span 6;
+			grid-row: 5;
+		}
+
+		div.pick-up-order-assessment-paint.wrapper {
+			display: grid;
+			grid-template-columns: 44% 56%;
+		}
+
+		div.pick-up-order-assessment-paint.wrapper h2 {
+			grid-column: span 2;
+		}
+
+		div.pick-up-order-assessment-test-drive {
+			grid-column: span 6;
+			grid-row: 6 / span 2;
+		}
+
+		div.pick-up-order-assessment-test-drive div.container {
+			grid-template-columns: 40% 24px 40px 24px auto;
+		}
+
+		div.pick-up-order-assessment-signature {
+			grid-column: 7 / span 6;
+			grid-row: 7;
+		}
+
+		div.pick-up-order-assessment-signature-confirmation.container div.box {
+			grid-column: span 2;
+			grid-template-columns: 24px auto;
+		}
+
+		div.pick-up-order-assessment-signature-confirmation div#pick-up-order-assessment-signature {
+			grid-column: span 2;
+		}
+
+		div.pick-up-order-assessment-signature-confirmation div#pick-up-order-assessment-signature.signature {
+			width: auto;
+			padding: 1mm;
+			height: 120px;
+		}
+
+		/*  Contract
+            ---------------------------------------------------------------------------------------------------- */
+		section.contract {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		section.contract h1 {
+			align-self: flex-end;
+			padding: var(--title-padding);
+			margin: var(--title-margin);
+		}
+
+		section.contract div.contract-logo {
+			grid-column: span 1;
+		}
+
+		section.contract div.contract-logo img {
+			max-height: 20mm;
+			width: auto;
+			float: right;
+			padding-bottom: 10mm;
+		}
+
+		/*  Contract: Buyer
+            ---------------------------------------------------------------------------------------------------- */
+		section.contract div.contract-buyer {
+			grid-column: span 1;
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: var(--container-gap);
+		}
+
+		section.contract div.contract-buyer div {
+			display: grid;
+		}
+
+		/*  Contract: Seller
+            ---------------------------------------------------------------------------------------------------- */
+		section.contract div.contract-seller {
+			grid-column: span 1;
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: var(--container-gap);
+		}
+
+		section.contract div.contract-seller h2 {
+			position: relative;
+		}
+
+		section.contract div.contract-seller h2 span {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			padding: var(--headline-padding);
+			width: auto;
+			display: inline-block;
+			font-size: 90%;
+			text-align: right;
+		}
+
+		section.contract div.contract-seller div {
+			display: grid;
+		}
+
+		/*  Contract: Purchase
+            ---------------------------------------------------------------------------------------------------- */
+		section.contract div.contract-purchase {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: var(--container-gap);
+		}
+
+		section.contract div.contract-purchase h2 {
+			grid-column: span 2;
+		}
+
+		section.contract div.contract-purchase div.container {
+			display: grid;
+			align-content: center;
+			align-items: center;
+		}
+
+		section.contract div.contract-purchase div :first-child {
+			text-align: right;
+		}
+
+		section.contract div.contract-purchase div.contract-purchase-price {
+			grid-column: 2;
+			grid-row: 2 / span 2;
+		}
+
+		section.contract .contract-purchase-taxfree,
+		section.contract .contract-purchase-tax {
+			grid-column: 1;
+		}
+
+		section.contract #contract-purchase-tax {
+			color: var(--tax-color);
+			font-size: var(--tax-font-size);
+			font-weight: var(--tax-font-weight);
+			font-family: var(--tax-font-family);
+			padding: var(--tax-padding);
+		}
+
+		section.contract .contract-purchase-taxfree-value,
+		section.contract .contract-purchase-tax-value {
+			text-align: right;
+		}
+
+		section.contract .contract-purchase-taxfree,
+		section.contract .contract-purchase-tax {
+			grid-template-columns: auto 20mm;
+		}
+
+		section.contract .contract-purchase-price {
+			overflow: visible;
+		}
+
+		section.contract #contract-purchase-price-value {
+			position: relative;
+			z-index: 1;
+			background: transparent;
+			min-height: calc(var(--price-font-size) * 1.25);
+		}
+
+		section.contract #contract-purchase-price-value:not(:empty) {
+			display: inline;
+			color: var(--price-color);
+			font-size: var(--price-font-size);
+			font-weight: var(--price-font-weight);
+			font-family: var(--price-font-family);
+			padding: var(--price-padding);
+		}
+
+		section.contract #contract-purchase-price-value:not(:empty):after {
+			content: '';
+			position: absolute;
+			right: -2mm;
+			bottom: 0;
+			left: -2mm;
+			border-bottom: 2mm double var(--price-underline-color);
+			transform: rotateZ(-2deg) translateX(.5mm);
+			visibility: var(--price-underline);
+		}
+
+		#contract-purchase-price-key+div {
+			position: relative;
+			text-align: center;
+		}
+
+		section.contract .contract-purchase-price svg#marking {
+			visibility: var(--price-marking);
+			position: absolute;
+			top: 0;
+			left: 0mm;
+			width: 100%;
+			height: auto;
+			z-index: 0;
+		}
+
+		section.contract .contract-purchase-price svg#marking path {
+			fill: var(--price-marking-color);
+		}
+
+		section.contract .contract-purchase-price svg#circle {
+			visibility: var(--price-circle);
+			position: absolute;
+			top: -4mm;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: calc(var(--price-font-size) * 1.25 + 8mm);
+			z-index: 0;
+		}
+
+		section.contract .contract-purchase-price svg#circle path {
+			fill: var(--price-circle-color);
+		}
+
+		/*  Contract: Vehicle
+            ---------------------------------------------------------------------------------------------------- */
+		section.contract div.contract-vehicle {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: var(--container-gap);
+		}
+
+		section.contract div.contract-vehicle h2 {
+			grid-column: span 2;
+		}
+
+		section.contract div.contract-vehicle div.container {
+			display: grid;
+		}
+
+		section.contract div.contract-vehicle div.contract-vehicle-brand {
+			grid-column: span 2;
+			grid-template-columns: var(--container-columns-double);
+		}
+
+		/*  Contract: Vehicle details
+            ---------------------------------------------------------------------------------------------------- */
+		section.contract div.contract-vehicle-details div.container {
+			display: grid;
+			grid-template-columns: 1fr;
+		}
+
+		/* section.contract .contract-vehicle-accident-free,
+        section.contract .contract-vehicle-repainting {
+            grid-template-columns: 1fr 1fr 1fr;
+        } */
+		section.contract .contract-vehicle-accident-free div span,
+		section.contract .contract-vehicle-repainting div span {
+			padding: var(--input-padding);
+		}
+
+		section.contract #contract-vehicle-accident-free-value:checked+span+span {
+			display: none;
+		}
+
+		section.contract #contract-vehicle-accident-free-value:not(:checked)+span {
+			display: none;
+		}
+
+		section.contract #contract-vehicle-repainting-value:checked+span+span {
+			display: none;
+		}
+
+		section.contract #contract-vehicle-repainting-value:not(:checked)+span {
+			display: none;
+		}
+
+		/*  Contract: Special agreements
+            ---------------------------------------------------------------------------------------------------- */
+		section.contract div.contract-special-agreements div.container {
+			display: grid;
+			grid-template-columns: 1fr;
+		}
+
+		/*  Contract: General terms
+            ---------------------------------------------------------------------------------------------------- */
+		section.contract div.contract-general-terms div.container {
+			display: grid;
+			grid-template-columns: 1fr;
+		}
+
+		/*  Contract: Signatures
+            ---------------------------------------------------------------------------------------------------- */
+		section.contract div.contract-signatures {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+
+		section.contract div.contract-signatures canvas {
+			width: calc(100% - 2px);
+			height: calc((100% - 2mm) * (9 / 16));
+			margin-bottom: calc((100% - 2mm) * (9 / 16) * -0.43);
+		}
+
+		section.contract div.contract-signatures h2 {
+			grid-column: span 2;
+		}
+
+		section.contract div.contract-signatures div.container {
+			grid-template-rows: auto 6mm 6mm;
+			grid-template-columns: 1fr;
+			align-content: flex-start;
+		}
+
+		section.contract div.contract-signatures div.container div.box {
+			grid-template-columns: 24px auto;
+		}
+
+		section.contract div.contract-signatures div.contract-signatures-seller-price {
+			grid-row: span 2;
+		}
+
+		section.contract div[id^="contract-signatures-"][id$="-date"] {
+			grid-row: 5;
+		}
+
+		section.contract div[id^="contract-signatures-"][id$="-signature"] {
+			grid-row: 6;
+		}
+
+		section.contract div.contract-signatures img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		section.contract div.contract-signatures img[src=""] {
+			display: none;
+		}
+
+		section.contract div.contract-signatures img:not([src=""])+canvas {
+			display: none;
+		}
+
+		section.contract div.contract-signatures div[class*="date-and-place"] {
+			width: 100%;
+			grid-row: 4;
+		}
+
+		section.contract div.contract-signatures div[class*="date-and-place"] input {
+			border: none;
+			border-bottom: 1px solid black;
+			margin-bottom: 10px;
+			width: 100%;
+		}
+
+    .result {
+      width: 100%;
+    }
+
+    .result .station, .result .time, .result .platform, .result .products, .result .capacity {
+      text-align: left;
+    }
+
+ul.connectionDetails {
+			padding: 0px 0;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			position: relative;
+		}
+		
+		li{
+			list-style: none;
+		}
+		
+		ul.connectionDetails li.sectionDeparture {
+			padding-top: 0px;
+		}
+		
+		ul.connectionDetails li.sectionArrival {
+			padding-top: 1px;
+		}
+		
+		#infoLayerJourney ul{
+			padding-left: 0px;
+		}
+		
+		ul.connectionDetails{
+			display: flex;
+			flex-direction: column;
+			color: #282d37;
+		}
+		
+		li:first-child div.conDetailsRow_dep, li:last-child div.conDetailsRow_arr {
+			color: #282D37;
+			font-size: 15px;
+			line-height: 15px;
+			font-family: 'Monda', sans-serif;
+			font-weight: bold;
+		}
+		
+		div.conDetailsRow_dep, div.conDetailsRow_arr {
+			display: flex;
+			justify-content: space-between;
+			flex: 1;
+			font-family: 'Monda', sans-serif;
+			font-size: 16px;
+			line-height: 24px;
+			color: #282d37;
+			position: relative;
+		}
+		
+		
+		.delayOnTime {
+			font-size: 1em;
+			color: #508B1B;
+		}
+		
+		div.conDetailsRow_dep div.platform div,div.conDetailsRow_arr div.platform div,  div.conDetailsRow_dep div.platform div,  div.conDetailsRow_arr div.platform div {
+			background-color: #0a1e6e;
+			color: #fff;
+			font-family: 'Monda', sans-serif;
+			font-size: 12px;
+			border-radius: 4px;
+			text-align: center;
+			line-height: 20px;
+			padding: 2px 4px;
+		}
+		
+		div.conDetailsRow_dep div.platform div.platformred, div.conDetailsRow_arr div.platform div.platformred,  div.conDetailsRow_dep div.platform div.platformred,  div.conDetailsRow_arr div.platform div.platformred {
+			background-color: #c50014;
+		}
+		
+		div.detailsintermediate div:last-child, div.detailsintermediate div:last-child {
+			display: flex;
+			align-items: center;
+		}
+		
+		div.moreDetailsLink, div.capacity{
+			display: none;
+			
+		}
+		
+		.sectionDuration, div.detailContainer .detailCancelled.jnyCancelled {
+			position: absolute;
+			right: 37px;
+			width: 80px;
+			bottom: 0;
+			transform: translateY(35%);
+			font-size: 12px;
+			line-height: 16px;
+			color: #646973;
+		}
+		
+		sectionDuration {
+			font-family: 'Monda', sans-serif;
+			font-size: 12px;
+			line-height: 16px;
+			color: #646973;
+		}
+		
+		#infoLayerJourney div.conDetailsRow_dep div.time, #infoLayerJourney div.conDetailsRow_arr div.time, #infoLayerJourney div.detailsintermediate div.time,  div.conDetailsRow_dep div.time,  div.conDetailsRow_arr div.time,  div.detailsintermediate div.time {
+			flex: 0 0 0px;
+			padding-right: 37px;
+			text-align: right;
+			position: relative;
+		}
+		
+		div.conDetailsRow_dep div.station, div.conDetailsRow_arr div.station, div.conDetailsRow_dep div.station, div.conDetailsRow_arr div.station {
+			flex-grow: 2;
+		}
+		
+		div.conDetailsRow_product .direction, div.conDetailsRow_product .capacity {
+			margin-top: 8px;
+		}
+		
+		ul.connectionDetails li .moreDetailsLink, #infoLayerJourney div.conDetailsRow_product, div.conDetailsRow_product {
+			font-family: 'Monda', sans-serif;
+			font-size: 14px;
+			line-height: 20px;
+			color: #282d37;
+			padding-top: 5px;
+		}
+		
+		#content div.connectionStations div.station:first-child, #content ul.connectionDetails li:first-child div.stationIcon {
+			background-image: url("https://www.img-bahn.de/s3/prod/v/img_responsive/20dp_icon_journey_start_grey300.svg");
+		}
+		
+		[target="train"] {
+		  pointer-events: none;
+		  cursor: default;
+		  text-decoration: none;
+		  color: black;
+		}
+		
+		[title="Umsteigezeit anpassen"] {
+		  pointer-events: none;
+		  cursor: default;
+		  text-decoration: none;
+		  color: black;
+		}
+		
+		
+		
+		div.conDetailsRow_product .direction {
+			background-image: url(https://www.img-bahn.de/s3/prod/v/img_responsive/20dp_icon_navigation_arrow-forward-small14.svg);
+			background-repeat: no-repeat;
+			background-position: left 1px;
+			background-size: 20px 20px;
+			padding-left: 29px;
+		}
+		
+		ul.connectionDetails div.stationIcon, ul.connectionDetails div.stationIcon {
+			background-repeat: no-repeat;
+			background-position: left top;
+			background-size: 20px 20px;
+			padding: 0;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: -2px;
+			right: 11px;
+		}
+		
+		ul.connectionDetails li:first-child div.stationIcon {
+			background-image: url(https://www.img-bahn.de/s3/prod/v/img_responsive/20dp_icon_journey_intermediary-stop_grey300.svg);
+		}
+		
+		ul.connectionDetails li:last-child div.stationIcon {
+			background-image: url(https://www.img-bahn.de/s3/prod/v/img_responsive/20dp_icon_journey_destination-filled_grey300.svg);
+			z-index: 5;
+		}
+		
+		ul.connectionDetails li.intermediate, ul.connectionDetails li.intermediate {
+			background-color: #f0f3f5;
+			border-left: 1px solid #fff;
+			border-right: 1px solid #fff;
+			font-family: 'Monda', sans-serif;
+			font-size: 12px;
+			color: #646973;
+			display: flex;
+		}
+		
+		ul.connectionDetails li {
+			padding: 5px 215px 5px 0px;
+			background-color: #FFFFFF;
+		}
+		
+		
+		
+		div.detailsintermediate, div.detailsintermediate {
+			display: flex;
+			flex-direction: row;
+			align-items: left;
+			position: relative;
+			flex: 1;
+		}
+		
+		#infoLayerJourney div.conDetailsRow_dep div.time, #infoLayerJourney div.conDetailsRow_arr div.time, #infoLayerJourney div.detailsintermediate div.time, div.conDetailsRow_dep div.time, div.conDetailsRow_arr div.time, div.detailsintermediate div.time {
+			flex: 0 0 50px;
+			padding-right: 37px;
+			text-align: right;
+			position: relative;
+		}
+</style> 
+ </head> 
+ <body class="design-classic font-modern  "> 
+  <div style="display: block; page-break-after: always;"> 
+   <section class="pick-up-order"> 
+    <h1>Abholauftrag</h1> 
+    <div class="pick-up-order-logo"> 
+	<img src="data:image/png;base64,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">
+   </div> 
+    <div class="pick-up-order-info wrapper"> 
+     <div class="pick-up-order-info-driver container"> 
+      <label id="pick-up-order-info-driver-key">Fahrer</label> 
+      <span id="pick-up-order-info-driver-value" contenteditable="true"></span> 
+     </div> 
+     <div class="pick-up-order-info-vehicle container"> 
+      <label id="pick-up-order-info-vehicle-key">Fahrzeug</label> 
+      <span id="pick-up-order-info-vehicle-value" contenteditable="true"></span> 
+     </div> 
+     <div class="pick-up-order-info-price container"> 
+      <label id="pick-up-order-info-price-key">Preis</label> 
+      <span id="pick-up-order-info-price-value" contenteditable="true"></span> 
+     </div> 
+     <div class="pick-up-order-info-note container"> 
+      <label id="pick-up-order-info-note-key">Notiz</label> 
+      <span id="pick-up-order-info-note-value" contenteditable="true"></span> 
+     </div> 
+    </div> 
+    <div class="pick-up-order-rail-connection wrapper"> 
+    </div> 
+    <div class="pick-up-order-assessment-graphic wrapper"> 
+     <h2>Skizze</h2> 
+     <div class="pick-up-order-assessment-graphic container"> 
+      <img id="pick-up-order-assessment-graphic" src="assessment-graphic.svg" alt="Bewertungsgrafik"> 
+      <p> <em><b>N</b>&nbsp;=&nbsp;Nachlackierung</em> <em><b>U</b>&nbsp;=&nbsp;Unfall</em> <em><b>K</b>&nbsp;=&nbsp;Kratzer</em> <em><b>B</b>&nbsp;=&nbsp;Beule</em> <em><b>H</b>&nbsp;=&nbsp;Hagelschaden</em> <em><b>R</b>&nbsp;=&nbsp;Rost</em> <em><b>S</b>&nbsp;=&nbsp;Steinschlage</em> <em><b>X</b>&nbsp;=&nbsp;Riss</em> </p> 
+     </div> 
+    </div> 
+    <div class="pick-up-order-assessment-condition wrapper"> 
+     <h2>Zustand</h2> 
+     <div class="pick-up-order-assessment-condition-visual container"> 
+      <p id="pick-up-order-assessment-condition-visual-key">Optischer Zustand</p> 
+      <input id="pick-up-order-assessment-condition-visual-value-great" name="pick-up-order-assessment-condition-visual-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-visual-value-great">Sehr gut</label> 
+      <input id="pick-up-order-assessment-condition-visual-value-good" name="pick-up-order-assessment-condition-visual-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-visual-value-good">Gut</label> 
+      <input id="pick-up-order-assessment-condition-visual-value-ok" name="pick-up-order-assessment-condition-visual-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-visual-value-ok">Mittel</label> 
+      <input id="pick-up-order-assessment-condition-visual-value-bad" name="pick-up-order-assessment-condition-visual-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-visual-value-bad">Schlecht</label> 
+     </div> 
+     <div class="pick-up-order-assessment-condition-technical container"> 
+      <p id="pick-up-order-assessment-condition-technical-key">Technischer Zustand</p> 
+      <input id="pick-up-order-assessment-condition-technical-value-great" name="pick-up-order-assessment-condition-technical-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-technical-value-great">Sehr gut</label> 
+      <input id="pick-up-order-assessment-condition-technical-value-good" name="pick-up-order-assessment-condition-technical-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-technical-value-good">Gut</label> 
+      <input id="pick-up-order-assessment-condition-technical-value-ok" name="pick-up-order-assessment-condition-technical-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-technical-value-ok">Mittel</label> 
+      <input id="pick-up-order-assessment-condition-technical-value-bad" name="pick-up-order-assessment-condition-technical-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-technical-value-bad">Schlecht</label> 
+     </div> 
+     <div class="pick-up-order-assessment-condition-damages container"> 
+      <p id="pick-up-order-assessment-condition-damages-key">Unfallschäden/Hagelschäden</p> 
+      <input id="pick-up-order-assessment-condition-damages-value-no" name="pick-up-order-assessment-condition-damages-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-damages-value-no">Nein</label> 
+      <input id="pick-up-order-assessment-condition-damages-value-yes" name="pick-up-order-assessment-condition-damages-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-damages-value-yes">Ja, hier:</label> 
+     </div> 
+     <div class="pick-up-order-assessment-condition-glass container"> 
+      <p id="pick-up-order-assessment-condition-glass-key">Glasschäden/Steinschläge</p> 
+      <input id="pick-up-order-assessment-condition-glass-value-no" name="pick-up-order-assessment-condition-glass-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-glass-value-no">Nein</label> 
+      <input id="pick-up-order-assessment-condition-glass-value-yes" name="pick-up-order-assessment-condition-glass-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-glass-value-yes">Ja, hier:</label> 
+     </div> 
+     <div class="pick-up-order-assessment-condition-timing-belt container"> 
+      <p id="pick-up-order-assessment-condition-timing-belt-key">Zahnriemenwechsel</p> 
+      <input id="pick-up-order-assessment-condition-timing-belt-value-no" name="pick-up-order-assessment-condition-timing-belt-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-timing-belt-value-no">Nein</label> 
+      <input id="pick-up-order-assessment-condition-timing-belt-value-yes" name="pick-up-order-assessment-condition-timing-belt-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-timing-belt-value-yes">Ja, hier:</label> 
+     </div> 
+     <div class="pick-up-order-assessment-condition-lights container"> 
+      <p id="pick-up-order-assessment-condition-lights-key">Beleuchtung</p> 
+      <input id="pick-up-order-assessment-condition-lights-value-no" name="pick-up-order-assessment-condition-lights-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-lights-value-no">Nein</label> 
+      <input id="pick-up-order-assessment-condition-lights-value-yes" name="pick-up-order-assessment-condition-lights-value" type="radio"> 
+      <label for="pick-up-order-assessment-condition-lights-value-yes">Ja, hier:</label> 
+     </div> 
+    </div> 
+    <div class="pick-up-order-assessment-test-drive wrapper"> 
+     <h2>Probefahrt</h2> 
+     <div class="pick-up-order-assessment-test-drive-chassis container"> 
+      <label id="pick-up-order-assessment-test-drive-chassis-key">Fahrwerk</label> 
+      <input id="pick-up-order-assessment-test-drive-chassis-value-ok" name="pick-up-order-assessment-test-drive-chassis-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-chassis-value-ok">OK</label> 
+      <input id="pick-up-order-assessment-test-drive-chassis-value-notok" name="pick-up-order-assessment-test-drive-chassis-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-chassis-value-notok">Nicht OK</label> 
+     </div> 
+     <div class="pick-up-order-assessment-test-drive-steering container"> 
+      <label id="pick-up-order-assessment-test-drive-steering-key">Lenkung</label> 
+      <input id="pick-up-order-assessment-test-drive-steering-value-ok" name="pick-up-order-assessment-test-drive-steering-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-steering-value-ok">OK</label> 
+      <input id="pick-up-order-assessment-test-drive-steering-value-notok" name="pick-up-order-assessment-test-drive-steering-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-steering-value-notok">Nicht OK</label> 
+     </div> 
+     <div class="pick-up-order-assessment-test-drive-oil container"> 
+      <label id="pick-up-order-assessment-test-drive-oil-key">Ölstand</label> 
+      <input id="pick-up-order-assessment-test-drive-oil-value-ok" name="pick-up-order-assessment-test-drive-oil-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-oil-value-ok">OK</label> 
+      <input id="pick-up-order-assessment-test-drive-oil-value-notok" name="pick-up-order-assessment-test-drive-oil-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-oil-value-notok">Nicht OK</label> 
+     </div> 
+     <div class="pick-up-order-assessment-test-drive-brakes container"> 
+      <label id="pick-up-order-assessment-test-drive-brakes-key">Bremsen</label> 
+      <input id="pick-up-order-assessment-test-drive-brakes-value-ok" name="pick-up-order-assessment-test-drive-brakes-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-brakes-value-ok">OK</label> 
+      <input id="pick-up-order-assessment-test-drive-brakes-value-notok" name="pick-up-order-assessment-test-drive-brakes-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-brakes-value-notok">Nicht OK</label> 
+     </div> 
+     <div class="pick-up-order-assessment-test-drive-tires container"> 
+      <label id="pick-up-order-assessment-test-drive-tires-key">8-fach Bereifung</label> 
+      <input id="pick-up-order-assessment-test-drive-tires-value-ok" name="pick-up-order-assessment-test-drive-tires-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-tires-value-ok">OK</label> 
+      <input id="pick-up-order-assessment-test-drive-tires-value-notok" name="pick-up-order-assessment-test-drive-tires-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-tires-value-notok">Nicht OK</label> 
+     </div> 
+     <div class="pick-up-order-assessment-test-drive-engine container"> 
+      <label id="pick-up-order-assessment-test-drive-engine-key">Motorgeräusch</label> 
+      <input id="pick-up-order-assessment-test-drive-engine-value-ok" name="pick-up-order-assessment-test-drive-engine-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-engine-value-ok">OK</label> 
+      <input id="pick-up-order-assessment-test-drive-engine-value-notok" name="pick-up-order-assessment-test-drive-engine-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-engine-value-notok">Nicht OK</label> 
+     </div> 
+     <div class="pick-up-order-assessment-test-drive-flywheel container"> 
+      <label id="pick-up-order-assessment-test-drive-flywheel-key">Zweimassenschwungrad</label> 
+      <input id="pick-up-order-assessment-test-drive-flywheel-value-ok" name="pick-up-order-assessment-test-drive-flywheel-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-flywheel-value-ok">OK</label> 
+      <input id="pick-up-order-assessment-test-drive-flywheel-value-notok" name="pick-up-order-assessment-test-drive-flywheel-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-flywheel-value-notok">Nicht OK</label> 
+     </div> 
+     <div class="pick-up-order-assessment-test-drive-clutch container"> 
+      <label id="pick-up-order-assessment-test-drive-clutch-key">Kupplung</label> 
+      <input id="pick-up-order-assessment-test-drive-clutch-value-ok" name="pick-up-order-assessment-test-drive-clutch-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-clutch-value-ok">OK</label> 
+      <input id="pick-up-order-assessment-test-drive-clutch-value-notok" name="pick-up-order-assessment-test-drive-clutch-value" type="radio"> 
+      <label for="pick-up-order-assessment-test-drive-clutch-value-notok">Nicht OK</label> 
+     </div> 
+    </div> 
+    <div class="pick-up-order-assessment-paint wrapper"> 
+     <h2>Lackdichtstärke</h2> 
+     <div class="pick-up-order-assessment-paint-front container"> 
+      <label id="pick-up-order-assessment-paint-front-key">Front</label> 
+     </div> 
+     <div class="pick-up-order-assessment-paint-front container"> 
+      <label id="pick-up-order-assessment-paint-front-key">Heck</label> 
+     </div> 
+     <div class="pick-up-order-assessment-paint-front container"> 
+      <label id="pick-up-order-assessment-paint-front-key">Linke&nbsp;Seite</label> 
+     </div> 
+     <div class="pick-up-order-assessment-paint-front container"> 
+      <label id="pick-up-order-assessment-paint-front-key">Rechte&nbsp;Seite</label> 
+     </div> 
+     <div class="pick-up-order-assessment-paint-front container"> 
+      <label id="pick-up-order-assessment-paint-front-key">Dach</label> 
+     </div> 
+     <div class="pick-up-order-assessment-paint-front container"> 
+      <label id="pick-up-order-assessment-paint-front-key">Stoßstangen/Spaltemaße</label> 
+     </div> 
+    </div> 
+    <div class="pick-up-order-assessment-signature wrapper"> 
+     <h2>Unterschrift Bewerter</h2> 
+     <div class="pick-up-order-assessment-signature-confirmation container"> 
+      <div class="pick-up-order-assessment-signature-confirmation box"> 
+       <input id="pick-up-order-assessment-signature-confirmation-value" type="checkbox"> 
+       <label for="pick-up-order-assessment-signature-confirmation-value">Das Fahrzeug wurde überprüft und Probe gefahren</label> 
+      </div> 
+      <div id="pick-up-order-assessment-signature" class="signature">
+        Unterschrift Bewerter 
+      </div> 
+     </div> 
+    </div> 
+   </section> 
+  </div> 
+  <section class="contract"> 
+   <h1>KFZ Kaufvertrag</h1> 
+   <div class="contract-logo"> 
+   <img src="data:image/png;base64,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"> 
+   </div> 
+   <!-- Buyer --> 
+   <div class="contract-buyer wrapper"> 
+    <h2>Käufer</h2> 
+    <div class="contract-buyer-name container"> 
+     <label id="contract-buyer-name-key">Name/Firma</label> 
+     <span id="contract-buyer-name-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-buyer-address container"> 
+     <label id="contract-buyer-address-key">Straße, Hausnummer</label> 
+     <span id="contract-buyer-address-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-buyer-location container"> 
+     <label id="contract-buyer-location-key">PLZ, Ort</label> 
+     <span id="contract-buyer-location-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-buyer-phone container"> 
+     <label id="contract-buyer-phone-key">Telefonnummer</label> 
+     <span id="contract-buyer-phone-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-buyer-mail container"> 
+     <label id="contract-buyer-mail-key">E-Mail</label> 
+     <span id="contract-buyer-mail-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-seller-mail container"> 
+     <label id="contract-buyer-tax-number-key">Steuernummer</label> 
+     <span id="contract-buyer-tax-number-value" contenteditable="true"></span> 
+    </div> 
+   </div> 
+   <!-- Seller --> 
+   <div class="contract-seller wrapper"> 
+    <div> 
+     <h2>Verkäufer<span>Kundennummer: <strong id="contract-seller-customer-number"></strong></span></h2> 
+    </div> 
+    <div class="contract-seller-name container"> 
+     <label id="contract-seller-name-key">Name/Firma</label> 
+     <span id="contract-seller-name-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-seller-address container"> 
+     <label id="contract-seller-address-key">Straße, Hausnummer</label> 
+     <span id="contract-seller-address-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-seller-location container"> 
+     <label id="contract-seller-location-key">PLZ, Ort</label> 
+     <span id="contract-seller-location-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-seller-phone container"> 
+     <label id="contract-seller-phone-key">Telefonnummer</label> 
+     <span id="contract-seller-phone-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-seller-mail container"> 
+     <label id="contract-seller-mail-key">E-Mail</label> 
+     <span id="contract-seller-mail-value" contenteditable="true"></span> 
+    </div> 
+   </div> 
+   <!-- Purchase --> 
+   <div class="contract-purchase wrapper"> 
+    <h2>Kaufpreis</h2> 
+    <div class="contract-purchase-taxfree container"> 
+     <label id="contract-purchase-taxfree-key">Nettobetrag</label> 
+     <span contenteditable="true" id="contract-purchase-taxfree-value"></span> 
+    </div> 
+    <div class="contract-purchase-tax container"> 
+     <label id="contract-purchase-tax-key">19%&nbsp;MwSt.</label> 
+     <span contenteditable="true" id="contract-purchase-tax-value"></span> 
+    </div> 
+    <div class="contract-purchase-price container"> 
+     <label id="contract-purchase-price-key">Kaufpreis in Euro</label> 
+     <div> 
+      <span contenteditable="true" id="contract-purchase-price-value"></span> 
+      <svg version="1.1" id="marking" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="240px" height="60px" viewbox="0 0 240 60" enable-background="new 0 0 240 60" xml:space="preserve"> 
+       <g> 
+        <path fill="#FCEE21" d="M221.4,24.7c4.3,0.4,7.4,1,9.3,2c2,0.9,3.3,2.1,4,3.5s1,2.9,0.8,4.6c-0.2,1.7-0.3,3.3-0.3,5
+                            c-4.8,2-10.9,3.6-18.3,4.7c-7.3,1.1-15.4,2-24.1,2.5s-17.9,0.9-27.3,1c-9.5,0.1-18.7,0.1-27.6,0.1c-8.9,0-17.2,0-24.8,0
+                            c-7.6,0-14,0.1-19,0.3c-15.4,0.9-27.4,1.9-36,2.8c-8.6,0.9-14.4,1.9-17.6,2.8c-5.6-0.2-10-0.8-13.3-2c-3.3-1.1-5.9-2.5-8-4.2
+                            c-2-1.7-3.8-3.6-5.3-5.7c-1.5-2.1-2.9-2.1-5.3-6.6S4.6,29.3,4.3,23s3.6-3.5,5.3-7.5s9.6-1.2,14.9-1.4c5.3-0.2,10.6-0.3,15.8-0.4
+                            c5.2-0.1,10.1-0.4,14.8-0.8c4.7-0.5,8.7-1.3,12.3-2.4c14.3,0,29.3,0,44.9-0.1c15.6-0.1,30.2-0.3,43.8-0.7
+                            c4.8,0.9,10.6,1.5,17.2,1.7c6.6,0.2,13.1,0.6,19.5,1.3c6.4,0.7,12.3,1.8,17.6,3.5C215.7,17.7,219.4,20.6,221.4,24.7z"></path> 
+       </g> 
+      </svg> 
+      <svg version="1.1" id="circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="320px" height="120px" viewbox="0 0 320 120" enable-background="new 0 0 320 120" xml:space="preserve"> 
+       <path d="M290.8,22c-2.5-0.8-3.9-0.6-4.4,0.6c-0.5,1.2,0.8,3.2,3.9,6.1c10.4,9.6,14.2,18.9,11.7,28c-2.2,9.7-11.1,18.1-26.7,25.3
+                            c-11.6,5.4-23.1,10.6-44,14.5c-9.9,1.8-42.8,5.2-69.6,5.7c-29.8,0.5-59.3-0.6-71.7-2.3c-23.5-3.3-52-11.8-62.1-21
+                            c-10-9.3-10.9-18.5-2.5-27.7c5.6-6.3,12.1-11.1,19.3-14.4c7.3-3.4,13.6-5.9,19.1-7.7c17.4-5.5,33.3-8.4,52.3-10.2s36.4-3.1,63.1-2
+                            c26,1.1,51.2,6.2,58.9,8c15.7,3.8,27.3,9.1,34.8,16c4.9,4.5,6.1,8.8,3.6,12.7c-0.1,0.4-0.1,0.8,0.2,1c2.1,0.3,4.5-0.4,7-2.3
+                            c2.6-1.8,4.1-4.2,4.6-7c0.5-2.8,0-5.1-1.6-6.8c-1.6-1.8-2.9-3.1-4-4.1c-6-5.5-15.5-10.6-28.5-15.3C222,7.1,120.3,8.3,88,14.9
+                            c-16.6,3.4-30.4,6.9-41,11.8c-16.7,7.7-30.4,15.5-35.5,27.4c-3.9,10.1,0,20.5,11.5,31.1c11.5,10.7,38.6,18.2,61.9,22.7
+                            c23.3,4.4,114.4,1,140.6-3.2c16.2-2.7,35.7-7.9,47.5-13.3c21.4-9.9,33.9-18.4,36.3-32.7c2.4-10.9-1.7-21.9-12.2-33
+                            C295.4,24,293.3,22.8,290.8,22z"></path> 
+      </svg> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- Vehicle --> 
+   <div class="contract-vehicle wrapper"> 
+    <h2>Fahrzeugdaten</h2> 
+    <div class="contract-vehicle-brand container"> 
+     <label id="contract-vehicle-brand-key">Hersteller/Typ</label> 
+     <span id="contract-vehicle-brand-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-first-registration container"> 
+     <label id="contract-vehicle-first-registration-key">Erstzulassung</label> 
+     <span id="contract-vehicle-first-registration-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-total-mileage container"> 
+     <label id="contract-vehicle-total-mileage-key">KFZ-Gesamtfahrleistung</label> 
+     <span id="contract-vehicle-total-mileage-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-number-of-owners container"> 
+     <label id="contract-vehicle-number-of-owners-key">Anzahl der Fahrzeughalter</label> 
+     <span id="contract-vehicle-number-of-owners-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-color container"> 
+     <label id="contract-vehicle-color-key">Farbe</label> 
+     <span id="contract-vehicle-color-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-performance container"> 
+     <label id="contract-vehicle-performance-key">PS/KW</label> 
+     <span id="contract-vehicle-performance-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-cubic-capacity container"> 
+     <label id="contract-vehicle-cubic-capacity-key">Hubraum</label> 
+     <span id="contract-vehicle-cubic-capacity-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-gear-type container"> 
+     <label id="contract-vehicle-gear-type-key">Getriebeart</label> 
+     <span id="contract-vehicle-gear-type-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-fuel-type container"> 
+     <label id="contract-vehicle-fuel-type-key">Kraftstoffart</label> 
+     <span id="contract-vehicle-fuel-type-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-emission-class container"> 
+     <label id="contract-vehicle-emission-class-key">Schadstoffklasse</label> 
+     <span id="contract-vehicle-emission-class-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-checkbook-until container"> 
+     <label id="contract-vehicle-checkbook-until-key">Scheckheftgepflegt bis</label> 
+     <span id="contract-vehicle-checkbook-until-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-climate-control container"> 
+     <label id="contract-vehicle-climate-control-key">Klima</label> 
+     <span id="contract-vehicle-climate-control-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-inspection container"> 
+     <label id="contract-vehicle-inspection-key">TÜV/AU</label> 
+     <span id="contract-vehicle-inspection-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-vehicle-type container"> 
+     <label for="contract-vehicle-vehicle-type-key">Fahrzeugtyp</label> 
+     <span id="contract-vehicle-vehicle-type-value" contenteditable="true">Kombi</span> 
+    </div> 
+    <div class="contract-vehicle-number-of-doors container"> 
+     <label for="contract-vehicle-number-of-doors-key">Anzahl der Türen</label> 
+     <span id="contract-vehicle-number-of-doors-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-eu-import container"> 
+     <label id="contract-vehicle-eu-import-key">EU-Import</label> 
+     <span id="contract-vehicle-eu-import-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-commercially-used container"> 
+     <label id="contract-vehicle-commercially-used-key">Gewerblich genutzt ab EZ</label> 
+     <span id="contract-vehicle-commercially-used-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-accident-free container"> 
+     <label for="contract-vehicle-details-options">Unfallfrei</label> 
+     <div contenteditable="true" id="contract-vehicle-accident-free-value">
+       Ja 
+     </div> 
+    </div> 
+    <div class="contract-vehicle-repainting container"> 
+     <label for="contract-vehicle-details-options">Nachlackierung</label> 
+     <div contenteditable="true" id="contract-vehicle-repainting-value">
+       Nein 
+     </div> 
+    </div> 
+    <div class="contract-vehicle-ready-to-drive container"> 
+     <label id="contract-vehicle-ready-to-drive-key">Uneingeschränkt fahrbereit</label> 
+     <span id="contract-vehicle-ready-to-drive-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-engine-gearbox-clutch container"> 
+     <label id="contract-vehicle-engine-gearbox-clutch-key">Motor, Getriebe, Kupplung</label> 
+     <span id="contract-vehicle-engine-gearbox-clutch-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-damages container"> 
+     <label for="contract-vehicle-damages-options">Sonnstige Schäden</label> 
+     <div contenteditable="true" id="contract-vehicle-damages-value">
+       - 
+     </div> 
+    </div> 
+    <div class="contract-vehicle-id container"> 
+     <label id="contract-vehicle-id-key">Fahrzeug-Ident.-Nr.</label> 
+     <span id="contract-vehicle-id-value" contenteditable="true"></span> 
+    </div> 
+   </div> 
+   <div class="contract-vehicle-details wrapper"> 
+    <h2>Fahrzeugdetails</h2> 
+    <div class="contract-vehicle-details-options container"> 
+     <label id="contract-vehicle-details-options-key">Ausstattung</label> 
+     <span id="contract-vehicle-details-options-value" contenteditable="true"></span> 
+    </div> 
+    <div class="contract-vehicle-details-description container"> 
+     <label id="contract-vehicle-details-description-key">Beschreibung</label> 
+     <span id="contract-vehicle-details-description-value" contenteditable="true"></span> 
+    </div> 
+   </div> 
+   <!-- Details --> 
+   <div class="contract-special-agreements wrapper"> 
+    <h2>Besondere Vereinbarungen</h2> 
+    <div class="container"> 
+     <textarea id="contract-special-terms-value" onkeyup="handleInput(event)" rows="4" style="height:66px;overflow-y:hidden;">• Die Fahrzeugübergabe findet bis/am {Datum} in {Ort} gegen {Zahlungsart} statt.
+• Das Fahrzeug wird nur unter der Vorlage der Kundennummer: {KNR} ausgehändigt.</textarea> 
+    </div> 
+   </div> 
+   <div class="contract-general-terms wrapper"> 
+    <h2>Allgemeine Vertragsbedingungen</h2> 
+    <div class="container"> 
+     <label id="contract-general-terms-key">Folgende Vertragsbedingungen werden beidseitig eingewilligt.</label> 
+     <span id="contract-general-terms-value" contenteditable="true"> 1. Der Verkäufer übernimmt nach der Fahrzeugübergabe keinerlei Garantie oder Gewährleistung für das Fahrzeug.<br> 2. Mündliche- und schriftliche Absagen, sind aufgrund von anfallenden Kosten, nach KFZ-Email Bestätigung nicht wirksam.<br> 3. Der Verkäufer bestätigt, dass die oben festgehaltenen Daten überprüft sind und der Richtigkeit entsprechen.<br> 4. Dieser Vertrag ist rechtskräftig, verbindlich und ohne Unterschrift gültig<br> </span> 
+    </div> 
+   </div> 
+   <div class="contract-signatures wrapper"> 
+    <h2>Unterschriften</h2> 
+    <div class="contract-signatures-buyer container"> 
+     <p>Der Käufer bestätigt den Empfang von:</p> 
+     <div class="contract-signatures-buyer-registration-certificate box"> 
+      <input type="checkbox"> 
+      <label id="contract-signatures-buyer-registration-certificate-key">Zulassungsbescheinigung Teil I &amp; II</label> 
+     </div> 
+     <div class="contract-signatures-buyer-vehicle-and-keys box"> 
+      <input type="checkbox"> 
+      <label id="contract-signatures-buyer-vehicle-and-keys-key">KFZ mit ____ Schlüssel(n)</label> 
+     </div> 
+     <div class="contract-signatures-buyer-date-and-place"> 
+      <label id="contract-signatures-buyer-date-and-place-key">Datum und Ort:</label> 
+      <input id="contract-signatures-buyer-date-and-place-value" type="text"> 
+     </div> 
+     <label for="confirmation-signature-buyer-value">Unterschrift Käufer:</label> 
+     <div id="confirmation-signature-buyer-pad"> 
+      <img src="" alt="confirmation-signature-buyer-signature"> 
+      <canvas class="signature"></canvas> 
+      <input type="hidden" name="confirmation-signature-buyer-value" id="confirmation-signature-buyer-value"> 
+     </div> 
+    </div> 
+    <div class="contract-signatures-seller container"> 
+     <p>Der Verkäufer bestätigt den Empfang von:</p> 
+     <div class="contract-signatures-seller-price box"> 
+      <input type="checkbox"> 
+      <label id="contract-signatures-seller-price-key">Kaufpreises</label> 
+     </div> 
+     <div class="contract-signatures-seller-date-and-place"> 
+      <label id="contract-signatures-seller-date-and-place-key">Datum und Ort:</label> 
+      <input id="contract-signatures-seller-date-and-place-value" type="text"> 
+     </div> 
+     <label for="confirmation-signature-seller-value">Unterschrift Verkäufer:</label> 
+     <div id="confirmation-signature-seller-pad"> 
+      <img src="" alt="confirmation-signature-seller-signature"> 
+      <canvas class="signature"></canvas> 
+      <input type="hidden" name="confirmation-signature-seller-value" id="confirmation-signature-seller-value"> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <nav> 
+   <ul> 
+    <li><a onclick="setDesign(this, 'design-classic', 'font-modern')" class="active">Classic</a></li> 
+    <li><a onclick="setDesign(this, 'design-elegant', 'font-classic')" class="">Elegant</a></li> 
+    <li><a onclick="setDesign(this, 'design-oldschool', 'font-retro')" class="">Oldschool</a></li> 
+    <li><a onclick="setDesign(this, 'design-custom', 'font-classic')" class="">IContract</a></li> 
+    <li><a id="btn_template_save" class="">Speichern</a></li> 
+   </ul> 
+  </nav> 
+   
+ </body>
+</html>

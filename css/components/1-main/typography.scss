@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Tahoma";
+  src: url("./Tahoma.eot");
+  src: url("./Tahoma.eot?#iefix") format("embedded-opentype"),
+    url("./Tahoma.woff2") format("woff2"), url("./Tahoma.woff") format("woff"),
+    url("./Tahoma.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tahoma";
+  src: url("./Tahoma-Bold.eot");
+  src: url("./Tahoma-Bold.eot?#iefix") format("embedded-opentype"),
+    url("./Tahoma-Bold.woff2") format("woff2"),
+    url("./Tahoma-Bold.woff") format("woff"),
+    url("./Tahoma-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1,
+h2,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: $font-size;
+  font-weight: bold;
+}

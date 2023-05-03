@@ -1,0 +1,149 @@
+/*** 
+
+====================================================================
+	Reset
+====================================================================
+
+***/
+//
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+button {
+  outline: none;
+}
+button:focus {
+  outline: none;
+}
+button:focus {
+  outline: none;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba($color: #000, $alpha: 0.2);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($color: #000, $alpha: 0.3);
+}
+/*** 
+  ====================================================================
+      Global Settings
+  ====================================================================
+   ***/
+body {
+  font-family: $font-primary;
+  font-size: $font-size;
+  color: $black;
+  font-weight: 400;
+  background: $whiteBg;
+  line-height: 1;
+}
+body section {
+  width: calc(100% - 40px);
+  max-width: 210mm;
+  padding: 2.2mm 1.5mm;
+  margin: 10mm auto;
+  background: $white-2;
+}
+@media screen {
+  body section {
+    max-width: 210mm;
+    padding: 2.2mm 1.5mm;
+    margin: 10mm auto;
+    background: $white-2;
+  }
+  input[onclick="window.print()"] {
+    position: fixed;
+    background: black;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    margin: auto;
+    bottom: 40px;
+    right: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Monda", sans-serif;
+  }
+
+  input[onclick="window.print()"]:hover {
+    cursor: pointer;
+    background: #333;
+  }
+
+  span[contenteditable="true"]:hover {
+    cursor: text;
+  }
+
+  input[onclick="window.print()"]:active {
+    background: #111;
+  }
+
+  section.pick-up-order {
+    position: relative;
+    margin-bottom: 10mm;
+    padding-bottom: 10mm;
+  }
+}
+// body:not(.pick-up-order) section.pick-up-order {
+//   display: none !important;
+// }
+
+// body:not(.mwst) div.contract-purchase-taxfree.container {
+//   display: none !important;
+// }
+
+// body:not(.mwst) div.contract-purchase-tax.container {
+//   display: none !important;
+// }
+
+// body:not(.contract-signatures) div.contract-signatures.wrapper {
+//   display: none !important;
+// }
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
+}
+
+.auto__container {
+  position: relative;
+  max-width: 1640px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}

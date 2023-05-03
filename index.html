@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <section class="pick-up-order">
+        <div class="header">
+            <p>
+                Your Logo
+            </p>
+            <h2>
+                Abholauftrag
+            </h2>
+            <div class="header__logo">
+                <img src="./images/logo.png" alt="">
+            </div>
+        </div>
+        <div class="pick-up-order-info">
+            <div class="pick-up-order-info-wrapper">
+                <h2>
+                    Fahrerinformationen
+                </h2>
+                <div class="pick-up-order-info-driver container">
+                    <label id="pick-up-order-info-driver-key">Fahrer</label>
+                    <span id="pick-up-order-info-driver-value" contenteditable="true">John Doe</span>
+                </div>
+                <div class="pick-up-order-info-vehicle container">
+                    <label id="pick-up-order-info-vehicle-key">Fahrzeug</label>
+                    <span id="pick-up-order-info-vehicle-value" contenteditable="true">Volkswagen Golf GTI Edition
+                        35 VI 2.0 Automatik *BIXENON*AH</span>
+                </div>
+            </div>
+            <div class="pick-up-order-info-wrapper">
+                <h2>
+                    Zahlungsinformationen
+                </h2>
+                <div class="pick-up-order-info-price container">
+                    <label id="pick-up-order-info-price-key">Kaufpreis inkl. 19% MwSt.</label>
+                    <div class="pick-up-order-info-price-body">
+                        <span id="pick-up-order-info-price-value" contenteditable="true">2000,00</span>
+                        <p class="pick-up-order-info-price-cash">
+                            Euro
+                        </p>
+                    </div>
+                </div>
+                <div class="pick-up-order-info-price-inputs">
+                    <div class="checkBox">
+                        <h3 id="pick-up-order-info-price-key">
+                            Zahlungsart
+                        </h3>
+                        <div class="checkBox__body">
+                            <div class="input">
+                                <input type="radio" id="pick-up-order-info-price-value-1"
+                                    name="pick-up-order-info-price-value" value="pick-up-order-info-price-value-1">
+                                <span class="circle">
+                                </span>
+                                <label for="pick-up-order-info-price-value-1">
+                                    Überweisung
+                                </label>
+                            </div>
+                            <div class="input">
+
+                                <input type="radio" id="pick-up-order-info-price-value-2"
+                                    name="pick-up-order-info-price-value" value="pick-up-order-info-price-value-2">
+                                <span class="circle">
+                                </span>
+                                <label for="pick-up-order-info-price-value-2">
+                                    Bar
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="checkBox">
+                        <h3 id="pick-up-order-info-price-key">
+                            Zahlungsart
+                        </h3>
+                        <div class="checkBox__body">
+                            <div class="input">
+                                <input type="radio" id="pick-up-order-info-price-value-3"
+                                    name="pick-up-order-info-price-value" value="pick-up-order-info-price-value-3">
+                                <span class="circle">
+                                </span>
+                                <label for="pick-up-order-info-price-value-3">
+                                    Ja
+                                </label>
+                            </div>
+                            <div class="input">
+
+                                <input type="radio" id="pick-up-order-info-price-value-4"
+                                    name="pick-up-order-info-price-value" value="pick-up-order-info-price-value-4">
+                                <span class="circle">
+                                </span>
+                                <label for="pick-up-order-info-price-value-4">
+                                    Nein
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-up-order-info-note container">
+                <label id="pick-up-order-info-note-key">Zusätzliche Notizen</label>
+                <span id="pick-up-order-info-note-value" contenteditable="true">Das Fahrzeug befindet sich in einem
+                    guten Zustand</span>
+            </div>
+        </div>
+        <div class="pick-up-order-assessment">
+            <div class="title">
+                <h2>
+                    Fahrzeugskizze
+                </h2>
+                <h2>
+                    Lackdichtstärke
+                </h2>
+            </div>
+            <div class="pick-up-order-assessment-row">
+                <div class="pick-up-order-assessment-graphic">
+                    <div class="pick-up-order-assessment-graphic-image">
+                        <img src="./images/cars.png" alt="">
+                    </div>
+                </div>
+                <div class="pick-up-order-assessment-paints">
+                    <div class="pick-up-order-assessment-paint-front container">
+                        <label id="pick-up-order-assessment-paint-front-key">Front</label>
+                        <span id="pick-up-order-assessment-paint-front-value" contenteditable="true">1500</span>
+                    </div>
+                    <div class="pick-up-order-assessment-paint-front container">
+                        <label id="pick-up-order-assessment-paint-front-key">Linke Seite
+                        </label>
+                        <span id="pick-up-order-assessment-paint-front-value" contenteditable="true">1500</span>
+                    </div>
+                    <div class="pick-up-order-assessment-paint-front container">
+                        <label id="pick-up-order-assessment-paint-front-key">Dach</label>
+                        <span id="pick-up-order-assessment-paint-front-value" contenteditable="true">1500</span>
+                    </div>
+                    <div class="pick-up-order-assessment-paint-front container">
+                        <label id="pick-up-order-assessment-paint-front-key">Heck</label>
+                        <span id="pick-up-order-assessment-paint-front-value" contenteditable="true">1500</span>
+                    </div>
+                    <div class="pick-up-order-assessment-paint-front container">
+                        <label id="pick-up-order-assessment-paint-front-key">Rechte Seite
+                        </label>
+                        <span id="pick-up-order-assessment-paint-front-value" contenteditable="true">1500</span>
+                    </div>
+                    <div class="pick-up-order-assessment-paint-front container">
+                        <label id="pick-up-order-assessment-paint-front-key">Stoßstangen/Spaltemaße
+                        </label>
+                        <span id="pick-up-order-assessment-paint-front-value" contenteditable="true">1500</span>
+                    </div>
+                </div>
+            </div>
+            <div class="title">
+                <h2>
+                    Art und Zustand
+                </h2>
+            </div>
+            <div class="pick-up-order-assessment-condition">
+                <div class="pick-up-order-assessment-condition-visual wrapper">
+                    <div class="checkBox">
+                        <h3 id="pick-up-order-assessment-condition-visual-key">Optischer Zustand
+                        </h3>
+                        <div class="checkBox__body">
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-visual-value-great"
+                                    name="pick-up-order-assessment-condition-visual-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-visual-value-great">Sehr gut</label>
+                            </div>
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-visual-value-good"
+                                    name="pick-up-order-assessment-condition-visual-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-visual-value-good">Gut</label>
+                            </div>
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-visual-value-ok"
+                                    name="pick-up-order-assessment-condition-visual-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-visual-value-ok">Mittel</label>
+                            </div>
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-visual-value-bad"
+                                    name="pick-up-order-assessment-condition-visual-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-visual-value-bad">Schlecht</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pick-up-order-assessment-condition-glass wrapper">
+                    <div class="checkBox checkBox--border">
+                        <h3 id="pick-up-order-assessment-condition-glass-key">Glasschäden/Steinschläge</h3>
+                        <div class="checkBox__body">
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-glass-value-no"
+                                    name="pick-up-order-assessment-condition-glass-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-glass-value-no">Nein</label>
+                            </div>
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-glass-value-yes"
+                                    name="pick-up-order-assessment-condition-glass-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-glass-value-yes">Ja, hier:</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pick-up-order-assessment-condition-damages wrapper">
+                    <div class="checkBox checkBox--border">
+                        <h3 id="pick-up-order-assessment-condition-damages-key">Unfallschäden/Hagelschäden</h3>
+                        <div class="checkBox__body">
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-damages-value-no"
+                                    name="pick-up-order-assessment-condition-damages-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-damages-value-no">Nein</label>
+                            </div>
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-damages-value-yes"
+                                    name="pick-up-order-assessment-condition-damages-value" type="radio" value="on">
+                                <div class="circle"></div>
+
+                                <label for="pick-up-order-assessment-condition-damages-value-yes">Ja, hier:</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pick-up-order-assessment-condition-technical wrapper">
+                    <div class="checkBox">
+                        <h3 id="pick-up-order-assessment-condition-technical-key">Technischer Zustand</h3>
+                        <div class="checkBox__body">
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-technical-value-great"
+                                    name="pick-up-order-assessment-condition-technical-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-technical-value-great">Sehr
+                                    gut</label>
+                            </div>
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-technical-value-good"
+                                    name="pick-up-order-assessment-condition-technical-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-technical-value-good">Gut</label>
+                            </div>
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-technical-value-ok"
+                                    name="pick-up-order-assessment-condition-technical-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-technical-value-ok">Mittel</label>
+                            </div>
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-technical-value-bad"
+                                    name="pick-up-order-assessment-condition-technical-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-technical-value-bad">Schlecht</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pick-up-order-assessment-condition-timing-belt wrapper">
+                    <div class="checkBox checkBox--border">
+                        <h3 id="pick-up-order-assessment-condition-timing-belt-key">Zahnriemenwechsel</h3>
+                        <div class="checkBox__body">
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-timing-belt-value-no"
+                                    name="pick-up-order-assessment-condition-timing-belt-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-timing-belt-value-no">Nein</label>
+                            </div>
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-timing-belt-value-yes"
+                                    name="pick-up-order-assessment-condition-timing-belt-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-timing-belt-value-yes">Ja,
+                                    hier:</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pick-up-order-assessment-condition-lights wrapper">
+                    <div class="checkBox checkBox--border">
+                        <h3 id="pick-up-order-assessment-condition-lights-key">Beleuchtung</h3>
+                        <div class="checkBox__body">
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-lights-value-no"
+                                    name="pick-up-order-assessment-condition-lights-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-lights-value-no">Nein</label>
+                            </div>
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-lights-value-yes"
+                                    name="pick-up-order-assessment-condition-lights-value" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-lights-value-yes">Ja, hier:</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pick-up-order-assessment-test-drive">
+            <div class="title">
+                <h2>
+                    Probefahrt
+                </h2>
+            </div>
+            <div class="pick-up-order-assessment-test-drive-chassis wrapper">
+                <div class="checkBox">
+                    <h3 id="pick-up-order-assessment-test-drive-chassis-key">Fahrwerk</h3>
+                    <div class="checkBox__body">
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-chassis-value-ok"
+                                name="pick-up-order-assessment-test-drive-chassis-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-chassis-value-ok">OK</label>
+                        </div>
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-chassis-value-notok"
+                                name="pick-up-order-assessment-test-drive-chassis-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-chassis-value-notok">Nicht OK</label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="pick-up-order-assessment-test-drive-steering wrapper">
+                <div class="checkBox">
+                    <h3 id="pick-up-order-assessment-test-drive-steering-key">Lenkung</h3>
+                    <div class="checkBox__body">
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-steering-value-ok"
+                                name="pick-up-order-assessment-test-drive-steering-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-steering-value-ok">OK</label>
+                        </div>
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-steering-value-notok"
+                                name="pick-up-order-assessment-test-drive-steering-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-steering-value-notok">Nicht OK</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-up-order-assessment-test-drive-oil wrapper">
+                <div class="checkBox">
+                    <h3 id="pick-up-order-assessment-test-drive-oil-key">Ölstand</h3>
+                    <div class="checkBox__body">
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-oil-value-ok"
+                                name="pick-up-order-assessment-test-drive-oil-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-oil-value-ok">OK</label>
+                        </div>
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-oil-value-notok"
+                                name="pick-up-order-assessment-test-drive-oil-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-oil-value-notok">Nicht OK</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-up-order-assessment-test-drive-brakes wrapper">
+                <div class="checkBox">
+                    <h3 id="pick-up-order-assessment-test-drive-brakes-key">Bremsen</h3>
+                    <div class="checkBox__body">
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-brakes-value-ok"
+                                name="pick-up-order-assessment-test-drive-brakes-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-brakes-value-ok">OK</label>
+                        </div>
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-brakes-value-notok"
+                                name="pick-up-order-assessment-test-drive-brakes-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-brakes-value-notok">Nicht OK</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-up-order-assessment-test-drive-tires wrapper">
+                <div class="checkBox">
+                    <h3 id="pick-up-order-assessment-test-drive-tires-key">8-fach Bereifung</h3>
+                    <div class="checkBox__body">
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-tires-value-ok"
+                                name="pick-up-order-assessment-test-drive-tires-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-tires-value-ok">OK</label>
+                        </div>
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-tires-value-notok"
+                                name="pick-up-order-assessment-test-drive-tires-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-tires-value-notok">Nicht OK</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-up-order-assessment-test-drive-engine wrapper">
+                <div class="checkBox">
+                    <h3 id="pick-up-order-assessment-test-drive-engine-key">Motorgeräusch</h3>
+                    <div class="checkBox__body">
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-engine-value-ok"
+                                name="pick-up-order-assessment-test-drive-engine-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-engine-value-ok">OK</label>
+                        </div>
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-engine-value-notok"
+                                name="pick-up-order-assessment-test-drive-engine-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-engine-value-notok">Nicht OK</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-up-order-assessment-test-drive-flywheel wrapper">
+                <div class="checkBox">
+                    <h3 id="pick-up-order-assessment-test-drive-flywheel-key">Zweimassenschwungrad</h3>
+                    <div class="checkBox__body">
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-flywheel-value-ok"
+                                name="pick-up-order-assessment-test-drive-flywheel-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-flywheel-value-ok">OK</label>
+                        </div>
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-flywheel-value-notok"
+                                name="pick-up-order-assessment-test-drive-flywheel-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-flywheel-value-notok">Nicht OK</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-up-order-assessment-test-drive-clutch wrapper">
+                <div class="checkBox">
+                    <h3 id="pick-up-order-assessment-test-drive-clutch-key">Kupplung</h3>
+                    <div class="checkBox__body">
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-clutch-value-ok"
+                                name="pick-up-order-assessment-test-drive-clutch-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-clutch-value-ok">OK</label>
+                        </div>
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-clutch-value-notok"
+                                name="pick-up-order-assessment-test-drive-clutch-value" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-clutch-value-notok">Nicht OK</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-up-order-assessment-test-drive-signature">
+                <div class="input">
+                    <input id="pick-up-order-assessment-signature-confirmation-value" type="checkbox" value="on">
+                    <div class="circle check">
+                    </div>
+                    <label for="pick-up-order-assessment-signature-confirmation-value">Das Fahrzeug wurde
+                        überprüft und Probe gefahren</label>
+                </div>
+                <div id="pick-up-order-assessment-signature" class="signature">
+                    Unterschrift Bewerter
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contract">
+        <div class="header">
+            <p>
+                Your Logo
+            </p>
+            <h2>
+                Übergabeprotokoll des abgeschlossenen KFZ-Kaufvertrags
+            </h2>
+            <div class="header__logo">
+                <img src="./images/logo.png" alt="">
+            </div>
+        </div>
+        <div class="contract__body">
+            <div class="contract__body wrapper">
+                <h2>Verkäufer
+                </h2>
+                <div class="contract-seller-name container">
+                    <h3 id="contract-seller-name-key">Name/Firma</h3>
+                    <span id="contract-seller-name-value" contenteditable="true">Autohaus Josefs</span>
+                </div>
+                <div class="contract-seller-address container">
+                    <h3 id="contract-seller-address-key">Straße, Hausnummer</h3>
+                    <span id="contract-seller-address-value" contenteditable="true">Oststraße 40</span>
+                </div>
+                <div class="contract-seller-location container">
+                    <h3 id="contract-seller-location-key">PLZ, Ort</h3>
+                    <span id="contract-seller-location-value" contenteditable="true">DE-33129&nbsp;Delbrück</span>
+                </div>
+                <div class="contract-seller-phone container">
+                    <h3 id="contract-seller-phone-key">Telefonnummer</h3>
+                    <span id="contract-seller-phone-value" contenteditable="true">Tel.: +49 (0)5250 705500247</span>
+                </div>
+                <div class="contract-seller-mail container">
+                    <h3 id="contract-seller-mail-key">E-Mail</h3>
+                    <span id="contract-seller-mail-value" contenteditable="true">test@i-contract.de</span>
+                </div>
+            </div>
+            <div class="contract__body wrapper">
+                <h2>Käufer</h2>
+                <div class="contract-buyer">
+                    <div class="contract-buyer-name container">
+                        <h3 id="contract-buyer-name-key">Name/Firma</h3>
+                        <span id="contract-buyer-name-value" contenteditable="true">I-Contract GmbH</span>
+                    </div>
+                </div>
+                <div class="contract-buyer-address container">
+                    <h3 id="contract-buyer-address-key">Straße, Hausnummer</h3>
+                    <span id="contract-buyer-address-value" contenteditable="true">Stettiner Str. 6</span>
+                </div>
+                <div class="contract-buyer-location container">
+                    <h3 id="contract-buyer-location-key">PLZ, Ort</h3>
+                    <span id="contract-buyer-location-value" contenteditable="true">30926 Seelze</span>
+                </div>
+                <div class="contract-buyer-phone container">
+                    <h3 id="contract-buyer-phone-key">Telefonnummer</h3>
+                    <span id="contract-buyer-phone-value" contenteditable="true">+49513 7938 2929</span>
+                </div>
+                <div class="contract-buyer-mail container">
+                    <h3 id="contract-buyer-mail-key">E-Mail</h3>
+                    <span id="contract-buyer-mail-value" contenteditable="true">test@i-contract.de</span>
+                </div>
+            </div>
+            <div class="contract-purchase-price container">
+                <div class="contract-purchase-price-body">
+                    <h3>
+                        Kaufpreis in Euro
+                    </h3>
+                    <div class="contract-purchase-price-wrapper">
+                        <span contenteditable="true" id="contract-purchase-price-value">2000,00</span>
+                        <h3 class="contract-purchase-price-vkey">
+                            inkl. 19% MwSt.
+                        </h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="contract-vehicle">
+            <div class="contract-vehicle-body">
+                <div class="title">
+                    <h2>
+                        Fahrzeugdaten
+                    </h2>
+                </div>
+                <div class="contract-vehicle-brand container">
+                    <label id="contract-vehicle-brand-key">Hersteller/Typ</label>
+                    <span id="contract-vehicle-brand-value" contenteditable="true">Volkswagen Passat Business LED Matrix
+                        VirtuCock AHK ACC DCC</span>
+                </div>
+                <div class="contract-vehicle-first-registration container">
+                    <label id="contract-vehicle-first-registration-key">Erstzulassung</label>
+                    <span id="contract-vehicle-first-registration-value" contenteditable="true">03/2012</span>
+                </div>
+                <div class="contract-vehicle-total-mileage container">
+                    <label id="contract-vehicle-total-mileage-key">KFZ-Gesamtfahrleistung</label>
+                    <span id="contract-vehicle-total-mileage-value" contenteditable="true">83.153 km</span>
+                </div>
+                <div class="contract-vehicle-number-of-owners container">
+                    <label id="contract-vehicle-number-of-owners-key">Anzahl der Fahrzeughalter</label>
+                    <span id="contract-vehicle-number-of-owners-value" contenteditable="true">1</span>
+                </div>
+                <div class="contract-vehicle-color container">
+                    <label id="contract-vehicle-color-key">Farbe</label>
+                    <span id="contract-vehicle-color-value" contenteditable="true">Weiß</span>
+                </div>
+                <div class="contract-vehicle-performance container">
+                    <label id="contract-vehicle-performance-key">PS/KW</label>
+                    <span id="contract-vehicle-performance-value" contenteditable="true">228 kW (310 PS)</span>
+                </div>
+                <div class="contract-vehicle-cubic-capacity container">
+                    <label id="contract-vehicle-cubic-capacity-key">Hubraum</label>
+                    <span id="contract-vehicle-cubic-capacity-value" contenteditable="true">1.984 cm³</span>
+                </div>
+                <div class="contract-vehicle-gear-type container">
+                    <label id="contract-vehicle-gear-type-key">Getriebeart</label>
+                    <span id="contract-vehicle-gear-type-value" contenteditable="true">Automatik</span>
+                </div>
+                <div class="contract-vehicle-fuel-type container">
+                    <label id="contract-vehicle-fuel-type-key">Kraftstoffart</label>
+                    <span id="contract-vehicle-fuel-type-value" contenteditable="true">Benzin</span>
+                </div>
+                <div class="contract-vehicle-emission-class container">
+                    <label id="contract-vehicle-emission-class-key">Schadstoffklasse</label>
+                    <span id="contract-vehicle-emission-class-value" contenteditable="true">Euro5</span>
+                </div>
+                <div class="contract-vehicle-checkbook-until container">
+                    <label id="contract-vehicle-checkbook-until-key">Scheckheftgepflegt</label>
+                    <span id="contract-vehicle-checkbook-until-value" contenteditable="true"></span>
+                </div>
+                <div class="contract-vehicle-climate-control container">
+                    <label id="contract-vehicle-climate-control-key">Klima</label>
+                    <span id="contract-vehicle-climate-control-value"
+                        contenteditable="true">2-Zonen-Klimaautomatik</span>
+                </div>
+                <div class="contract-vehicle-inspection container">
+                    <label id="contract-vehicle-inspection-key">TÜV/AU</label>
+                    <span id="contract-vehicle-inspection-value" contenteditable="true">Neu</span>
+                </div>
+                <div class="contract-vehicle-vehicle-type container">
+                    <label for="contract-vehicle-vehicle-type-key">Fahrzeugtyp</label>
+                    <span id="contract-vehicle-vehicle-type-value" contenteditable="true">Limousine</span>
+                </div>
+                <div class="contract-vehicle-number-of-doors container">
+                    <label for="contract-vehicle-number-of-doors-key">Anzahl der Türen</label>
+                    <span id="contract-vehicle-number-of-doors-value" contenteditable="true">4/5</span>
+                </div>
+                <div class="contract-vehicle-eu-import container">
+                    <label id="contract-vehicle-eu-import-key">EU-Import</label>
+                    <span id="contract-vehicle-eu-import-value" contenteditable="true">Nein</span>
+                </div>
+                <div class="contract-vehicle-commercially-used container">
+                    <label id="contract-vehicle-commercially-used-key">Gewerblich genutzt ab EZ</label>
+                    <span id="contract-vehicle-commercially-used-value" contenteditable="true">Nein</span>
+                </div>
+                <div class="contract-vehicle-accident-free container">
+                    <label for="contract-vehicle-details-options">Unfallfrei</label>
+                    <span contenteditable="true" id="contract-vehicle-accident-free-value">Ja</span>
+                </div>
+                <div class="contract-vehicle-repainting container">
+                    <label for="contract-vehicle-details-options">Nachlackierung</label>
+                    <span contenteditable="true" id="contract-vehicle-repainting-value">Nein</span>
+                </div>
+                <div class="contract-vehicle-ready-to-drive container">
+                    <label id="contract-vehicle-ready-to-drive-key">Uneingeschränkt fahrbereit</label>
+                    <span id="contract-vehicle-ready-to-drive-value" contenteditable="true">Ja</span>
+                </div>
+                <div class="contract-vehicle-engine-gearbox-clutch container">
+                    <label id="contract-vehicle-engine-gearbox-clutch-key">Motor, Getriebe, Kupplung</label>
+                    <span id="contract-vehicle-engine-gearbox-clutch-value" contenteditable="true">Alles in
+                        Ordnung</span>
+                </div>
+                <div class="contract-vehicle-damages container">
+                    <label for="contract-vehicle-damages-options">Sonnstige Schäden</label>
+                    <span contenteditable="true" id="contract-vehicle-damages-value">-</span>
+                </div>
+                <div class="contract-vehicle-id container">
+                    <label id="contract-vehicle-id-key">Fahrzeug-Ident.-Nr.</label>
+                    <span id="contract-vehicle-id-value" contenteditable="true"></span>
+                </div>
+            </div>
+            <div class="contract-vehicle-body">
+                <div class="title">
+                    <h2>
+                        Fahrzeugdetails
+                    </h2>
+                </div>
+                <div class="contract-vehicle-body-checkBoxes">
+                    <div class="checkBox">
+                        <h3 id="contract-vehicle-checkBox key">Bremsen</h3>
+                        <div class="checkBox__body">
+                            <!-- First row -->
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-start" name="contract-vehicle-checkBox-firstRow"
+                                    type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-start">Start/Stopp-Automatik
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-abstandswarner"
+                                    name="contract-vehicle-checkBox-firstRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-abstandswarner">Abstandswarner</label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-blendfreies"
+                                    name="contract-vehicle-checkBox-firstRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-blendfreies">Blendfreies Fernlicht
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-totwinkel"
+                                    name="contract-vehicle-checkBox-firstRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-totwinkel">Totwinkel-Assistent
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-schiebedach"
+                                    name="contract-vehicle-checkBox-firstRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-schiebedach">Schiebedach
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-abs" name="contract-vehicle-checkBox-firstRow"
+                                    type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-abs">ABS
+                                </label>
+                            </div>
+                            <!-- Second row -->
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-beheizbare"
+                                    name="contract-vehicle-checkBox-secondRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-beheizbare">Beheizbare Frontscheibe
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-adaptives"
+                                    name="contract-vehicle-checkBox-secondRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-adaptives">Adaptives Kurvenlicht
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-dachreling"
+                                    name="contract-vehicle-checkBox-secondRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-dachreling">Dachreling
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-notrad" name="contract-vehicle-checkBox-secondRow"
+                                    type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-notrad">Notrad
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-schlüssellose"
+                                    name="contract-vehicle-checkBox-secondRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-schlüssellose">Schlüssellose
+                                    Zentralverriegelung
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-tagfahrlicht"
+                                    name="contract-vehicle-checkBox-secondRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-tagfahrlicht">
+                                    Tagfahrlicht
+                                </label>
+                            </div>
+                            <!-- Third row -->
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-berganfahrassistent"
+                                    name="contract-vehicle-checkBox-thirdRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-berganfahrassistent">
+                                    Berganfahrassistent
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-verkehrszeichen"
+                                    name="contract-vehicle-checkBox-thirdRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-verkehrszeichen">
+                                    Verkehrszeichen-
+                                    erkennung
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-elektr" name="contract-vehicle-checkBox-thirdRow"
+                                    type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-elektr">
+                                    Elektr. Heckklappe
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-pannenkit"
+                                    name="contract-vehicle-checkBox-thirdRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-pannenkit">
+                                    Pannenkit
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-servolenkung"
+                                    name="contract-vehicle-checkBox-thirdRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-servolenkung">
+                                    Servolenkung
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-esp" name="contract-vehicle-checkBox-thirdRow"
+                                    type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-esp">
+                                    ESP
+                                </label>
+                            </div>
+                            <!-- Fourth row -->
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-bi" name="contract-vehicle-checkBox-fourthRow"
+                                    type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-bi">
+                                    Bi-Xenon Scheinwerfer
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-allwetterreifen"
+                                    name="contract-vehicle-checkBox-fourthRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-allwetterreifen">
+                                    Allwetterreifen
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-wegfahrsperre"
+                                    name="contract-vehicle-checkBox-fourthRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-wegfahrsperre">
+                                    Elektr. Wegfahrsperre
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-wegfahrsperre"
+                                    name="contract-vehicle-checkBox-fourthRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-wegfahrsperre">
+                                    Wegfahrsperre
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-sommerreifen"
+                                    name="contract-vehicle-checkBox-fourthRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-sommerreifen">
+                                    Sommerreifen
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-laserlicht"
+                                    name="contract-vehicle-checkBox-fourthRow" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-laserlicht">
+                                    Laserlicht
+                                </label>
+                            </div>
+                            <!-- Fifth row -->
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-fernlichtassistent"
+                                    name="contract-vehicle-checkBox-fifth" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-fernlichtassistent">
+                                    Fernlichtassistent
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-led" name="contract-vehicle-checkBox-fifth"
+                                    type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-led">
+                                    LED-Scheinwerfer
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-luftfederung"
+                                    name="contract-vehicle-checkBox-fifth" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-luftfederung">
+                                    Luftfederung
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-xenonscheinwerfer"
+                                    name="contract-vehicle-checkBox-fifth" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-xenonscheinwerfer">
+                                    Xenonscheinwerfer
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-sportfahrwerk"
+                                    name="contract-vehicle-checkBox-fifth" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-sportfahrwerk">
+                                    Sportfahrwerk
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-lichtsensor" name="contract-vehicle-checkBox-fifth"
+                                    type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-lichtsensor">
+                                    Lichtsensor
+                                </label>
+                            </div>
+                            <!-- Sixth row -->
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-geschwindigkeits"
+                                    name="contract-vehicle-checkBox-sixth" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-geschwindigkeits">
+                                    Geschwindigkeits-
+                                    begrenzungsanlage
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-tagfahrlicht"
+                                    name="contract-vehicle-checkBox-sixth" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-tagfahrlicht">
+                                    LED-Tagfahrlicht
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-nachtsicht" name="contract-vehicle-checkBox-sixth"
+                                    type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-nachtsicht">
+                                    Nachtsicht-Assistent
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-reifendruckkontrolle"
+                                    name="contract-vehicle-checkBox-sixth" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-reifendruckkontrolle">
+                                    Reifendruckkontrolle
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-sportpaket" name="contract-vehicle-checkBox-sixth"
+                                    type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-sportpaket">
+                                    Sportpaket
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-winterreifen"
+                                    name="contract-vehicle-checkBox-sixth" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-winterreifen">
+                                    Winterreifen
+                                </label>
+                            </div>
+                            <!-- Seventh row -->
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-kurvenlicht"
+                                    name="contract-vehicle-checkBox-seventh" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-kurvenlicht">
+                                    Kurvenlicht
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-leichtmetallfelgen"
+                                    name="contract-vehicle-checkBox-seventh" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-leichtmetallfelgen">
+                                    Leichtmetallfelgen
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-nebelscheinwerfer"
+                                    name="contract-vehicle-checkBox-seventh" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-nebelscheinwerfer">
+                                    Nebelscheinwerfer
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-reserverad"
+                                    name="contract-vehicle-checkBox-seventh" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-reserverad">
+                                    Reserverad
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-spurhalteassistent"
+                                    name="contract-vehicle-checkBox-seventh" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-spurhalteassistent">
+                                    Spurhalteassistent
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-regensensor"
+                                    name="contract-vehicle-checkBox-seventh" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-regensensor">
+                                    Regensensor
+                                </label>
+                            </div>
+                            <!-- Eighth row -->
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-totwinkel" name="contract-vehicle-checkBox-eigtth"
+                                    type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-totwinkel">
+                                    Totwinkel-Assistent
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-allradantrieb"
+                                    name="contract-vehicle-checkBox-eigtth" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-allradantrieb">
+                                    Allradantrieb
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-notbremsassistent"
+                                    name="contract-vehicle-checkBox-eigtth" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-notbremsassistent">
+                                    Notbremsassistent
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-scheinwerferreinigung"
+                                    name="contract-vehicle-checkBox-eigtth" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-scheinwerferreinigung">
+                                    Scheinwerferreinigung
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-zentralverriegelung"
+                                    name="contract-vehicle-checkBox-eigtth" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-zentralverriegelung">
+                                    Zentralverriegelung
+                                </label>
+                            </div>
+                            <div class="input">
+                                <input id="contract-vehicle-checkBox-stahlfelgen"
+                                    name="contract-vehicle-checkBox-eigtth" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="contract-vehicle-checkBox-stahlfelgen">
+                                    Stahlfelgen
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contractDetails">
+        <div class="header">
+            <p>
+                Your Logo
+            </p>
+            <h2>
+                Übergabeprotokoll des abgeschlossenen KFZ-Kaufvertrags
+            </h2>
+            <div class="header__logo">
+                <img src="./images/logo.png" alt="">
+            </div>
+        </div>
+        <div class="title">
+            <h2>
+                Fahrzeugdetails
+            </h2>
+        </div>
+        <div class="contractDetails__body">
+            <div class="contractDetails-description container">
+                <h3 id="contract-vehicle-details-description-key">Beschreibung</h3>
+                <span id="contract-vehicle-details-description-value" contenteditable="true">
+                    Gebrauchtwagenschutz durch CarGarantie in unserem Hause geprüft
+                    <br>
+                    (Durchsicht) Nichtraucherfahrzeug
+                    <br>
+                    Scheckheftgepflegt Irrtümer und Zwischenverkauf vorbehalten
+                    <br>
+                    Änderungen, Zwischenverkauf und Irrtümer vorbehalten.
+                </span>
+            </div>
+            <div class="contractDetails-agreements container">
+                <h3>Besondere Vereinbarungen</h3>
+                <span contenteditable="true" id="contract-special-terms-value" onkeyup="handleInput(event)">
+                    Gebrauchtwagenschutz durch CarGarantie in unserem Hause geprüft
+                    <br>
+                    (Durchsicht) Nichtraucherfahrzeug
+                    <br>
+                    Scheckheftgepflegt Irrtümer und Zwischenverkauf vorbehalten
+                    <br>
+                    Änderungen, Zwischenverkauf und Irrtümer vorbehalten.
+                </span>
+            </div>
+            <div class="contractDetails-general-terms container">
+                <h3>Allgemeine Vertragsbedingungen</h3>
+                <span id="contract-general-terms-value" contenteditable="true">
+                    <label id="contract-general-terms-key"> Folgende Vertragsbedingungen werden beidseitig eingewilligt.
+                        eingewilligt.</label>
+                    <br>
+                    1. Der Verkäufer übernimmt nach der
+                    Fahrzeugübergabe keinerlei Garantie oder Gewährleistung für das Fahrzeug.
+                    <br>2. Mündliche- und
+                    schriftliche Absagen, sind aufgrund von anfallenden Kosten, nach KFZ-Email Bestätigung nicht
+                    wirksam.
+                    <br>3. Der Verkäufer bestätigt, dass die oben festgehaltenen Daten überprüft sind und der
+                    Richtigkeit entsprechen.
+                    <br>4. Dieser Vertrag ist rechtskräftig, verbindlich und auch ohne Unterschrift
+                    gültig.<br>
+                </span>
+            </div>
+        </div>
+        <div class="contractDetails-signatures wrapper">
+            <div class="title">
+                <h2>
+                    Unterschriften
+                </h2>
+            </div>
+            <div class="contractDetails-signatures-row">
+                <div class="contractDetails-signatures-buyer container">
+                    <div class="contractDetails-signatures-row-inputs">
+                        <h3>Der Käufer bestätigt den Empfang von:</h3>
+                        <div class="input">
+                            <input type="checkbox" value="on">
+                            <div class="circle check"></div>
+                            <label id="contract-signatures-buyer-registration-certificate-key">Zulassungsbescheinigung
+                                Teil
+                                I
+                                &amp; II</label>
+                        </div>
+                        <div class="input">
+                            <input type="checkbox">
+                            <div class="circle check"></div>
+                            <label id="contract-signatures-buyer-vehicle-and-keys-key">KFZ mit____Schlüssel(n)</label>
+                        </div>
+                    </div>
+                    <p>
+                        Datum und Ort:
+                    </p>
+                </div>
+                <div class="contractDetails-signatures-buyer-value caption container">
+                    <label for="confirmation-signature-buyer-value">Unterschrift Käufer:</label>
+                    <input type="hidden" name="confirmation-signature-buyer-value"
+                        id="confirmation-signature-buyer-value" value="">
+                </div>
+            </div>
+            <div class="contractDetails-signatures-row">
+                <div class="contractDetails-signatures-seller container">
+                    <div class="contractDetails-signatures-row-inputs">
+                        <h3>Der Verkäufer bestätigt den Empfang von:
+                        </h3>
+                        <div class="input">
+                            <input type="checkbox" value="on">
+                            <div class="circle check"></div>
+                            <label id="contract-signatures-seller-price-key">Kaufpreises</label>
+                        </div>
+                    </div>
+                    <p>
+                        Datum und Ort:
+                    </p>
+                </div>
+                <div class="contractDetails-signatures-seller-value caption container">
+                    <label for="confirmation-signature-seller-value caption">Unterschrift Verkäufer:</label>
+                    <input type="hidden" name="confirmation-signature-seller-value"
+                        id="confirmation-signature-seller-value" value="">
+                </div>
+            </div>
+        </div>
+    </section>
+   
+</body>
+
+</html>

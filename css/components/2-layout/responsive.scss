@@ -1,0 +1,43 @@
+
+@media print {
+  html {
+    height: 99%;
+  }
+  body {
+    max-width: none;
+    min-width: none;
+    max-height: none;
+    min-height: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    height: 99%;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  section,
+  div,
+  span {
+    break-inside: avoid !important;
+    overflow: visible !important;
+  }
+  section.contract div:not(.contract-signatures) {
+    position: relative;
+    z-index: 2;
+  }
+  .contract {
+    display: block !important;
+  }
+  .contract > * {
+    display: block;
+  }
+}
+@media (max-width: 630px) {
+  // base start
+  @include index-620;
+  // base end
+  // layout start
+  // layout end
+}
