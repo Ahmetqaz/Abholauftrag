@@ -322,7 +322,7 @@ li {
   width: 100%;
 }
 .pick-up-order-info-note textarea {
-  min-height: 40px;
+  min-height: 60px;
 }
 .pick-up-order-info-wrapper {
   display: -webkit-box;
@@ -351,7 +351,7 @@ li {
   gap: 9px;
 }
 .pick-up-order-info-price-body input {
-  padding: 1mm 0 1mm 1.8mm !important;
+  padding: 1.5mm 1mm 1.5mm 1.8mm !important;
   display: block;
   width: 86px;
   -webkit-box-sizing: border-box;
@@ -377,7 +377,7 @@ li {
 }
 .pick-up-order-info .container input,
 .pick-up-order-info .container textarea {
-  padding: 1.7mm 2mm;
+  padding: 2.3mm 2mm;
 }
 .pick-up-order-info .input .circle {
   border-color: #185f76;
@@ -487,7 +487,7 @@ li {
   gap: 5px;
 }
 .pick-up-order-assessment .container input {
-  padding: 0.7mm 1.5mm;
+  padding: 1.5mm 1.5mm;
   font-size: 6pt;
   line-height: 10px;
 }
@@ -607,7 +607,7 @@ li {
   font-weight: normal;
 }
 .contract-purchase-price-wrapper input {
-  padding: 0.6mm 1.8mm 0.6mm 1.8mm !important;
+  padding: 1mm 1.8mm 1mm 1.8mm !important;
   color: #185f76;
   font-weight: bold;
   max-width: 50px;
@@ -661,7 +661,7 @@ li {
   font-size: 5.3pt;
 }
 .contract-vehicle-body-checkBoxes .checkBox__body {
-  gap: 10px 5px;
+  gap: 7px 5px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -714,7 +714,7 @@ li {
   gap: 8px;
 }
 .contract input {
-  padding: 1.7mm 2.8mm;
+  padding: 2mm 2.8mm;
 }
 .contractDetails {
   padding: 2.2mm 5.8mm 4.3mm;
