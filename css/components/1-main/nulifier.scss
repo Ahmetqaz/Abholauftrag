@@ -50,6 +50,11 @@ body {
   font-weight: 400;
   background: $whiteBg;
   line-height: 1.6;
+  &.pick-up-order{
+    gap: unset;
+    display: unset;
+    flex-direction: unset;
+  }
 }
 body section {
   width: calc(100% - 40px);
