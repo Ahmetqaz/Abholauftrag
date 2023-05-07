@@ -94,6 +94,22 @@ body section {
   background: #F7F7F7;
 }
 
+body:not(.pick-up-order) section.pick-up-order {
+  display: none !important;
+}
+
+body:not(.mwst) div.contract-purchase-taxfree.container {
+  display: none !important;
+}
+
+body:not(.mwst) div.contract-purchase-tax.container {
+  display: none !important;
+}
+
+body:not(.contract-signatures) div.contract-signatures.wrapper {
+  display: none !important;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;

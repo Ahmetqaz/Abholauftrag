@@ -8,7 +8,6 @@
 
   <title>Home</title>
   <style>
-    /* Fontf family */
     @font-face {
       font-family: "Tahoma";
       src: url("./Tahoma.eot");
@@ -38,7 +37,6 @@
       font-weight: bold;
     }
 
-    /* Global styles */
     html {
       scroll-behavior: smooth;
     }
@@ -108,12 +106,27 @@
       background: #F7F7F7;
     }
 
+    body:not(.pick-up-order) section.pick-up-order {
+      display: none !important;
+    }
+
+    body:not(.mwst) div.contract-purchase-taxfree.container {
+      display: none !important;
+    }
+
+    body:not(.mwst) div.contract-purchase-tax.container {
+      display: none !important;
+    }
+
+    body:not(.contract-signatures) div.contract-signatures.wrapper {
+      display: none !important;
+    }
+
     a {
       text-decoration: none;
       cursor: pointer;
     }
 
-    /* Components */
     h1,
     h2,
     h3,
@@ -327,7 +340,6 @@
       object-fit: contain;
     }
 
-    /* Pick Up */
     .pick-up-order {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -647,7 +659,6 @@
       color: #e96d24;
     }
 
-    /* Contract */
     .contract__body {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -934,7 +945,6 @@
       white-space: unset;
     }
 
-    /* Media */
     @media print {
       section {
         page-break-after: always;
@@ -950,7 +960,7 @@
   </style>
 </head>
 
-<body>
+<body class="contract-signatures  pick-up-order mwst">
   <section class="pick-up-order">
     <div class="header">
       <p>
@@ -1483,9 +1493,11 @@
           </h3>
           <div class="contract-purchase-price-wrapper">
             <input id="contract-purchase-price-value" value="2000,00" />
-            <h3 class="contract-purchase-price-vkey">
-              inkl. 19% MwSt.
-            </h3>
+            <div class="contract-purchase-tax container">
+              <h3>
+                inkl. 19% MwSt.
+              </h3>
+            </div>
           </div>
         </div>
       </div>
@@ -2033,7 +2045,7 @@ Folgende Vertragsbedingungen werden beidseitig eingewilligt.eingewilligt.
                 </textarea>
       </div>
     </div>
-    <div class="contractDetails-signatures wrapper">
+    <div class="contractDetails-signatures contract-signatures wrapper">
       <div class="title">
         <h2>
           Unterschriften
