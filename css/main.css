@@ -100,6 +100,7 @@ body section {
   padding: 2.2mm 1.5mm;
   margin: 10mm auto;
   background: #F7F7F7;
+  position: relative;
 }
 
 body:not(.pick-up-order) section.pick-up-order {
@@ -342,6 +343,12 @@ li {
   padding: 0 10px;
   gap: 0 55px;
 }
+.pick-up-order-info-driver {
+  width: calc(35% - 10px);
+}
+.pick-up-order-info-vehicle {
+  width: calc(65% - 10px);
+}
 .pick-up-order-info-note {
   width: 100%;
 }
@@ -352,10 +359,8 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 10px 8px;
   width: calc(100% - 205px);
 }
@@ -452,7 +457,7 @@ li {
   gap: 10px 5px;
 }
 .pick-up-order-assessment-condition .wrapper {
-  width: calc(33.3% - 5px);
+  width: calc(25% - 5px);
 }
 .pick-up-order-assessment-condition .wrapper .checkBox h3 {
   display: inline-block;
@@ -542,7 +547,7 @@ li {
   gap: 15px 5px;
 }
 .pick-up-order-assessment-test-drive .wrapper {
-  width: calc(25% - 5px);
+  width: calc(20% - 5px);
 }
 .pick-up-order-assessment-test-drive .title {
   width: 100%;
@@ -841,6 +846,25 @@ li {
   min-height: 140px;
   padding: 2.7mm 1.5mm;
   white-space: unset;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media print {

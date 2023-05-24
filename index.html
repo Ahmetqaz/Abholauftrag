@@ -7,957 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <title>Home</title>
-    <style>
-        @font-face {
-            font-family: "Tahoma";
-            src: url("./Tahoma.eot");
-            src: url("./Tahoma.eot?#iefix") format("embedded-opentype"), url("./Tahoma.woff2") format("woff2"), url("./Tahoma.woff") format("woff"), url("./Tahoma.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: "Tahoma";
-            src: url("./Tahoma-Bold.eot");
-            src: url("./Tahoma-Bold.eot?#iefix") format("embedded-opentype"), url("./Tahoma-Bold.woff2") format("woff2"), url("./Tahoma-Bold.woff") format("woff"), url("./Tahoma-Bold.ttf") format("truetype");
-            font-weight: bold;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        h1,
-        h2,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-size: 6.8pt;
-            font-weight: bold;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        * {
-            margin: 0px;
-            padding: 0px;
-            border: none;
-            outline: none;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        button {
-            outline: none;
-        }
-
-        button:focus {
-            outline: none;
-        }
-
-        button:focus {
-            outline: none;
-        }
-
-        /* width */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: #fff;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        /*** 
-  ====================================================================
-      Global Settings
-  ====================================================================
-   ***/
-        body {
-            font-family: "Tahoma", sans-serif;
-            font-size: 6.8pt;
-            color: #1e1f24;
-            font-weight: 400;
-            background: #E4E4E4;
-            line-height: 1.6;
-        }
-
-        body section {
-            width: calc(100% - 40px);
-            max-width: 210mm;
-            min-height: 280mm;
-            padding: 2.2mm 1.5mm;
-            margin: 10mm auto;
-            background: #F7F7F7;
-        }
-
-        body:not(.pick-up-order) section.pick-up-order {
-            display: none !important;
-        }
-
-        body:not(.mwst) div.contract-purchase-taxfree.container {
-            display: none !important;
-        }
-
-        body:not(.mwst) div.contract-purchase-tax.container {
-            display: none !important;
-        }
-
-        body:not(.contract-signatures) div.contract-signatures.wrapper {
-            display: none !important;
-        }
-
-        a {
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin: 0px;
-        }
-
-        .auto__container {
-            position: relative;
-            max-width: 1640px;
-            margin: 0 auto;
-            padding: 0 60px;
-        }
-
-        ul,
-        li {
-            list-style: none;
-            padding: 0px;
-            margin: 0px;
-        }
-
-        .container {
-            overflow: hidden;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .container span,
-        .container input,
-        .container textarea {
-            border: 1px solid #185f76;
-            background: #fff;
-            font-size: 6.8pt;
-            border-radius: 1.5mm;
-            padding: 1mm 2mm;
-            color: #1e1f24;
-            font-weight: normal;
-        }
-
-        .container textarea {
-            resize: none;
-            white-space: unset;
-        }
-
-        .input {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            gap: 2px;
-            position: relative;
-        }
-
-        .input input {
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 2;
-            cursor: pointer;
-            position: absolute;
-        }
-
-        .input input:checked+.circle {
-            border-color: #185f76;
-        }
-
-        .input input:checked+.circle::before {
-            opacity: 1;
-        }
-
-        .input .circle {
-            width: 12px;
-            height: 12px;
-            border: 1px solid #707070;
-            border-radius: 50%;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            position: relative;
-            background: #fff;
-        }
-
-        .input .circle::before {
-            content: "";
-            width: 70%;
-            height: 70%;
-            background: #185f76;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            -webkit-transition: 0.3s linear;
-            transition: 0.3s linear;
-            opacity: 0;
-        }
-
-        .input .circle.check::before {
-            border-top: 1px solid #185f76;
-            border-right: 1px solid #185f76;
-            top: 30%;
-            left: 30%;
-            width: 40%;
-            height: 20%;
-            border-radius: unset;
-            -webkit-transform: rotate(130deg);
-            transform: rotate(130deg);
-            background: unset;
-        }
-
-        .checkBox {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .checkBox__body {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: start;
-            -ms-flex-pack: start;
-            justify-content: flex-start;
-            gap: 10px;
-        }
-
-        .checkBox--border {
-            padding-left: 15px;
-            border-left: 1px solid #707070;
-        }
-
-        .title {
-            padding-bottom: 1.5mm;
-            border-bottom: 1px solid #707070;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-        }
-
-        .title h2 {
-            color: #185f76;
-            font-size: 8.5pt;
-        }
-
-        .header {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            background: #fff;
-            padding: 3mm 2.5mm;
-            border-radius: 1.5mm;
-        }
-
-        .header h2 {
-            color: #e96d24;
-            font-size: 9pt;
-        }
-
-        .header p {
-            font-size: 10pt;
-        }
-
-        .header__logo {
-            width: 96px;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-        }
-
-        .header__logo img {
-            width: 100%;
-            -o-object-fit: contain;
-            object-fit: contain;
-        }
-
-        .pick-up-order {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .pick-up-order-info {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            padding: 0 10px;
-            gap: 0 55px;
-        }
-
-        .pick-up-order-info-note {
-            width: 100%;
-        }
-
-        .pick-up-order-info-note textarea {
-            min-height: 60px;
-        }
-
-        .pick-up-order-info-wrapper {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 10px 8px;
-            width: calc(100% - 205px);
-        }
-
-        .pick-up-order-info-wrapper:nth-child(2) {
-            width: 150px;
-        }
-
-        .pick-up-order-info-price-body {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: start;
-            -ms-flex-pack: start;
-            justify-content: flex-start;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            gap: 9px;
-        }
-
-        .pick-up-order-info-price-body input {
-            padding: 1.5mm 1mm 1.5mm 1.8mm !important;
-            display: block;
-            width: 86px;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            font-weight: bold;
-            color: #185f76;
-        }
-
-        .pick-up-order-info-price-body p {
-            font-weight: bold;
-        }
-
-        .pick-up-order-info-price-inputs {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .pick-up-order-info-note input {
-            min-height: 40px;
-        }
-
-        .pick-up-order-info .container input,
-        .pick-up-order-info .container textarea {
-            padding: 2.3mm 2mm;
-        }
-
-        .pick-up-order-info .input .circle {
-            border-color: #185f76;
-            border-width: 1px;
-        }
-
-        .pick-up-order-info .input .circle::before {
-            background: #185f76;
-            width: 70%;
-            height: 70%;
-        }
-
-        .pick-up-order-info h2 {
-            color: #185f76;
-            font-size: 8.5pt;
-            display: inline-block;
-            width: 100%;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
-
-        .pick-up-order-assessment {
-            padding: 1.5mm 3mm;
-            background: #fff;
-            border-radius: 1.5mm;
-        }
-
-        .pick-up-order-assessment-row {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            padding: 2mm 0;
-        }
-
-        .pick-up-order-assessment-condition {
-            padding: 2mm 0;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            gap: 10px 5px;
-        }
-
-        .pick-up-order-assessment-condition .wrapper {
-            width: calc(33.3% - 5px);
-        }
-
-        .pick-up-order-assessment-condition .wrapper .checkBox h3 {
-            display: inline-block;
-            width: 100%;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
-
-        .pick-up-order-assessment-condition .wrapper .checkBox__body {
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        }
-
-        .pick-up-order-assessment-graphic {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            width: calc(80% - 20px);
-        }
-
-        .pick-up-order-assessment-graphic-image {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            max-width: 350px;
-        }
-
-        .pick-up-order-assessment-graphic-image img {
-            width: 100%;
-            -o-object-fit: contain;
-            object-fit: contain;
-        }
-
-        .pick-up-order-assessment-paints {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 5px;
-            width: 20%;
-        }
-
-        .pick-up-order-assessment-paints h3 {
-            font-weight: normal;
-        }
-
-        .pick-up-order-assessment .container {
-            gap: 5px;
-        }
-
-        .pick-up-order-assessment .container input {
-            padding: 1.5mm 1.5mm;
-            font-size: 6pt;
-            line-height: 10px;
-        }
-
-        .pick-up-order-assessment .checkBox {
-            gap: 0;
-        }
-
-        .pick-up-order-assessment .checkBox__body {
-            padding: 12px 0;
-        }
-
-        .pick-up-order-assessment .checkBox h3 {
-            font-size: 6pt;
-        }
-
-        .pick-up-order-assessment .checkBox label {
-            font-size: 6pt;
-        }
-
-        .pick-up-order-assessment-test-drive {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            padding: 1.5mm 3mm 4mm;
-            background: #fff;
-            border-radius: 1.5mm;
-            gap: 15px 5px;
-        }
-
-        .pick-up-order-assessment-test-drive .wrapper {
-            width: calc(25% - 5px);
-        }
-
-        .pick-up-order-assessment-test-drive .title {
-            width: 100%;
-        }
-
-        .pick-up-order-assessment-test-drive .checkBox {
-            gap: 8px;
-        }
-
-        .pick-up-order-assessment-test-drive .checkBox h3 {
-            display: inline-block;
-            width: 100%;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
-
-        .pick-up-order-assessment-test-drive .checkBox__body {
-            gap: 15px;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        }
-
-        .pick-up-order-assessment-test-drive .checkBox h3 {
-            font-size: 6pt;
-        }
-
-        .pick-up-order-assessment-test-drive .checkBox label {
-            font-size: 6pt;
-        }
-
-        .pick-up-order-assessment-test-drive-signature {
-            width: 100%;
-            min-height: 100px;
-            border: 1px solid #185f76;
-            border-radius: 1.5mm;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            padding: 2.5mm 1.6mm;
-        }
-
-        .pick-up-order-assessment-test-drive-signature .signature {
-            text-align: center;
-            color: #185f76;
-            font-size: 7pt;
-        }
-
-        .pick-up-order-assessment-test-drive-signature .input {
-            gap: 8px;
-        }
-
-        .pick-up-order-assessment-test-drive-signature label {
-            color: #e96d24;
-        }
-
-        .contract__body {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 1.4mm 2mm 3mm;
-        }
-
-        .contract__body h2 {
-            color: #185f76;
-            font-size: 8.5pt;
-        }
-
-        .contract-purchase-price {
-            width: 100%;
-        }
-
-        .contract-purchase-price-wrapper {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .contract-purchase-price-wrapper h3 {
-            font-weight: normal;
-        }
-
-        .contract-purchase-price-wrapper input {
-            padding: 1mm 1.8mm 1mm 1.8mm !important;
-            color: #185f76;
-            font-weight: bold;
-            max-width: 50px;
-        }
-
-        .contract-purchase-price-body {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 5px;
-            max-width: 150px;
-            margin: 0 auto;
-        }
-
-        .contract-vehicle {
-            padding: 2.2mm 2.7mm 2.7mm 2.7mm;
-            background: #fff;
-            border-radius: 1.5mm;
-        }
-
-        .contract-vehicle-body {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            gap: 5px;
-            margin-bottom: 10px;
-        }
-
-        .contract-vehicle-body:last-child {
-            margin-bottom: 0;
-        }
-
-        .contract-vehicle-body-checkBoxes {
-            width: 100%;
-        }
-
-        .contract-vehicle-body-checkBoxes .input {
-            width: calc(16.6% - 4px);
-        }
-
-        .contract-vehicle-body-checkBoxes .input label {
-            width: calc(100% - 14px);
-        }
-
-        .contract-vehicle-body-checkBoxes h3 {
-            font-size: 6pt;
-            font-weight: bold !important;
-        }
-
-        .contract-vehicle-body-checkBoxes label {
-            font-size: 5.3pt;
-        }
-
-        .contract-vehicle-body-checkBoxes .checkBox__body {
-            gap: 7px 5px;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        }
-
-        .contract-vehicle .container {
-            width: calc(50% - 5px);
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-            flex-direction: row;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            gap: 5px;
-        }
-
-        .contract-vehicle .container input {
-            width: calc(100% - 113px);
-        }
-
-        .contract-vehicle-brand input {
-            width: calc(100% - 105px);
-        }
-
-        .contract-vehicle-brand.container {
-            width: 100%;
-            max-width: unset;
-        }
-
-        .contract-vehicle-brand.container span {
-            max-width: unset;
-        }
-
-        .contract-vehicle .title {
-            margin-bottom: 5px;
-            width: 100%;
-        }
-
-        .contract-vehicle h3 {
-            font-weight: normal;
-        }
-
-        .contract .wrapper {
-            width: calc(50% - 60px);
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            gap: 8px;
-        }
-
-        .contract input {
-            padding: 2mm 2.8mm;
-        }
-
-        .contractDetails {
-            padding: 2.2mm 5.8mm 4.3mm;
-        }
-
-        .contractDetails__body {
-            margin: 15px 0;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 11px;
-        }
-
-        .contractDetails-signatures {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        }
-
-        .contractDetails-signatures-row {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            width: calc(50% - 25px);
-            gap: 20px;
-        }
-
-        .contractDetails-signatures-row-inputs {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-        }
-
-        .contractDetails-signatures-row .caption {
-            -webkit-box-pack: end !important;
-            -ms-flex-pack: end !important;
-            justify-content: flex-end !important;
-        }
-
-        .contractDetails-signatures-row .caption label {
-            font-size: 5.4pt;
-            color: #185f76;
-        }
-
-        .contractDetails-signatures .container {
-            padding: 1mm 2mm;
-            border: 1px solid #185f76;
-            background: #fff;
-            border-radius: 1.5mm;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            min-height: 95px;
-        }
-
-        .contractDetails-signatures .title {
-            margin-bottom: 10px;
-            width: 100%;
-        }
-
-        .contractDetails-signatures h3 {
-            color: #e96d24;
-            margin-bottom: 8px;
-        }
-
-        .contractDetails-signatures .input {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            gap: 5px;
-            margin-bottom: 12px;
-        }
-
-        .contractDetails-signatures .input:last-child {
-            margin-bottom: 0;
-        }
-
-        .contractDetails-signatures .input .circle {
-            border-color: #1e1f24;
-        }
-
-        .contractDetails .header {
-            margin-bottom: 15px;
-        }
-
-        .contractDetails .container textarea {
-            min-height: 140px;
-            padding: 2.7mm 1.5mm;
-            white-space: unset;
-        }
-
-        @media print {
-            section {
-                page-break-after: always;
-                margin: 0;
-                background: #F7F7F7;
-            }
-        }
-
-        @page {
-            size: auto;
-            margin: 0;
-        }
-    </style>
 </head>
 
 <body class="contract-signatures  pick-up-order mwst">
@@ -986,6 +35,11 @@
                     <h3 id="pick-up-order-info-vehicle-key">Fahrzeug</h3>
                     <input id="pick-up-order-info-vehicle-value"
                         value="Volkswagen Golf GTI Edition 35 VI 2.0 Automatik *BIXENON*AH" />
+                </div>
+                <div class="pick-up-order-info-note container">
+                    <h3 id="pick-up-order-info-note-key">Zusätzliche Notizen</h3>
+                    <textarea
+                        id="pick-up-order-info-note-value">Das Fahrzeug befindet sich in einem guten Zustand</textarea>
                 </div>
             </div>
             <div class="pick-up-order-info-wrapper">
@@ -1056,11 +110,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="pick-up-order-info-note container">
-                <h3 id="pick-up-order-info-note-key">Zusätzliche Notizen</h3>
-                <textarea
-                    id="pick-up-order-info-note-value">Das Fahrzeug befindet sich in einem guten Zustand</textarea>
             </div>
         </div>
         <div class="pick-up-order-assessment">
@@ -1185,6 +234,26 @@
                         </div>
                     </div>
                 </div>
+                <div class="pick-up-order-assessment-condition-damages wrapper">
+                    <div class="checkBox checkBox--border">
+                        <h3 id="pick-up-order-assessment-condition-damages-key">Unfallschäden/Hagelschäden</h3>
+                        <div class="checkBox__body">
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-damages-value-no-2"
+                                    name="pick-up-order-assessment-condition-damages-value-1" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-damages-value-no-2">Nein</label>
+                            </div>
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-damages-value-yes-1"
+                                    name="pick-up-order-assessment-condition-damages-value-1" type="radio" value="on">
+                                <div class="circle"></div>
+
+                                <label for="pick-up-order-assessment-condition-damages-value-yes">Ja, hier:</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="pick-up-order-assessment-condition-technical wrapper">
                     <div class="checkBox">
                         <h3 id="pick-up-order-assessment-condition-technical-key">Technischer Zustand</h3>
@@ -1256,6 +325,25 @@
                         </div>
                     </div>
                 </div>
+                <div class="pick-up-order-assessment-condition-lights wrapper">
+                    <div class="checkBox checkBox--border">
+                        <h3 id="pick-up-order-assessment-condition-lights-key">Beleuchtung</h3>
+                        <div class="checkBox__body">
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-lights-value-no-1"
+                                    name="pick-up-order-assessment-condition-lights-value-1" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-lights-value-no-1">Nein</label>
+                            </div>
+                            <div class="input">
+                                <input id="pick-up-order-assessment-condition-lights-value-yes-1"
+                                    name="pick-up-order-assessment-condition-lights-value-1" type="radio" value="on">
+                                <div class="circle"></div>
+                                <label for="pick-up-order-assessment-condition-lights-value-yes-1">Ja, hier:</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="pick-up-order-assessment-test-drive">
@@ -1266,7 +354,10 @@
             </div>
             <div class="pick-up-order-assessment-test-drive-chassis wrapper">
                 <div class="checkBox">
-                    <h3 id="pick-up-order-assessment-test-drive-chassis-key">Fahrwerk</h3>
+                    <h3 id="pick-up-order-assessment-test-drive-chassis-key">
+                        Fahrwerk
+                    </h3>
+
                     <div class="checkBox__body">
                         <div class="input">
                             <input id="pick-up-order-assessment-test-drive-chassis-value-ok"
@@ -1280,7 +371,6 @@
                             <div class="circle"></div>
                             <label for="pick-up-order-assessment-test-drive-chassis-value-notok">Nicht OK</label>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -1337,6 +427,25 @@
                                 name="pick-up-order-assessment-test-drive-brakes-value" type="radio" value="on">
                             <div class="circle"></div>
                             <label for="pick-up-order-assessment-test-drive-brakes-value-notok">Nicht OK</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-up-order-assessment-test-drive-brakes wrapper">
+                <div class="checkBox">
+                    <h3 id="pick-up-order-assessment-test-drive-brakes-key">Bremsen</h3>
+                    <div class="checkBox__body">
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-brakes-value-ok-1"
+                                name="pick-up-order-assessment-test-drive-brakes-value-1" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-brakes-value-ok-1">OK</label>
+                        </div>
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-brakes-value-notok-1"
+                                name="pick-up-order-assessment-test-drive-brakes-value-1" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-brakes-value-notok-1">Nicht OK</label>
                         </div>
                     </div>
                 </div>
@@ -1417,6 +526,25 @@
                     </div>
                 </div>
             </div>
+            <div class="pick-up-order-assessment-test-drive-clutch wrapper">
+                <div class="checkBox">
+                    <h3 id="pick-up-order-assessment-test-drive-clutch-key">Kupplung</h3>
+                    <div class="checkBox__body">
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-clutch-value-ok-1"
+                                name="pick-up-order-assessment-test-drive-clutch-value-1" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-clutch-value-ok-1">OK</label>
+                        </div>
+                        <div class="input">
+                            <input id="pick-up-order-assessment-test-drive-clutch-value-notok-1"
+                                name="pick-up-order-assessment-test-drive-clutch-value-1" type="radio" value="on">
+                            <div class="circle"></div>
+                            <label for="pick-up-order-assessment-test-drive-clutch-value-notok-1">Nicht OK</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="pick-up-order-assessment-test-drive-signature">
                 <div class="input">
                     <input id="pick-up-order-assessment-signature-confirmation-value" type="checkbox" value="on">
@@ -1429,6 +557,9 @@
                     Unterschrift Bewerter
                 </div>
             </div>
+        </div>
+        <div class="pagination">
+            1
         </div>
     </section>
     <section class="contract">
@@ -1463,7 +594,6 @@
                     <h3 id="contract-seller-phone-key">Telefonnummer</h3>
                     <input id="contract-seller-phone-value" value="Tel.: +49 (0)5250 705500247" />
                 </div>
-
             </div>
             <div class="contract__body wrapper">
                 <h2>Käufer</h2>
@@ -1485,7 +615,6 @@
                     <h3 id="contract-buyer-phone-key">Telefonnummer</h3>
                     <input id="contract-buyer-phone-value" value="+49513 7938 2929" />
                 </div>
-
             </div>
             <div class="contract-purchase-price container">
                 <div class="contract-purchase-price-body">
@@ -2002,6 +1131,9 @@
                 </div>
             </div>
         </div>
+        <div class="pagination">
+            2
+        </div>
     </section>
     <section class="contractDetails">
         <div class="header">
@@ -2101,6 +1233,15 @@ Folgende Vertragsbedingungen werden beidseitig eingewilligt.eingewilligt.
                         id="confirmation-signature-seller-value" value="">
                 </div>
             </div>
+        </div>
+        <div class="pagination">
+            3
+        </div>
+    </section>
+    <section class="image">
+        <img src="./images/screen.PNG" alt="">
+        <div class="pagination">
+            4
         </div>
     </section>
 </body>

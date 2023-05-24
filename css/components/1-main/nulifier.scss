@@ -63,6 +63,7 @@ body section {
   padding: 2.2mm 1.5mm;
   margin: 10mm auto;
   background: $white-2;
+  position: relative;
 }
 
 body:not(.pick-up-order) section.pick-up-order {
