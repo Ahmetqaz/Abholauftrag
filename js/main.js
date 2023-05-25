@@ -104,11 +104,10 @@ const popControl = (inputState = false) => {
     });
   }
 };
-
 // Set new filed Data
-const filedArray = ["filed-1", "filed-2", "field-3", "filed-4"];
+const filedArray = ["ja", "ja", "ja", "ja"];
 const setFieldData = (filedArray, filedState = true) => {
-let filedData = document.querySelector(".contract-vehicle-body");
+  let filedData = document.querySelector(".contract-vehicle-body");
   if (filedState) {
     filedArray.forEach((element) => {
       let container = document.createElement("div");
@@ -119,6 +118,14 @@ let filedData = document.querySelector(".contract-vehicle-body");
   }
 };
 
+// Hide mwst
+const hideMwst = (mwstState = false) => {
+  if (mwstState) {
+    let mwst = document.querySelector("#mwst");
+    mwst.classList.add("active");
+  }
+};
+hideMwst();
 setFieldData(filedArray);
 inputControl();
 popControl();

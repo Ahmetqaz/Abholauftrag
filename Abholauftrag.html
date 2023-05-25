@@ -817,6 +817,16 @@
             width: 100%;
         }
 
+        .contract-purchase-price-tax {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 10px;
+        }
+
         .contract-purchase-price-wrapper {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -838,7 +848,7 @@
             padding: 2mm 2.8mm 2mm 2.8mm !important;
             color: #185f76;
             font-weight: bold;
-            max-width: 100px;
+            max-width: 75px;
             font-size: 10pt;
         }
 
@@ -846,16 +856,50 @@
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 5px;
+            gap: 20px;
             margin: 0 auto;
         }
 
         .contract-purchase-price-body h3 {
             font-size: 10pt;
+        }
+
+        .contract-purchase-price-body p {
+            font-size: 10pt;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            display: none;
+        }
+
+        .contract-purchase-price-body p span {
+            display: block;
+            border: unset;
+            background-color: unset;
+            padding: 0 0 2.7mm 0;
+            font-size: inherit;
+            line-height: 1.2;
+        }
+
+        .contract-purchase-price-body.active p {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        .contract-purchase-price-body.active h3.hideText {
+            display: none;
+        }
+
+        .contract-purchase-price-body.active input {
+            max-width: 100px;
         }
 
         .contract-vehicle {
@@ -1728,18 +1772,37 @@
                 </div>
             </div>
             <div class="contract-purchase-price container">
-                <div class="contract-purchase-price-body">
-                    <h3>
-                        Kaufpreis in Euro
-                    </h3>
-                    <div class="contract-purchase-price-wrapper">
-                        <input id="contract-purchase-price-value" value="2000,00" />
-                        <div class="contract-purchase-tax container">
-                            <h3>
-                                inkl. 19% MwSt.
-                            </h3>
+                <div class="contract-purchase-price-body"  id="mwst">
+                    <div class="contract-purchase-price-body-content">
+                        <h3>
+                            Kaufpreis in Euro
+                        </h3>
+                        <div class="contract-purchase-price-wrapper">
+                            <input id="contract-purchase-price-value" value="2000,00" />
+                            <div class="contract-purchase-price-tax ">
+                                <h3 class="hideText">
+                                    inkl. 19% MwSt.
+                                </h3>
+
+                            </div>
                         </div>
                     </div>
+                    <p>
+                        <strong>
+                            Nettobetrag
+                        </strong>
+                        <span>
+                            1680,67
+                        </span>
+                    </p>
+                    <p>
+                        <strong>
+                            19% MwSt.
+                        </strong>
+                        <span>
+                            1680,67
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -2008,133 +2071,140 @@ Folgende Vertragsbedingungen werden beidseitig eingewilligt.eingewilligt.
         </div>
     </div>
     <!-- js -->
-    <script>
+    <script >
         // data
-        const array = [
-            "Start/Stopp-Automatik",
-            "Abstandswarner",
-            "Blendfreies Fernlicht",
-            "Totwinkel-Assistent",
-            "Schiebedach",
-            "ABS",
-            "Start/Stopp-Automatik",
-            "Abstandswarner",
-            "Blendfreies Fernlicht",
-            "Totwinkel-Assistent",
-            "Schiebedach",
-            "ABS",
-            "Start/Stopp-Automatik",
-            "Abstandswarner",
-            "Blendfreies Fernlicht",
-            "Totwinkel-Assistent",
-            "Schiebedach",
-            "ABS",
-            "Start/Stopp-Automatik",
-            "Abstandswarner",
-            "Blendfreies Fernlicht",
-            "Totwinkel-Assistent",
-            "Schiebedach",
-            "ABS",
-            "Start/Stopp-Automatik",
-            "Abstandswarner",
-            "Blendfreies Fernlicht",
-            "Totwinkel-Assistent",
-            "Schiebedach",
-            "ABS",
-        ];
-        const createCheckboxes = (array, variant = "A") => {
-            let checkBoxes = document.querySelector("#checkBoxes");
-            checkBoxes.innerHTML = "";
-            if (variant === "A") {
-                array.forEach((element, index) => {
-                    let input = document.createElement("div");
-                    input.classList.add("input");
-                    input.innerHTML = `
+const array = [
+  "Start/Stopp-Automatik",
+  "Abstandswarner",
+  "Blendfreies Fernlicht",
+  "Totwinkel-Assistent",
+  "Schiebedach",
+  "ABS",
+  "Start/Stopp-Automatik",
+  "Abstandswarner",
+  "Blendfreies Fernlicht",
+  "Totwinkel-Assistent",
+  "Schiebedach",
+  "ABS",
+  "Start/Stopp-Automatik",
+  "Abstandswarner",
+  "Blendfreies Fernlicht",
+  "Totwinkel-Assistent",
+  "Schiebedach",
+  "ABS",
+  "Start/Stopp-Automatik",
+  "Abstandswarner",
+  "Blendfreies Fernlicht",
+  "Totwinkel-Assistent",
+  "Schiebedach",
+  "ABS",
+  "Start/Stopp-Automatik",
+  "Abstandswarner",
+  "Blendfreies Fernlicht",
+  "Totwinkel-Assistent",
+  "Schiebedach",
+  "ABS",
+];
+const createCheckboxes = (array, variant = "A") => {
+  let checkBoxes = document.querySelector("#checkBoxes");
+  checkBoxes.innerHTML = "";
+  if (variant === "A") {
+    array.forEach((element, index) => {
+      let input = document.createElement("div");
+      input.classList.add("input");
+      input.innerHTML = `
       <input  id="${index}" name="${parseInt(index / 6)}" type="radio">
       <div class="circle"></div>
       <label for="${index}">
       ${element}
         </label>
    `;
-                    checkBoxes.appendChild(input);
-                });
-            } else {
-                let input = document.createElement("div");
-                input.classList.add("input--text");
-                let textarea = document.createElement("textarea");
-                textarea.innerHTML = array.join(", ");
-                input.innerHTML = textarea.outerHTML;
-                checkBoxes.appendChild(input);
-            }
-        };
-        // Input ebale/disable
-        const inputControl = (inputState = false) => {
-            let contract = document.getElementById("contract");
-            let contractInput = contract.querySelectorAll("input");
-            let contractTexts = contract.querySelectorAll("textarea");
-            contractInput.forEach((input) => {
-                if (inputState) {
-                    input.setAttribute("disabled", "");
-                } else {
-                    input.removeAttribute("disabled");
-                }
-            });
-            contractTexts.forEach((contractText) => {
-                if (inputState) {
-                    contractText.setAttribute("disabled", "");
-                } else {
-                    contractText.removeAttribute("disabled");
-                }
-            });
-        };
-        // Pop------------------------------------
-        const popControl = (inputState = false) => {
-            if (inputState) {
-                let pops = document.querySelectorAll(".pop");
-                let popUp = document.querySelector(".popUp");
-                let popUpItems = document.querySelectorAll(".popUpItem");
-                pops.forEach((pop) => {
-                    let popDisbale = pop.querySelector("input");
-                    popDisbale.setAttribute("disabled", "");
-                    pop.addEventListener("click", () => {
-                        let popId = pop.getAttribute("id");
-                        let popClose = popUp.querySelector(".popUp__inner-close");
-                        popUp.classList.add("active");
-                        popUpItems.forEach((popUpItem) => {
-                            let popUpItem__id = popUpItem.getAttribute("data-pop");
-                            if (popId == popUpItem__id) {
-                                popUpItem.classList.add("active");
-                            } else {
-                                popUpItem.classList.remove("active");
-                            }
-                        });
-                        popClose.addEventListener("click", () => {
-                            popUp.classList.remove("active");
-                        });
-                    });
-                });
-            }
-        };
+      checkBoxes.appendChild(input);
+    });
+  } else {
+    let input = document.createElement("div");
+    input.classList.add("input--text");
+    let textarea = document.createElement("textarea");
+    textarea.innerHTML = array.join(", ");
+    input.innerHTML = textarea.outerHTML;
+    checkBoxes.appendChild(input);
+  }
+};
+// Input ebale/disable
+const inputControl = (inputState = false) => {
+  let contract = document.getElementById("contract");
+  let contractInput = contract.querySelectorAll("input");
+  let contractTexts = contract.querySelectorAll("textarea");
+  contractInput.forEach((input) => {
+    if (inputState) {
+      input.setAttribute("disabled", "");
+    } else {
+      input.removeAttribute("disabled");
+    }
+  });
+  contractTexts.forEach((contractText) => {
+    if (inputState) {
+      contractText.setAttribute("disabled", "");
+    } else {
+      contractText.removeAttribute("disabled");
+    }
+  });
+};
+// Pop------------------------------------
+const popControl = (inputState = false) => {
+  if (inputState) {
+    let pops = document.querySelectorAll(".pop");
+    let popUp = document.querySelector(".popUp");
+    let popUpItems = document.querySelectorAll(".popUpItem");
+    pops.forEach((pop) => {
+      let popDisbale = pop.querySelector("input");
+      popDisbale.setAttribute("disabled", "");
+      pop.addEventListener("click", () => {
+        let popId = pop.getAttribute("id");
+        let popClose = popUp.querySelector(".popUp__inner-close");
+        popUp.classList.add("active");
+        popUpItems.forEach((popUpItem) => {
+          let popUpItem__id = popUpItem.getAttribute("data-pop");
+          if (popId == popUpItem__id) {
+            popUpItem.classList.add("active");
+          } else {
+            popUpItem.classList.remove("active");
+          }
+        });
+        popClose.addEventListener("click", () => {
+          popUp.classList.remove("active");
+        });
+      });
+    });
+  }
+};
+// Set new filed Data
+const filedArray = ["filed-1", "filed-2", "field-3", "filed-4"];
+const setFieldData = (filedArray, filedState = true) => {
+  let filedData = document.querySelector(".contract-vehicle-body");
+  if (filedState) {
+    filedArray.forEach((element) => {
+      let container = document.createElement("div");
+      container.classList.add("container");
+      container.innerHTML = `<h3 for="contract-vehicle-damages-options">${element}</h3><input>`;
+      filedData.appendChild(container);
+    });
+  }
+};
 
-        // Set new filed Data
-        const filedArray = ["filed-1", "filed-2", "field-3", "filed-4"];
-        const setFieldData = (filedArray, filedState = true) => {
-        let filedData = document.querySelector(".contract-vehicle-body");
-            if (filedState) {
-                filedArray.forEach((element) => {
-                    let container = document.createElement("div");
-                    container.classList.add("container");
-                    container.innerHTML =
-                        `<h3 for="contract-vehicle-damages-options">${element}</h3><input>`;
-                    filedData.appendChild(container);
-                });
-            }
-        };
+// Hide mwst
+const hideMwst = (mwstState = true) => {
+  if (mwstState) {
+    let mwst = document.querySelector("#mwst");
+    mwst.classList.add("active");
+  }
+};
+hideMwst();
+setFieldData(filedArray);
+inputControl();
+popControl();
+createCheckboxes(array);
 
-        setFieldData(filedArray);
-        inputControl();
-        popControl();
-        createCheckboxes(array);
     </script>
 </body>
 
