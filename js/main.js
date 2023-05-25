@@ -95,7 +95,6 @@ if (inputState == false) {
   pops.forEach((pop) => {
     let popDisbale = pop.querySelector("input");
     popDisbale.setAttribute("disabled", "");
-    console.log(popDisbale);
     pop.addEventListener("click", () => {
       let popId = pop.getAttribute("id");
       let popClose = popUp.querySelector(".popUp__inner-close");
