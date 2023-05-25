@@ -1,5 +1,5 @@
 // data
-let array = [
+const array = [
   "Start/Stopp-Automatik",
   "Abstandswarner",
   "Blendfreies Fernlicht",
@@ -31,12 +31,9 @@ let array = [
   "Schiebedach",
   "ABS",
 ];
-
-let checkBoxes = document.querySelector("#checkBoxes");
-
 const createCheckboxes = (array, variant = "A") => {
+  let checkBoxes = document.querySelector("#checkBoxes");
   checkBoxes.innerHTML = "";
-
   if (variant === "A") {
     array.forEach((element, index) => {
       let input = document.createElement("div");
@@ -54,18 +51,16 @@ const createCheckboxes = (array, variant = "A") => {
     let input = document.createElement("div");
     input.classList.add("input--text");
     let textarea = document.createElement("textarea");
-    textarea.innerHTML = array.join(', ');
+    textarea.innerHTML = array.join(", ");
     input.innerHTML = textarea.outerHTML;
     checkBoxes.appendChild(input);
   }
 };
-
 // Input ebale/disable
-let inputState = false;
-let contract = document.getElementById("contract");
-let contractInput = contract.querySelectorAll("input");
-let contractTexts = contract.querySelectorAll("textarea");
-let inputControl = () => {
+const inputControl = (inputState = false) => {
+  let contract = document.getElementById("contract");
+  let contractInput = contract.querySelectorAll("input");
+  let contractTexts = contract.querySelectorAll("textarea");
   contractInput.forEach((input) => {
     if (inputState) {
       input.setAttribute("disabled", "");
@@ -81,31 +76,50 @@ let inputControl = () => {
     }
   });
 };
-inputControl();
-
 // Pop------------------------------------
-if (inputState == false) {
-  let pops = document.querySelectorAll(".pop");
-  let popUp = document.querySelector(".popUp");
-  let popUpItems = document.querySelectorAll(".popUpItem");
-  pops.forEach((pop) => {
-    let popDisbale = pop.querySelector("input");
-    popDisbale.setAttribute("disabled", "");
-    pop.addEventListener("click", () => {
-      let popId = pop.getAttribute("id");
-      let popClose = popUp.querySelector(".popUp__inner-close");
-      popUp.classList.add("active");
-      popUpItems.forEach((popUpItem) => {
-        let popUpItem__id = popUpItem.getAttribute("data-pop");
-        if (popId == popUpItem__id) {
-          popUpItem.classList.add("active");
-        } else {
-          popUpItem.classList.remove("active");
-        }
-      });
-      popClose.addEventListener("click", () => {
-        popUp.classList.remove("active");
+const popControl = (inputState = false) => {
+  if (inputState) {
+    let pops = document.querySelectorAll(".pop");
+    let popUp = document.querySelector(".popUp");
+    let popUpItems = document.querySelectorAll(".popUpItem");
+    pops.forEach((pop) => {
+      let popDisbale = pop.querySelector("input");
+      popDisbale.setAttribute("disabled", "");
+      pop.addEventListener("click", () => {
+        let popId = pop.getAttribute("id");
+        let popClose = popUp.querySelector(".popUp__inner-close");
+        popUp.classList.add("active");
+        popUpItems.forEach((popUpItem) => {
+          let popUpItem__id = popUpItem.getAttribute("data-pop");
+          if (popId == popUpItem__id) {
+            popUpItem.classList.add("active");
+          } else {
+            popUpItem.classList.remove("active");
+          }
+        });
+        popClose.addEventListener("click", () => {
+          popUp.classList.remove("active");
+        });
       });
     });
-  });
-}
+  }
+};
+
+// Set new filed Data
+const filedArray = ["filed-1", "filed-2", "field-3", "filed-4"];
+let filedData = document.querySelector(".contract-vehicle-body");
+const setFieldData = (filedArray, filedState = true) => {
+  if (filedState) {
+    filedArray.forEach((element) => {
+      let container = document.createElement("div");
+      container.classList.add("container");
+      container.innerHTML = `<h3 for="contract-vehicle-damages-options">${element}</h3><input>`;
+      filedData.appendChild(container);
+    });
+  }
+};
+
+setFieldData(filedArray);
+inputControl();
+popControl();
+createCheckboxes(array);
