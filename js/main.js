@@ -65,9 +65,9 @@ const createCheckboxes = (data, variant = "A") => {
 
 // Input ebale/disable
 let inputState = false;
-  let contract = document.getElementById("contract");
-  let contractInput = contract.querySelectorAll("input");
-  let contractTexts = contract.querySelectorAll("textarea");
+let contract = document.getElementById("contract");
+let contractInput = contract.querySelectorAll("input");
+let contractTexts = contract.querySelectorAll("textarea");
 let inputControl = () => {
   contractInput.forEach((input) => {
     if (inputState) {
@@ -87,45 +87,44 @@ let inputControl = () => {
 inputControl();
 
 // Pop------------------------------------
-if (inputState == false) {
-    let pops = document.querySelectorAll(".pop");
-    let popUp = document.querySelector(".popUp");
-    let popUpItems = document.querySelectorAll(".popUpItem");
-    pops.forEach((pop) => {
-      let popDisbale = pop.querySelector("input");
-      popDisbale.setAttribute("disabled", "");
-      pop.addEventListener("click", () => {
-        let popId = pop.getAttribute("id");
-        let popClose = popUp.querySelector(".popUp__inner-close");
-        popUp.classList.add("active");
-        popUpItems.forEach((popUpItem) => {
-          let popUpItem__id = popUpItem.getAttribute("data-pop");
-          if (popId == popUpItem__id) {
-            popUpItem.classList.add("active");
-          } else {
-            popUpItem.classList.remove("active");
-          }
-        });
-        popClose.addEventListener("click", () => {
-          popUp.classList.remove("active");
-        });
-      });
-    });
-  }
-};
+// if (inputState == false) {
+//   let pops = document.querySelectorAll(".pop");
+//   let popUp = document.querySelector(".popUp");
+//   let popUpItems = document.querySelectorAll(".popUpItem");
+//   pops.forEach((pop) => {
+//     let popDisbale = pop.querySelector("input");
+//     popDisbale.setAttribute("disabled", "");
+//     pop.addEventListener("click", () => {
+//       let popId = pop.getAttribute("id");
+//       let popClose = popUp.querySelector(".popUp__inner-close");
+//       popUp.classList.add("active");
+//       popUpItems.forEach((popUpItem) => {
+//         let popUpItem__id = popUpItem.getAttribute("data-pop");
+//         if (popId == popUpItem__id) {
+//           popUpItem.classList.add("active");
+//         } else {
+//           popUpItem.classList.remove("active");
+//         }
+//       });
+//       popClose.addEventListener("click", () => {
+//         popUp.classList.remove("active");
+//       });
+//     });
+//   });
+// }
 // Set new filed Data
-const filedArray = ["ja", "ja", "ja", "ja"];
-const setFieldData = (filedArray, filedState = true) => {
-  let filedData = document.querySelector(".contract-vehicle-body");
-  if (filedState) {
-    filedArray.forEach((element) => {
-      let container = document.createElement("div");
-      container.classList.add("container");
-      container.innerHTML = `<h3 for="contract-vehicle-damages-options">${element}</h3><input>`;
-      filedData.appendChild(container);
-    });
-  }
-};
+// const filedArray = ["ja", "ja", "ja", "ja"];
+// const setFieldData = (filedArray, filedState = true) => {
+//   let filedData = document.querySelector(".contract-vehicle-body");
+//   if (filedState) {
+//     filedArray.forEach((element) => {
+//       let container = document.createElement("div");
+//       container.classList.add("container");
+//       container.innerHTML = `<h3 for="contract-vehicle-damages-options">${element}</h3><input>`;
+//       filedData.appendChild(container);
+//     });
+//   }
+// };
 
 // Hide mwst
 const hideMwst = (mwstState = false) => {
@@ -134,8 +133,13 @@ const hideMwst = (mwstState = false) => {
     mwst.classList.add("active");
   }
 };
+
+
+
+
+
 hideMwst();
-setFieldData(filedArray);
+// setFieldData(filedArray);
 inputControl();
-popControl();
+// popControl();
 createCheckboxes(array);

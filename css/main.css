@@ -869,6 +869,11 @@ li {
 .contract-vehicle .container input {
   width: calc(100% - 113px);
 }
+.contract-vehicle .container.pop {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
 .contract-vehicle-brand input {
   width: calc(100% - 105px);
 }
@@ -1015,6 +1020,21 @@ li {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.input--wrapper {
+  width: calc(100% - 113px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+}
+.input--wrapper input {
+  width: 100% !important;
 }
 
 @media print {
