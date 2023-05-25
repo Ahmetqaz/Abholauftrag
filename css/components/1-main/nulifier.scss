@@ -60,10 +60,11 @@ body section {
   width: calc(100% - 40px);
   max-width: 210mm;
   min-height: 280mm;
-  padding: 2.2mm 1.5mm;
+  padding: 2.2mm 1.5mm 8mm;
   margin: 10mm auto;
   background: $white-2;
   position: relative;
+  
 }
 
 body:not(.pick-up-order) section.pick-up-order {

@@ -11,7 +11,7 @@
 
 <body class="contract-signatures  pick-up-order mwst">
     <section class="pick-up-order">
-        <div class="header">
+        <div class="header ">
             <p>
                 Your Logo
             </p>
@@ -81,7 +81,6 @@
                                 </label>
                             </div>
                         </div>
-
                     </div>
                     <div class="checkBox">
                         <h3 id="pick-up-order-info-price-key">
@@ -562,8 +561,8 @@
             1
         </div>
     </section>
-    <section class="contract">
-        <div class="header">
+    <section class="contract" id="contract">
+        <div class="header header--lg">
             <p>
                 Your Logo
             </p>
@@ -708,11 +707,11 @@
                     <h3 id="contract-vehicle-commercially-used-key">Gewerblich genutzt ab EZ</h3>
                     <input id="contract-vehicle-commercially-used-value" value="Nein" />
                 </div>
-                <div class="contract-vehicle-accident-free container">
+                <div class="contract-vehicle-accident-free container pop" id="unfallfrei">
                     <h3 for="contract-vehicle-details-options">Unfallfrei</h3>
                     <input id="contract-vehicle-accident-free-value" value="Ja" />
                 </div>
-                <div class="contract-vehicle-repainting container">
+                <div class="contract-vehicle-repainting container pop" id="nachlackierung">
                     <h3 for="contract-vehicle-details-options">Nachlackierung</h3>
                     <input id="contract-vehicle-repainting-value" value="Nein" />
                 </div>
@@ -724,7 +723,7 @@
                     <h3 id="contract-vehicle-engine-gearbox-clutch-key">Motor, Getriebe, Kupplung</h3>
                     <input id="contract-vehicle-engine-gearbox-clutch-value" value="Alles in Ordnung" />
                 </div>
-                <div class="contract-vehicle-damages container">
+                <div class="contract-vehicle-damages container pop" id="schäden">
                     <h3 for="contract-vehicle-damages-options">Sonnstige Schäden</h3>
                     <input id="contract-vehicle-damages-value" value="-" />
                 </div>
@@ -742,390 +741,7 @@
                 <div class="contract-vehicle-body-checkBoxes">
                     <div class="checkBox">
                         <h3 id="contract-vehicle-checkBox key">Bremsen</h3>
-                        <div class="checkBox__body">
-                            <!-- First row -->
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-start" name="contract-vehicle-checkBox-firstRow"
-                                    type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-start">Start/Stopp-Automatik
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-abstandswarner"
-                                    name="contract-vehicle-checkBox-firstRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-abstandswarner">Abstandswarner</label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-blendfreies"
-                                    name="contract-vehicle-checkBox-firstRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-blendfreies">Blendfreies Fernlicht
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-totwinkel"
-                                    name="contract-vehicle-checkBox-firstRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-totwinkel">Totwinkel-Assistent
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-schiebedach"
-                                    name="contract-vehicle-checkBox-firstRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-schiebedach">Schiebedach
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-abs" name="contract-vehicle-checkBox-firstRow"
-                                    type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-abs">ABS
-                                </label>
-                            </div>
-                            <!-- Second row -->
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-beheizbare"
-                                    name="contract-vehicle-checkBox-secondRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-beheizbare">Beheizbare Frontscheibe
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-adaptives"
-                                    name="contract-vehicle-checkBox-secondRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-adaptives">Adaptives Kurvenlicht
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-dachreling"
-                                    name="contract-vehicle-checkBox-secondRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-dachreling">Dachreling
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-notrad" name="contract-vehicle-checkBox-secondRow"
-                                    type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-notrad">Notrad
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-schlüssellose"
-                                    name="contract-vehicle-checkBox-secondRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-schlüssellose">Schlüssellose
-                                    Zentralverriegelung
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-tagfahrlicht"
-                                    name="contract-vehicle-checkBox-secondRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-tagfahrlicht">
-                                    Tagfahrlicht
-                                </label>
-                            </div>
-                            <!-- Third row -->
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-berganfahrassistent"
-                                    name="contract-vehicle-checkBox-thirdRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-berganfahrassistent">
-                                    Berganfahrassistent
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-verkehrszeichen"
-                                    name="contract-vehicle-checkBox-thirdRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-verkehrszeichen">
-                                    Verkehrszeichen-
-                                    erkennung
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-elektr" name="contract-vehicle-checkBox-thirdRow"
-                                    type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-elektr">
-                                    Elektr. Heckklappe
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-pannenkit"
-                                    name="contract-vehicle-checkBox-thirdRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-pannenkit">
-                                    Pannenkit
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-servolenkung"
-                                    name="contract-vehicle-checkBox-thirdRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-servolenkung">
-                                    Servolenkung
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-esp" name="contract-vehicle-checkBox-thirdRow"
-                                    type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-esp">
-                                    ESP
-                                </label>
-                            </div>
-                            <!-- Fourth row -->
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-bi" name="contract-vehicle-checkBox-fourthRow"
-                                    type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-bi">
-                                    Bi-Xenon Scheinwerfer
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-allwetterreifen"
-                                    name="contract-vehicle-checkBox-fourthRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-allwetterreifen">
-                                    Allwetterreifen
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-wegfahrsperre"
-                                    name="contract-vehicle-checkBox-fourthRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-wegfahrsperre">
-                                    Elektr. Wegfahrsperre
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-wegfahrsperre"
-                                    name="contract-vehicle-checkBox-fourthRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-wegfahrsperre">
-                                    Wegfahrsperre
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-sommerreifen"
-                                    name="contract-vehicle-checkBox-fourthRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-sommerreifen">
-                                    Sommerreifen
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-laserlicht"
-                                    name="contract-vehicle-checkBox-fourthRow" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-laserlicht">
-                                    Laserlicht
-                                </label>
-                            </div>
-                            <!-- Fifth row -->
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-fernlichtassistent"
-                                    name="contract-vehicle-checkBox-fifth" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-fernlichtassistent">
-                                    Fernlichtassistent
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-led" name="contract-vehicle-checkBox-fifth"
-                                    type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-led">
-                                    LED-Scheinwerfer
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-luftfederung"
-                                    name="contract-vehicle-checkBox-fifth" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-luftfederung">
-                                    Luftfederung
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-xenonscheinwerfer"
-                                    name="contract-vehicle-checkBox-fifth" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-xenonscheinwerfer">
-                                    Xenonscheinwerfer
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-sportfahrwerk"
-                                    name="contract-vehicle-checkBox-fifth" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-sportfahrwerk">
-                                    Sportfahrwerk
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-lichtsensor" name="contract-vehicle-checkBox-fifth"
-                                    type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-lichtsensor">
-                                    Lichtsensor
-                                </label>
-                            </div>
-                            <!-- Sixth row -->
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-geschwindigkeits"
-                                    name="contract-vehicle-checkBox-sixth" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-geschwindigkeits">
-                                    Geschwindigkeits-
-                                    begrenzungsanlage
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-tagfahrlicht"
-                                    name="contract-vehicle-checkBox-sixth" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-tagfahrlicht">
-                                    LED-Tagfahrlicht
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-nachtsicht" name="contract-vehicle-checkBox-sixth"
-                                    type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-nachtsicht">
-                                    Nachtsicht-Assistent
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-reifendruckkontrolle"
-                                    name="contract-vehicle-checkBox-sixth" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-reifendruckkontrolle">
-                                    Reifendruckkontrolle
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-sportpaket" name="contract-vehicle-checkBox-sixth"
-                                    type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-sportpaket">
-                                    Sportpaket
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-winterreifen"
-                                    name="contract-vehicle-checkBox-sixth" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-winterreifen">
-                                    Winterreifen
-                                </label>
-                            </div>
-                            <!-- Seventh row -->
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-kurvenlicht"
-                                    name="contract-vehicle-checkBox-seventh" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-kurvenlicht">
-                                    Kurvenlicht
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-leichtmetallfelgen"
-                                    name="contract-vehicle-checkBox-seventh" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-leichtmetallfelgen">
-                                    Leichtmetallfelgen
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-nebelscheinwerfer"
-                                    name="contract-vehicle-checkBox-seventh" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-nebelscheinwerfer">
-                                    Nebelscheinwerfer
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-reserverad"
-                                    name="contract-vehicle-checkBox-seventh" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-reserverad">
-                                    Reserverad
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-spurhalteassistent"
-                                    name="contract-vehicle-checkBox-seventh" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-spurhalteassistent">
-                                    Spurhalteassistent
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-regensensor"
-                                    name="contract-vehicle-checkBox-seventh" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-regensensor">
-                                    Regensensor
-                                </label>
-                            </div>
-                            <!-- Eighth row -->
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-totwinkel" name="contract-vehicle-checkBox-eigtth"
-                                    type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-totwinkel">
-                                    Totwinkel-Assistent
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-allradantrieb"
-                                    name="contract-vehicle-checkBox-eigtth" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-allradantrieb">
-                                    Allradantrieb
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-notbremsassistent"
-                                    name="contract-vehicle-checkBox-eigtth" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-notbremsassistent">
-                                    Notbremsassistent
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-scheinwerferreinigung"
-                                    name="contract-vehicle-checkBox-eigtth" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-scheinwerferreinigung">
-                                    Scheinwerferreinigung
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-zentralverriegelung"
-                                    name="contract-vehicle-checkBox-eigtth" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-zentralverriegelung">
-                                    Zentralverriegelung
-                                </label>
-                            </div>
-                            <div class="input">
-                                <input id="contract-vehicle-checkBox-stahlfelgen"
-                                    name="contract-vehicle-checkBox-eigtth" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="contract-vehicle-checkBox-stahlfelgen">
-                                    Stahlfelgen
-                                </label>
-                            </div>
+                        <div class="checkBox__body" id="checkBoxes">
                         </div>
                     </div>
                 </div>
@@ -1244,6 +860,44 @@ Folgende Vertragsbedingungen werden beidseitig eingewilligt.eingewilligt.
             4
         </div>
     </section>
+    <div class="popUp">
+        <div class="popUp__inner">
+            <div class="popUpItem" data-pop="unfallfrei">
+                <div class="popUpItem__header">
+                    <h2>
+                        Unfallfrei
+                    </h2>
+                </div>
+                <div class="input">
+                    <textarea></textarea>
+                </div>
+            </div>
+            <div class="popUpItem" data-pop="schäden">
+                <div class="popUpItem__header">
+                    <h2>
+                        Sonnstige Schäden
+                    </h2>
+                </div>
+                <div class="input">
+                    <textarea></textarea>
+                </div>
+            </div>
+            <div class="popUpItem" data-pop="nachlackierung">
+                <div class="popUpItem__header">
+                    <h2>
+                        Nachlackierung
+                    </h2>
+                </div>
+                <div class="input">
+                    <textarea></textarea>
+                </div>
+            </div>
+            <div class="popUp__inner-close"></div>
+        </div>
+    </div>
+    <!-- js -->
+    <script src="./js/main.js">
+    </script>
 </body>
 
 </html>

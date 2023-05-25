@@ -97,7 +97,7 @@ body section {
   width: calc(100% - 40px);
   max-width: 210mm;
   min-height: 280mm;
-  padding: 2.2mm 1.5mm;
+  padding: 2.2mm 1.5mm 8mm;
   margin: 10mm auto;
   background: #F7F7F7;
   position: relative;
@@ -168,8 +168,6 @@ li {
   padding: 1mm 2mm;
   color: #1e1f24;
   font-weight: normal;
-}
-.container textarea {
   resize: none;
   white-space: unset;
 }
@@ -237,6 +235,29 @@ li {
           transform: rotate(130deg);
   background: unset;
 }
+.input textarea {
+  border: 1px solid #185f76;
+  background: #fff;
+  font-size: 6.8pt;
+  border-radius: 1.5mm;
+  padding: 1mm 2mm;
+  color: #1e1f24;
+  font-weight: normal;
+  resize: none;
+  white-space: unset;
+}
+.input--text textarea {
+  border: 1px solid #185f76;
+  background: #fff;
+  font-size: 6.8pt;
+  border-radius: 1.5mm;
+  padding: 1mm 2mm;
+  color: #1e1f24;
+  font-weight: normal;
+  resize: none;
+  white-space: unset;
+}
+
 .checkBox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -298,13 +319,13 @@ li {
 }
 .header h2 {
   color: #e96d24;
-  font-size: 9pt;
-}
-.header p {
   font-size: 10pt;
 }
+.header p {
+  font-size: 11pt;
+}
 .header__logo {
-  width: 96px;
+  width: 105px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -319,6 +340,95 @@ li {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.header--lg {
+  padding: 5mm 4.5mm;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.popUp {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+}
+.popUp__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 40px 30px;
+  width: 50%;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+.popUp__inner-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+}
+.popUp__inner-close::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #e96d24;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+.popUp__inner-close::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #e96d24;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+.popUp h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 11pt;
+  margin-bottom: 10px;
+}
+.popUp textarea {
+  min-height: 200px;
+  width: 100%;
+  border-color: #707070;
+  font-size: 8pt;
+}
+.popUp.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.popUpItem {
+  display: none;
+}
+.popUpItem.active {
+  display: block;
 }
 
 .pick-up-order {
@@ -636,10 +746,11 @@ li {
   font-weight: normal;
 }
 .contract-purchase-price-wrapper input {
-  padding: 1mm 1.8mm 1mm 1.8mm !important;
+  padding: 2mm 2.8mm 2mm 2.8mm !important;
   color: #185f76;
   font-weight: bold;
-  max-width: 50px;
+  max-width: 100px;
+  font-size: 10pt;
 }
 .contract-purchase-price-body {
   display: -webkit-box;
@@ -650,8 +761,10 @@ li {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 5px;
-  max-width: 150px;
   margin: 0 auto;
+}
+.contract-purchase-price-body h3 {
+  font-size: 10pt;
 }
 .contract-vehicle {
   padding: 2.2mm 2.7mm 2.7mm 2.7mm;
@@ -681,6 +794,13 @@ li {
 }
 .contract-vehicle-body-checkBoxes .input label {
   width: calc(100% - 14px);
+}
+.contract-vehicle-body-checkBoxes .input--text {
+  width: 100%;
+}
+.contract-vehicle-body-checkBoxes .input--text textarea {
+  width: 100%;
+  min-height: 120px;
 }
 .contract-vehicle-body-checkBoxes h3 {
   font-size: 6pt;
@@ -846,14 +966,6 @@ li {
   min-height: 140px;
   padding: 2.7mm 1.5mm;
   white-space: unset;
-}
-
-.pagination {
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
 }
 
 .image {

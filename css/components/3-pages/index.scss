@@ -9,22 +9,22 @@
     justify-content: space-between;
     padding: 0 10px;
     gap: 0 55px;
-    &-driver{
+    &-driver {
       width: calc(35% - 10px);
     }
-    &-vehicle{
+    &-vehicle {
       width: calc(65% - 10px);
     }
     &-note {
       width: 100%;
-      textarea{
+      textarea {
         min-height: 60px;
       }
     }
     &-wrapper {
       display: flex;
       flex-wrap: wrap;
-      gap:10px 8px;
+      gap: 10px 8px;
       width: calc(100% - 205px);
       &:nth-child(2) {
         width: 150px;
@@ -62,7 +62,7 @@
     .container {
       input,
       textarea {
-        padding:2.3mm 2mm;
+        padding: 2.3mm 2mm;
       }
     }
     .input {
@@ -93,7 +93,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-items:center;
+      align-items: center;
       padding: 2mm 0;
     }
     &-condition {
@@ -229,7 +229,7 @@
     flex-wrap: wrap;
     gap: 10px;
     padding: 1.4mm 2mm 3mm;
-    h2{
+    h2 {
       color: $primary;
       font-size: $font-size-title;
     }
@@ -245,18 +245,21 @@
         font-weight: normal;
       }
       input {
-        padding:1mm 1.8mm 1mm 1.8mm !important;
+        padding: 2mm 2.8mm 2mm 2.8mm !important;
         color: $primary;
         font-weight: bold;
-        max-width: 50px;
+        max-width: 100px;
+        font-size: 10pt;
       }
     }
     &-body {
       display: flex;
       flex-direction: column;
       gap: 5px;
-      max-width: 150px;
       margin: 0 auto;
+      h3 {
+        font-size: 10pt;
+      }
     }
   }
   &-vehicle {
@@ -279,6 +282,13 @@
           label {
             width: calc(100% - 14px);
           }
+          &--text{
+            width: 100%;
+            textarea {
+              width: 100%;
+              min-height: 120px;
+            }
+          }
         }
         h3 {
           font-size: 6pt;
@@ -292,6 +302,7 @@
             gap: 7px 5px;
             flex-wrap: wrap;
           }
+        
         }
       }
     }
@@ -408,16 +419,10 @@
   }
 }
 
-.pagination{
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.image{
+.image {
   width: 100%;
   height: 100%;
-  img{
+  img {
     width: 100%;
     height: 100%;
     object-fit: cover;
