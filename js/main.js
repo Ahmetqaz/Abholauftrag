@@ -107,8 +107,8 @@ const popControl = (inputState = false) => {
 
 // Set new filed Data
 const filedArray = ["filed-1", "filed-2", "field-3", "filed-4"];
-let filedData = document.querySelector(".contract-vehicle-body");
 const setFieldData = (filedArray, filedState = true) => {
+let filedData = document.querySelector(".contract-vehicle-body");
   if (filedState) {
     filedArray.forEach((element) => {
       let container = document.createElement("div");
