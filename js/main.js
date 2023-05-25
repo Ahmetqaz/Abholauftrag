@@ -31,39 +31,35 @@ let array = [
   "Schiebedach",
   "ABS",
 ];
+
 let checkBoxes = document.querySelector("#checkBoxes");
-let rowCounter = 0;
-let rowCounterListener = 1;
-let inputCounter = 0;
-let variant = "B";
-// Data render
-array.forEach((element) => {
+
+const createCheckboxes = (array, variant = "A") => {
+  checkBoxes.innerHTML = "";
+
   if (variant === "A") {
-    let input = document.createElement("div");
-    input.classList.add("input");
-    input.innerHTML = `
-      <input  id="${inputCounter}" name="${rowCounter}" type="radio">
+    array.forEach((element, index) => {
+      let input = document.createElement("div");
+      input.classList.add("input");
+      input.innerHTML = `
+      <input  id="${index}" name="${parseInt(index / 6)}" type="radio">
       <div class="circle"></div>
-      <label for="${inputCounter}">
+      <label for="${index}">
       ${element}
         </label>
    `;
-    inputCounter += 1;
-    if (rowCounterListener == 6) {
-      rowCounter += 1;
-      rowCounterListener = 0;
-    }
-    rowCounterListener += 1;
-    checkBoxes.innerHTML += input.outerHTML;
+      checkBoxes.appendChild(input);
+    });
   } else {
     let input = document.createElement("div");
     input.classList.add("input--text");
     let textarea = document.createElement("textarea");
-    textarea.innerHTML = array;
+    textarea.innerHTML = array.join(', ');
     input.innerHTML = textarea.outerHTML;
-    checkBoxes.innerHTML = input.outerHTML;
+    checkBoxes.appendChild(input);
   }
-});
+};
+
 // Input ebale/disable
 let inputState = false;
 let contract = document.getElementById("contract");
