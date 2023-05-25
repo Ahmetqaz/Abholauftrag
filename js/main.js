@@ -1,5 +1,7 @@
 // data
-const array = [
+let testJSON =
+  '[ "Start/Stopp-Automatik","Abstandswarner", "Blendfreies Fernlicht", "Totwinkel-Assistent","Schiebedach", "ABS","Start/Stopp-Automatik", "Abstandswarner","Blendfreies Fernlicht","Totwinkel-Assistent","Schiebedach","ABS", "Start/Stopp-Automatik","Abstandswarner", "Blendfreies Fernlicht", "Totwinkel-Assistent","Schiebedach","ABS","Start/Stopp-Automatik","Abstandswarner","Blendfreies Fernlicht","Totwinkel-Assistent","Schiebedach","ABS","Start/Stopp-Automatik","Abstandswarner","Blendfreies Fernlicht","Totwinkel-Assistent","Schiebedach","ABS"]';
+let array = [
   "Start/Stopp-Automatik",
   "Abstandswarner",
   "Blendfreies Fernlicht",
@@ -31,9 +33,13 @@ const array = [
   "Schiebedach",
   "ABS",
 ];
-const createCheckboxes = (array, variant = "A") => {
-  let checkBoxes = document.querySelector("#checkBoxes");
+
+let checkBoxes = document.querySelector("#checkBoxes");
+
+const createCheckboxes = (data, variant = "A") => {
   checkBoxes.innerHTML = "";
+  const array = typeof data === "string" ? JSON.parse(data) : data;
+  console.log("array", array);
   if (variant === "A") {
     array.forEach((element, index) => {
       let input = document.createElement("div");
@@ -56,11 +62,13 @@ const createCheckboxes = (array, variant = "A") => {
     checkBoxes.appendChild(input);
   }
 };
+
 // Input ebale/disable
-const inputControl = (inputState = false) => {
+let inputState = false;
   let contract = document.getElementById("contract");
   let contractInput = contract.querySelectorAll("input");
   let contractTexts = contract.querySelectorAll("textarea");
+let inputControl = () => {
   contractInput.forEach((input) => {
     if (inputState) {
       input.setAttribute("disabled", "");
@@ -76,9 +84,10 @@ const inputControl = (inputState = false) => {
     }
   });
 };
+inputControl();
+
 // Pop------------------------------------
-const popControl = (inputState = false) => {
-  if (inputState) {
+if (inputState == false) {
     let pops = document.querySelectorAll(".pop");
     let popUp = document.querySelector(".popUp");
     let popUpItems = document.querySelectorAll(".popUpItem");
