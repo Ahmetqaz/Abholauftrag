@@ -1,4 +1,6 @@
 // data
+let testJSON =
+  '[ "Start/Stopp-Automatik","Abstandswarner", "Blendfreies Fernlicht", "Totwinkel-Assistent","Schiebedach", "ABS","Start/Stopp-Automatik", "Abstandswarner","Blendfreies Fernlicht","Totwinkel-Assistent","Schiebedach","ABS", "Start/Stopp-Automatik","Abstandswarner", "Blendfreies Fernlicht", "Totwinkel-Assistent","Schiebedach","ABS","Start/Stopp-Automatik","Abstandswarner","Blendfreies Fernlicht","Totwinkel-Assistent","Schiebedach","ABS","Start/Stopp-Automatik","Abstandswarner","Blendfreies Fernlicht","Totwinkel-Assistent","Schiebedach","ABS"]';
 let array = [
   "Start/Stopp-Automatik",
   "Abstandswarner",
@@ -34,9 +36,10 @@ let array = [
 
 let checkBoxes = document.querySelector("#checkBoxes");
 
-const createCheckboxes = (array, variant = "A") => {
+const createCheckboxes = (data, variant = "A") => {
   checkBoxes.innerHTML = "";
-
+  const array = typeof data === "string" ? JSON.parse(data) : data;
+  console.log("array", array);
   if (variant === "A") {
     array.forEach((element, index) => {
       let input = document.createElement("div");
@@ -54,7 +57,7 @@ const createCheckboxes = (array, variant = "A") => {
     let input = document.createElement("div");
     input.classList.add("input--text");
     let textarea = document.createElement("textarea");
-    textarea.innerHTML = array.join(', ');
+    textarea.innerHTML = array.join(", ");
     input.innerHTML = textarea.outerHTML;
     checkBoxes.appendChild(input);
   }
