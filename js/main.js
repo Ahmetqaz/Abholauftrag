@@ -84,6 +84,18 @@ let inputControl = (isEnabled = false) => {
   });
 };
 let inputState = false;
+const addInputs = (field, array) => {
+  const container = document.getElementById(field);
+  let inputs = container.querySelector(".container-group");
+  inputs.innerHTML = "";
+  array.forEach((element) => {
+    let newInput = document.createElement("input");
+    newInput.setAttribute("type", "text");
+    newInput.value = element;
+    newInput.id = element;
+    inputs.appendChild(newInput);
+  });
+};
 
 // // Pop------------------------------------
 // if (inputState == false) {
@@ -133,8 +145,10 @@ const setMwstState = (mwstState = false) => {
   } else mwst.classList.remove("active");
 };
 
-// setMwstState();
+// setMwstState(true|false);
 // setFieldData(filedArray);
-// inputControl();
-// popControl();
+// inputControl(true|false);
+// addInputs('nachlackierung',['test1','test2','test3'])
+// addInputs('unfallfrei',['test1','test2','test3'])
+// addInputs('schäden',['test1','test2','test3'])
 createCheckboxes(array);
