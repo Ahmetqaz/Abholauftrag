@@ -2,2040 +2,1918 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Home</title>
-    <style>
-        @font-face {
-            font-family: "Tahoma";
-            src: url("./Tahoma.eot");
-            src: url("./Tahoma.eot?#iefix") format("embedded-opentype"), url("./Tahoma.woff2") format("woff2"), url("./Tahoma.woff") format("woff"), url("./Tahoma.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
+  <title>Home</title>
+  <style>
+    @font-face {
+  font-family: "Tahoma";
+  src: url("./Tahoma.eot");
+  src: url("./Tahoma.eot?#iefix") format("embedded-opentype"), url("./Tahoma.woff2") format("woff2"), url("./Tahoma.woff") format("woff"), url("./Tahoma.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tahoma";
+  src: url("./Tahoma-Bold.eot");
+  src: url("./Tahoma-Bold.eot?#iefix") format("embedded-opentype"), url("./Tahoma-Bold.woff2") format("woff2"), url("./Tahoma-Bold.woff") format("woff"), url("./Tahoma-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+h1,
+h2,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 6.8pt;
+  font-weight: bold;
+}
 
-        @font-face {
-            font-family: "Tahoma";
-            src: url("./Tahoma-Bold.eot");
-            src: url("./Tahoma-Bold.eot?#iefix") format("embedded-opentype"), url("./Tahoma-Bold.woff2") format("woff2"), url("./Tahoma-Bold.woff") format("woff"), url("./Tahoma-Bold.ttf") format("truetype");
-            font-weight: bold;
-            font-style: normal;
-            font-display: swap;
-        }
+html {
+  scroll-behavior: smooth;
+}
 
-        h1,
-        h2,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-size: 6.8pt;
-            font-weight: bold;
-        }
+* {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+button {
+  outline: none;
+}
 
-        * {
-            margin: 0px;
-            padding: 0px;
-            border: none;
-            outline: none;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-        }
+button:focus {
+  outline: none;
+}
 
-        button {
-            outline: none;
-        }
+button:focus {
+  outline: none;
+}
 
-        button:focus {
-            outline: none;
-        }
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-        button:focus {
-            outline: none;
-        }
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
 
-        /* width */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
 
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: #fff;
-        }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
 
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        /*** 
+/*** 
   ====================================================================
       Global Settings
   ====================================================================
    ***/
-        body {
-            font-family: "Tahoma", sans-serif;
-            font-size: 6.8pt;
-            color: #1e1f24;
-            font-weight: 400;
-            background: #E4E4E4;
-            line-height: 1.6;
-        }
-
-        body.pick-up-order {
-            gap: unset;
-            display: unset;
-            -webkit-box-orient: unset;
-            -webkit-box-direction: unset;
-            -ms-flex-direction: unset;
-            flex-direction: unset;
-        }
-
-        body section {
-            width: calc(100% - 40px);
-            max-width: 210mm;
-            min-height: 280mm;
-            padding: 2.2mm 1.5mm 8mm;
-            margin: 10mm auto;
-            background: #F7F7F7;
-            position: relative;
-        }
-
-        body:not(.pick-up-order) section.pick-up-order {
-            display: none !important;
-        }
-
-        body:not(.mwst) div.contract-purchase-taxfree.container {
-            display: none !important;
-        }
-
-        body:not(.mwst) div.contract-purchase-tax.container {
-            display: none !important;
-        }
-
-        body:not(.contract-signatures) div.contract-signatures.wrapper {
-            display: none !important;
-        }
-
-        a {
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin: 0px;
-        }
-
-        .auto__container {
-            position: relative;
-            max-width: 1640px;
-            margin: 0 auto;
-            padding: 0 60px;
-        }
-
-        ul,
-        li {
-            list-style: none;
-            padding: 0px;
-            margin: 0px;
-        }
-
-        .container {
-            overflow: hidden;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .container span,
-        .container input,
-        .container textarea {
-            border: 1px solid #185f76;
-            background: #fff;
-            font-size: 6.8pt;
-            border-radius: 1.5mm;
-            padding: 1mm 2mm;
-            color: #1e1f24;
-            font-weight: normal;
-            resize: none;
-            white-space: unset;
-        }
-
-        .input {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            gap: 2px;
-            position: relative;
-        }
-
-        .input input {
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 2;
-            cursor: pointer;
-            position: absolute;
-        }
-
-        .input input:checked+.circle {
-            border-color: #185f76;
-        }
-
-        .input input:checked+.circle::before {
-            opacity: 1;
-        }
-
-        .input .circle {
-            width: 12px;
-            height: 12px;
-            border: 1px solid #707070;
-            border-radius: 50%;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            position: relative;
-            background: #fff;
-        }
-
-        .input .circle::before {
-            content: "";
-            width: 70%;
-            height: 70%;
-            background: #185f76;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            -webkit-transition: 0.3s linear;
-            transition: 0.3s linear;
-            opacity: 0;
-        }
-
-        .input .circle.check::before {
-            border-top: 1px solid #185f76;
-            border-right: 1px solid #185f76;
-            top: 30%;
-            left: 30%;
-            width: 40%;
-            height: 20%;
-            border-radius: unset;
-            -webkit-transform: rotate(130deg);
-            transform: rotate(130deg);
-            background: unset;
-        }
-
-        .input textarea {
-            border: 1px solid #185f76;
-            background: #fff;
-            font-size: 6.8pt;
-            border-radius: 1.5mm;
-            padding: 1mm 2mm;
-            color: #1e1f24;
-            font-weight: normal;
-            resize: none;
-            white-space: unset;
-        }
-
-        .input--text textarea {
-            border: 1px solid #185f76;
-            background: #fff;
-            font-size: 6.8pt;
-            border-radius: 1.5mm;
-            padding: 1mm 2mm;
-            color: #1e1f24;
-            font-weight: normal;
-            resize: none;
-            white-space: unset;
-        }
-
-        .checkBox {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .checkBox__body {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: start;
-            -ms-flex-pack: start;
-            justify-content: flex-start;
-            gap: 10px;
-        }
-
-        .checkBox--border {
-            padding-left: 15px;
-            border-left: 1px solid #707070;
-        }
-
-        .title {
-            padding-bottom: 1.5mm;
-            border-bottom: 1px solid #707070;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-        }
-
-        .title h2 {
-            color: #185f76;
-            font-size: 8.5pt;
-        }
-
-        .header {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            background: #fff;
-            padding: 3mm 2.5mm;
-            border-radius: 1.5mm;
-        }
-
-        .header h2 {
-            color: #e96d24;
-            font-size: 10pt;
-        }
-
-        .header p {
-            font-size: 11pt;
-        }
-
-        .header__logo {
-            width: 105px;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-        }
-
-        .header__logo img {
-            width: 100%;
-            -o-object-fit: contain;
-            object-fit: contain;
-        }
-
-        .header--lg {
-            padding: 5mm 4.5mm;
-        }
-
-        .pagination {
-            position: absolute;
-            bottom: 5px;
-            left: 50%;
-            -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-        }
-
-        .popUp {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            -webkit-backdrop-filter: blur(2px);
-            backdrop-filter: blur(2px);
-            background: rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .popUp__inner {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            background: #fff;
-            border-radius: 16px;
-            padding: 20px 40px 30px;
-            width: 50%;
-            -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-            z-index: 2;
-        }
-
-        .popUp__inner-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            width: 20px;
-            height: 20px;
-        }
-
-        .popUp__inner-close::before {
-            content: "";
-            width: 100%;
-            height: 2px;
-            background: #e96d24;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%) rotate(45deg);
-            transform: translate(-50%, -50%) rotate(45deg);
-        }
-
-        .popUp__inner-close::after {
-            content: "";
-            width: 100%;
-            height: 2px;
-            background: #e96d24;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%) rotate(-45deg);
-            transform: translate(-50%, -50%) rotate(-45deg);
-        }
-
-        .popUp h2 {
-            text-align: center;
-            font-weight: bold;
-            font-size: 11pt;
-            margin-bottom: 10px;
-        }
-
-        .popUp textarea {
-            min-height: 200px;
-            width: 100%;
-            border-color: #707070;
-            font-size: 8pt;
-        }
-
-        .popUp.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .popUpItem {
-            display: none;
-        }
-
-        .popUpItem.active {
-            display: block;
-        }
-
-        .pick-up-order {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .pick-up-order-info {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            padding: 0 10px;
-            gap: 0 55px;
-        }
-
-        .pick-up-order-info-driver {
-            width: calc(35% - 10px);
-        }
-
-        .pick-up-order-info-vehicle {
-            width: calc(65% - 10px);
-        }
-
-        .pick-up-order-info-note {
-            width: 100%;
-        }
-
-        .pick-up-order-info-note textarea {
-            min-height: 60px;
-        }
-
-        .pick-up-order-info-wrapper {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            gap: 10px 8px;
-            width: calc(100% - 205px);
-        }
-
-        .pick-up-order-info-wrapper:nth-child(2) {
-            width: 150px;
-        }
-
-        .pick-up-order-info-price-body {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: start;
-            -ms-flex-pack: start;
-            justify-content: flex-start;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            gap: 9px;
-        }
-
-        .pick-up-order-info-price-body input {
-            padding: 1.5mm 1mm 1.5mm 1.8mm !important;
-            display: block;
-            width: 86px;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            font-weight: bold;
-            color: #185f76;
-        }
-
-        .pick-up-order-info-price-body p {
-            font-weight: bold;
-        }
-
-        .pick-up-order-info-price-inputs {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .pick-up-order-info-note input {
-            min-height: 40px;
-        }
-
-        .pick-up-order-info .container input,
-        .pick-up-order-info .container textarea {
-            padding: 2.3mm 2mm;
-        }
-
-        .pick-up-order-info .input .circle {
-            border-color: #185f76;
-            border-width: 1px;
-        }
-
-        .pick-up-order-info .input .circle::before {
-            background: #185f76;
-            width: 70%;
-            height: 70%;
-        }
-
-        .pick-up-order-info h2 {
-            color: #185f76;
-            font-size: 8.5pt;
-            display: inline-block;
-            width: 100%;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
-
-        .pick-up-order-assessment {
-            padding: 1.5mm 3mm;
-            background: #fff;
-            border-radius: 1.5mm;
-        }
-
-        .pick-up-order-assessment-row {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            padding: 2mm 0;
-        }
-
-        .pick-up-order-assessment-condition {
-            padding: 2mm 0;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            gap: 10px 5px;
-        }
-
-        .pick-up-order-assessment-condition .wrapper {
-            width: calc(25% - 5px);
-        }
-
-        .pick-up-order-assessment-condition .wrapper .checkBox h3 {
-            display: inline-block;
-            width: 100%;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
-
-        .pick-up-order-assessment-condition .wrapper .checkBox__body {
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        }
-
-        .pick-up-order-assessment-graphic {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            width: calc(80% - 20px);
-        }
-
-        .pick-up-order-assessment-graphic-image {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            max-width: 350px;
-        }
-
-        .pick-up-order-assessment-graphic-image img {
-            width: 100%;
-            -o-object-fit: contain;
-            object-fit: contain;
-        }
-
-        .pick-up-order-assessment-paints {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 5px;
-            width: 20%;
-        }
-
-        .pick-up-order-assessment-paints h3 {
-            font-weight: normal;
-        }
-
-        .pick-up-order-assessment .container {
-            gap: 5px;
-        }
-
-        .pick-up-order-assessment .container input {
-            padding: 1.5mm 1.5mm;
-            font-size: 6pt;
-            line-height: 10px;
-        }
-
-        .pick-up-order-assessment .checkBox {
-            gap: 0;
-        }
-
-        .pick-up-order-assessment .checkBox__body {
-            padding: 12px 0;
-        }
-
-        .pick-up-order-assessment .checkBox h3 {
-            font-size: 6pt;
-        }
-
-        .pick-up-order-assessment .checkBox label {
-            font-size: 6pt;
-        }
-
-        .pick-up-order-assessment-test-drive {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            padding: 1.5mm 3mm 4mm;
-            background: #fff;
-            border-radius: 1.5mm;
-            gap: 15px 5px;
-        }
-
-        .pick-up-order-assessment-test-drive .wrapper {
-            width: calc(20% - 5px);
-        }
-
-        .pick-up-order-assessment-test-drive .title {
-            width: 100%;
-        }
-
-        .pick-up-order-assessment-test-drive .checkBox {
-            gap: 8px;
-        }
-
-        .pick-up-order-assessment-test-drive .checkBox h3 {
-            display: inline-block;
-            width: 100%;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
-
-        .pick-up-order-assessment-test-drive .checkBox__body {
-            gap: 15px;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        }
-
-        .pick-up-order-assessment-test-drive .checkBox h3 {
-            font-size: 6pt;
-        }
-
-        .pick-up-order-assessment-test-drive .checkBox label {
-            font-size: 6pt;
-        }
-
-        .pick-up-order-assessment-test-drive-signature {
-            width: 100%;
-            min-height: 100px;
-            border: 1px solid #185f76;
-            border-radius: 1.5mm;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            padding: 2.5mm 1.6mm;
-        }
-
-        .pick-up-order-assessment-test-drive-signature .signature {
-            text-align: center;
-            color: #185f76;
-            font-size: 7pt;
-        }
-
-        .pick-up-order-assessment-test-drive-signature .input {
-            gap: 8px;
-        }
-
-        .pick-up-order-assessment-test-drive-signature label {
-            color: #e96d24;
-        }
-
-        .contract__body {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 1.4mm 2mm 3mm;
-        }
-
-        .contract__body h2 {
-            color: #185f76;
-            font-size: 8.5pt;
-        }
-
-        .contract-purchase-price {
-            width: 100%;
-        }
-
-        .contract-purchase-price-tax {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .contract-purchase-price-wrapper {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .contract-purchase-price-wrapper h3 {
-            font-weight: normal;
-        }
-
-        .contract-purchase-price-wrapper input {
-            padding: 2mm 2.8mm 2mm 2.8mm !important;
-            color: #185f76;
-            font-weight: bold;
-            max-width: 75px;
-            font-size: 10pt;
-        }
-
-        .contract-purchase-price-body {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            gap: 20px;
-            margin: 0 auto;
-        }
-
-        .contract-purchase-price-body h3 {
-            font-size: 10pt;
-        }
-
-        .contract-purchase-price-body p {
-            font-size: 10pt;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            display: none;
-        }
-
-        .contract-purchase-price-body p span {
-            display: block;
-            border: unset;
-            background-color: unset;
-            padding: 0 0 2.7mm 0;
-            font-size: inherit;
-            line-height: 1.2;
-        }
-
-        .contract-purchase-price-body.active p {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-        }
-
-        .contract-purchase-price-body.active h3.hideText {
-            display: none;
-        }
-
-        .contract-purchase-price-body.active input {
-            max-width: 100px;
-        }
-
-        .contract-vehicle {
-            padding: 2.2mm 2.7mm 2.7mm 2.7mm;
-            background: #fff;
-            border-radius: 1.5mm;
-        }
-
-        .contract-vehicle-body {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            gap: 5px;
-            margin-bottom: 10px;
-        }
-
-        .contract-vehicle-body:last-child {
-            margin-bottom: 0;
-        }
-
-        .contract-vehicle-body-checkBoxes {
-            width: 100%;
-        }
-
-        .contract-vehicle-body-checkBoxes .input {
-            width: calc(16.6% - 4px);
-        }
-
-        .contract-vehicle-body-checkBoxes .input label {
-            width: calc(100% - 14px);
-        }
-
-        .contract-vehicle-body-checkBoxes .input--text {
-            width: 100%;
-        }
-
-        .contract-vehicle-body-checkBoxes .input--text textarea {
-            width: 100%;
-            min-height: 120px;
-        }
-
-        .contract-vehicle-body-checkBoxes h3 {
-            font-size: 6pt;
-            font-weight: bold !important;
-        }
-
-        .contract-vehicle-body-checkBoxes label {
-            font-size: 5.3pt;
-        }
-
-        .contract-vehicle-body-checkBoxes .checkBox__body {
-            gap: 7px 5px;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        }
-
-        .contract-vehicle .container {
-            width: calc(50% - 5px);
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-            flex-direction: row;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            gap: 5px;
-        }
-
-        .contract-vehicle .container input {
-            width: calc(100% - 113px);
-        }
-
-        .contract-vehicle-brand input {
-            width: calc(100% - 105px);
-        }
-
-        .contract-vehicle-brand.container {
-            width: 100%;
-            max-width: unset;
-        }
-
-        .contract-vehicle-brand.container span {
-            max-width: unset;
-        }
-
-        .contract-vehicle .title {
-            margin-bottom: 5px;
-            width: 100%;
-        }
-
-        .contract-vehicle h3 {
-            font-weight: normal;
-        }
-
-        .contract .wrapper {
-            width: calc(50% - 60px);
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            gap: 8px;
-        }
-
-        .contract input {
-            padding: 2mm 2.8mm;
-        }
-
-        .contractDetails {
-            padding: 2.2mm 5.8mm 4.3mm;
-        }
-
-        .contractDetails__body {
-            margin: 15px 0;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 11px;
-        }
-
-        .contractDetails-signatures {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        }
-
-        .contractDetails-signatures-row {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            width: calc(50% - 25px);
-            gap: 20px;
-        }
-
-        .contractDetails-signatures-row-inputs {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-        }
-
-        .contractDetails-signatures-row .caption {
-            -webkit-box-pack: end !important;
-            -ms-flex-pack: end !important;
-            justify-content: flex-end !important;
-        }
-
-        .contractDetails-signatures-row .caption label {
-            font-size: 5.4pt;
-            color: #185f76;
-        }
-
-        .contractDetails-signatures .container {
-            padding: 1mm 2mm;
-            border: 1px solid #185f76;
-            background: #fff;
-            border-radius: 1.5mm;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            min-height: 95px;
-        }
-
-        .contractDetails-signatures .title {
-            margin-bottom: 10px;
-            width: 100%;
-        }
-
-        .contractDetails-signatures h3 {
-            color: #e96d24;
-            margin-bottom: 8px;
-        }
-
-        .contractDetails-signatures .input {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            gap: 5px;
-            margin-bottom: 12px;
-        }
-
-        .contractDetails-signatures .input:last-child {
-            margin-bottom: 0;
-        }
-
-        .contractDetails-signatures .input .circle {
-            border-color: #1e1f24;
-        }
-
-        .contractDetails .header {
-            margin-bottom: 15px;
-        }
-
-        .contractDetails .container textarea {
-            min-height: 140px;
-            padding: 2.7mm 1.5mm;
-            white-space: unset;
-        }
-
-        .image {
-            width: 100%;
-            height: 100%;
-        }
-
-        .image img {
-            width: 100%;
-            height: 100%;
-            -o-object-fit: cover;
-            object-fit: cover;
-        }
-
-        @media print {
-            section {
-                page-break-after: always;
-                margin: 0;
-                background: #F7F7F7;
-            }
-        }
-
-        @page {
-            size: auto;
-            margin: 0;
-        }
-    </style>
+body {
+  font-family: "Tahoma", sans-serif;
+  font-size: 6.8pt;
+  color: #1e1f24;
+  font-weight: 400;
+  background: #E4E4E4;
+  line-height: 1.6;
+}
+body.pick-up-order {
+  gap: unset;
+  display: unset;
+  -webkit-box-orient: unset;
+  -webkit-box-direction: unset;
+      -ms-flex-direction: unset;
+          flex-direction: unset;
+}
+
+body section {
+  width: calc(100% - 40px);
+  max-width: 210mm;
+  min-height: 280mm;
+  padding: 2.2mm 1.5mm 8mm;
+  margin: 10mm auto;
+  background: #F7F7F7;
+  position: relative;
+}
+
+body:not(.pick-up-order) section.pick-up-order {
+  display: none !important;
+}
+
+body:not(.mwst) div.contract-purchase-taxfree.container {
+  display: none !important;
+}
+
+body:not(.mwst) div.contract-purchase-tax.container {
+  display: none !important;
+}
+
+body:not(.contract-signatures) div.contract-signatures.wrapper {
+  display: none !important;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
+}
+
+.auto__container {
+  position: relative;
+  max-width: 1640px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.container {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+.container span,
+.container input,
+.container textarea {
+  border: 1px solid #185f76;
+  background: #fff;
+  font-size: 6.8pt;
+  border-radius: 1.5mm;
+  padding: 1mm 2mm;
+  color: #1e1f24;
+  font-weight: normal;
+  resize: none;
+  white-space: unset;
+}
+
+.input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2px;
+  position: relative;
+}
+.input input {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  position: absolute;
+}
+.input input:checked + .circle {
+  border-color: #185f76;
+}
+.input input:checked + .circle::before {
+  opacity: 1;
+}
+.input .circle {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #707070;
+  border-radius: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  background: #fff;
+}
+.input .circle::before {
+  content: "";
+  width: 70%;
+  height: 70%;
+  background: #185f76;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+  opacity: 0;
+}
+.input .circle.check::before {
+  border-top: 1px solid #185f76;
+  border-right: 1px solid #185f76;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 20%;
+  border-radius: unset;
+  -webkit-transform: rotate(130deg);
+          transform: rotate(130deg);
+  background: unset;
+}
+.input textarea {
+  border: 1px solid #185f76;
+  background: #fff;
+  font-size: 6.8pt;
+  border-radius: 1.5mm;
+  padding: 1mm 2mm;
+  color: #1e1f24;
+  font-weight: normal;
+  resize: none;
+  white-space: unset;
+}
+.input--text textarea {
+  border: 1px solid #185f76;
+  background: #fff;
+  font-size: 6.8pt;
+  border-radius: 1.5mm;
+  padding: 1mm 2mm;
+  color: #1e1f24;
+  font-weight: normal;
+  resize: none;
+  white-space: unset;
+}
+
+.checkBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 6px;
+}
+.checkBox__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 10px;
+}
+.checkBox--border {
+  padding-left: 15px;
+  border-left: 1px solid #707070;
+}
+
+.title {
+  padding-bottom: 1.5mm;
+  border-bottom: 1px solid #707070;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.title h2 {
+  color: #185f76;
+  font-size: 8.5pt;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff;
+  padding: 3mm 2.5mm;
+  border-radius: 1.5mm;
+}
+.header h2 {
+  color: #e96d24;
+  font-size: 10pt;
+}
+.header p {
+  font-size: 11pt;
+}
+.header__logo {
+  width: 105px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.header__logo img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.header--lg {
+  padding: 5mm 4.5mm;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.popUp {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+}
+.popUp__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 40px 30px;
+  width: 50%;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+.popUp__inner-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+}
+.popUp__inner-close::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #e96d24;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+.popUp__inner-close::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #e96d24;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+.popUp h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 11pt;
+  margin-bottom: 10px;
+}
+.popUp textarea {
+  min-height: 200px;
+  width: 100%;
+  border-color: #707070;
+  font-size: 8pt;
+}
+.popUp.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.popUpItem {
+  display: none;
+}
+.popUpItem.active {
+  display: block;
+}
+
+.pick-up-order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+.pick-up-order-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 10px;
+  gap: 0 55px;
+}
+.pick-up-order-info-driver {
+  width: calc(35% - 10px);
+}
+.pick-up-order-info-vehicle {
+  width: calc(65% - 10px);
+}
+.pick-up-order-info-note {
+  width: 100%;
+}
+.pick-up-order-info-note textarea {
+  min-height: 60px;
+}
+.pick-up-order-info-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px 8px;
+  width: calc(100% - 205px);
+}
+.pick-up-order-info-wrapper:nth-child(2) {
+  width: 150px;
+}
+.pick-up-order-info-price-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 9px;
+}
+.pick-up-order-info-price-body input {
+  padding: 1.5mm 1mm 1.5mm 1.8mm !important;
+  display: block;
+  width: 86px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: bold;
+  color: #185f76;
+}
+.pick-up-order-info-price-body p {
+  font-weight: bold;
+}
+.pick-up-order-info-price-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+.pick-up-order-info-note input {
+  min-height: 40px;
+}
+.pick-up-order-info .container input,
+.pick-up-order-info .container textarea {
+  padding: 2.3mm 2mm;
+}
+.pick-up-order-info .input .circle {
+  border-color: #185f76;
+  border-width: 1px;
+}
+.pick-up-order-info .input .circle::before {
+  background: #185f76;
+  width: 70%;
+  height: 70%;
+}
+.pick-up-order-info h2 {
+  color: #185f76;
+  font-size: 8.5pt;
+  display: inline-block;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.pick-up-order-assessment {
+  padding: 1.5mm 3mm;
+  background: #fff;
+  border-radius: 1.5mm;
+}
+.pick-up-order-assessment-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2mm 0;
+}
+.pick-up-order-assessment-condition {
+  padding: 2mm 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px 5px;
+}
+.pick-up-order-assessment-condition .wrapper {
+  width: calc(25% - 5px);
+}
+.pick-up-order-assessment-condition .wrapper .checkBox h3 {
+  display: inline-block;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.pick-up-order-assessment-condition .wrapper .checkBox__body {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.pick-up-order-assessment-graphic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: calc(80% - 20px);
+}
+.pick-up-order-assessment-graphic-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 350px;
+}
+.pick-up-order-assessment-graphic-image img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.pick-up-order-assessment-paints {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+  width: 20%;
+}
+.pick-up-order-assessment-paints h3 {
+  font-weight: normal;
+}
+.pick-up-order-assessment .container {
+  gap: 5px;
+}
+.pick-up-order-assessment .container input {
+  padding: 1.5mm 1.5mm;
+  font-size: 6pt;
+  line-height: 10px;
+}
+.pick-up-order-assessment .checkBox {
+  gap: 0;
+}
+.pick-up-order-assessment .checkBox__body {
+  padding: 12px 0;
+}
+.pick-up-order-assessment .checkBox h3 {
+  font-size: 6pt;
+}
+.pick-up-order-assessment .checkBox label {
+  font-size: 6pt;
+}
+.pick-up-order-assessment-test-drive {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 1.5mm 3mm 4mm;
+  background: #fff;
+  border-radius: 1.5mm;
+  gap: 15px 5px;
+}
+.pick-up-order-assessment-test-drive .wrapper {
+  width: calc(20% - 5px);
+}
+.pick-up-order-assessment-test-drive .title {
+  width: 100%;
+}
+.pick-up-order-assessment-test-drive .checkBox {
+  gap: 8px;
+}
+.pick-up-order-assessment-test-drive .checkBox h3 {
+  display: inline-block;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.pick-up-order-assessment-test-drive .checkBox__body {
+  gap: 15px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.pick-up-order-assessment-test-drive .checkBox h3 {
+  font-size: 6pt;
+}
+.pick-up-order-assessment-test-drive .checkBox label {
+  font-size: 6pt;
+}
+.pick-up-order-assessment-test-drive-signature {
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid #185f76;
+  border-radius: 1.5mm;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2.5mm 1.6mm;
+}
+.pick-up-order-assessment-test-drive-signature .signature {
+  text-align: center;
+  color: #185f76;
+  font-size: 7pt;
+}
+.pick-up-order-assessment-test-drive-signature .input {
+  gap: 8px;
+}
+.pick-up-order-assessment-test-drive-signature label {
+  color: #e96d24;
+}
+
+.contract__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+  padding: 1.4mm 2mm 3mm;
+}
+.contract__body h2 {
+  color: #185f76;
+  font-size: 8.5pt;
+}
+.contract-purchase-price {
+  width: 100%;
+}
+.contract-purchase-price-tax {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.contract-purchase-price-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+.contract-purchase-price-wrapper h3 {
+  font-weight: normal;
+}
+.contract-purchase-price-wrapper input {
+  padding: 2mm 2.8mm 2mm 2.8mm !important;
+  color: #185f76;
+  font-weight: bold;
+  max-width: 75px;
+  font-size: 10pt;
+}
+.contract-purchase-price-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  margin: 0 auto;
+}
+.contract-purchase-price-body h3 {
+  font-size: 10pt;
+}
+.contract-purchase-price-body p {
+  font-size: 10pt;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: none;
+}
+.contract-purchase-price-body p span {
+  display: block;
+  border: unset;
+  background-color: unset;
+  padding: 0 0 2.7mm 0;
+  font-size: inherit;
+  line-height: 1.2;
+}
+.contract-purchase-price-body.active p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.contract-purchase-price-body.active h3.hideText {
+  display: none;
+}
+.contract-purchase-price-body.active input {
+  max-width: 100px;
+}
+.contract-vehicle {
+  padding: 2.2mm 2.7mm 2.7mm 2.7mm;
+  background: #fff;
+  border-radius: 1.5mm;
+}
+.contract-vehicle-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.contract-vehicle-body:last-child {
+  margin-bottom: 0;
+}
+.contract-vehicle-body-checkBoxes {
+  width: 100%;
+}
+.contract-vehicle-body-checkBoxes .input {
+  width: calc(16.6% - 4px);
+}
+.contract-vehicle-body-checkBoxes .input label {
+  width: calc(100% - 14px);
+}
+.contract-vehicle-body-checkBoxes .input--text {
+  width: 100%;
+}
+.contract-vehicle-body-checkBoxes .input--text textarea {
+  width: 100%;
+  min-height: 120px;
+}
+.contract-vehicle-body-checkBoxes h3 {
+  font-size: 6pt;
+  font-weight: bold !important;
+}
+.contract-vehicle-body-checkBoxes label {
+  font-size: 5.3pt;
+}
+.contract-vehicle-body-checkBoxes .checkBox__body {
+  gap: 7px 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.contract-vehicle .container {
+  width: calc(50% - 5px);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 5px;
+}
+.contract-vehicle .container-group, .contract-vehicle .container > input {
+  width: calc(100% - 113px);
+}
+.contract-vehicle .container-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: inherit;
+}
+.contract-vehicle .container-group input {
+  width: 100%;
+}
+.contract-vehicle .container h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 27px;
+}
+.contract-vehicle-brand input {
+  width: calc(100% - 105px);
+}
+.contract-vehicle-brand.container {
+  width: 100%;
+  max-width: unset;
+}
+.contract-vehicle-brand.container span {
+  max-width: unset;
+}
+.contract-vehicle .title {
+  margin-bottom: 5px;
+  width: 100%;
+}
+.contract-vehicle h3 {
+  font-weight: normal;
+}
+.contract .wrapper {
+  width: calc(50% - 60px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 8px;
+}
+.contract input {
+  padding: 2mm 2.8mm;
+}
+.contractDetails {
+  padding: 2.2mm 5.8mm 4.3mm;
+}
+.contractDetails__body {
+  margin: 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 11px;
+}
+.contractDetails-signatures {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.contractDetails-signatures-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: calc(50% - 25px);
+  gap: 20px;
+}
+.contractDetails-signatures-row-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.contractDetails-signatures-row .caption {
+  -webkit-box-pack: end !important;
+      -ms-flex-pack: end !important;
+          justify-content: flex-end !important;
+}
+.contractDetails-signatures-row .caption label {
+  font-size: 5.4pt;
+  color: #185f76;
+}
+.contractDetails-signatures .container {
+  padding: 1mm 2mm;
+  border: 1px solid #185f76;
+  background: #fff;
+  border-radius: 1.5mm;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 95px;
+}
+.contractDetails-signatures .title {
+  margin-bottom: 10px;
+  width: 100%;
+}
+.contractDetails-signatures h3 {
+  color: #e96d24;
+  margin-bottom: 8px;
+}
+.contractDetails-signatures .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+.contractDetails-signatures .input:last-child {
+  margin-bottom: 0;
+}
+.contractDetails-signatures .input .circle {
+  border-color: #1e1f24;
+}
+.contractDetails .header {
+  margin-bottom: 15px;
+}
+.contractDetails .container textarea {
+  min-height: 140px;
+  padding: 2.7mm 1.5mm;
+  white-space: unset;
+}
+
+.imageSection {
+  width: 100%;
+  padding: 60px 0;
+}
+.imageSection img {
+  width: 100%;
+  height: auto;
+}
+
+.input--wrapper {
+  width: calc(100% - 113px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+}
+.input--wrapper input {
+  width: 100% !important;
+}
+
+@media print {
+  section {
+    page-break-after: always;
+    margin: 0;
+    background: #F7F7F7;
+  }
+}
+@page {
+  size: auto;
+  margin: 0;
+}
+  </style>
 </head>
 
-<body class="contract-signatures  pick-up-order mwst">
-    <section class="pick-up-order">
-        <div class="header ">
-            <p>
-                Your Logo
-            </p>
-            <h2>
-                Abholauftrag
-            </h2>
-            <div class="header__logo">
-                <img src="./images/logo.png" alt="">
-            </div>
-        </div>
-        <div class="pick-up-order-info">
-            <div class="pick-up-order-info-wrapper">
-                <h2>
-                    Fahrerinformationen
-                </h2>
-                <div class="pick-up-order-info-driver container">
-                    <h3 id="pick-up-order-info-driver-key">Fahrer</h3>
-                    <input id="pick-up-order-info-driver-value" value="John Doe" />
-                </div>
-                <div class="pick-up-order-info-vehicle container">
-                    <h3 id="pick-up-order-info-vehicle-key">Fahrzeug</h3>
-                    <input id="pick-up-order-info-vehicle-value"
-                        value="Volkswagen Golf GTI Edition 35 VI 2.0 Automatik *BIXENON*AH" />
-                </div>
-                <div class="pick-up-order-info-note container">
-                    <h3 id="pick-up-order-info-note-key">Zusätzliche Notizen</h3>
-                    <textarea
-                        id="pick-up-order-info-note-value">Das Fahrzeug befindet sich in einem guten Zustand</textarea>
-                </div>
-            </div>
-            <div class="pick-up-order-info-wrapper">
-                <h2>
-                    Zahlungsinformationen
-                </h2>
-                <div class="pick-up-order-info-price container">
-                    <h3 id="pick-up-order-info-price-key">Kaufpreis inkl. 19% MwSt.</h3>
-                    <div class="pick-up-order-info-price-body">
-                        <input id="pick-up-order-info-price-value" value="2000,00">
-                        <p class="pick-up-order-info-price-cash">
-                            Euro
-                        </p>
-                    </div>
-                </div>
-                <div class="pick-up-order-info-price-inputs">
-                    <div class="checkBox">
-                        <h3 id="pick-up-order-info-price-key">
-                            Zahlungsart
-                        </h3>
-                        <div class="checkBox__body">
-                            <div class="input">
-                                <input type="radio" id="pick-up-order-info-price-value-1"
-                                    name="pick-up-order-info-price-value" value="pick-up-order-info-price-value-1">
-                                <span class="circle">
-                                </span>
-                                <label for="pick-up-order-info-price-value-1">
-                                    Überweisung
-                                </label>
-                            </div>
-                            <div class="input">
 
-                                <input type="radio" id="pick-up-order-info-price-value-2"
-                                    name="pick-up-order-info-price-value" value="pick-up-order-info-price-value-2">
-                                <span class="circle">
-                                </span>
-                                <label for="pick-up-order-info-price-value-2">
-                                    Bar
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="checkBox">
-                        <h3 id="pick-up-order-info-price-key">
-                            Zahlungsart
-                        </h3>
-                        <div class="checkBox__body">
-                            <div class="input">
-                                <input type="radio" id="pick-up-order-info-price-value-3"
-                                    name="pick-up-order-info-price-value" value="pick-up-order-info-price-value-3">
-                                <span class="circle">
-                                </span>
-                                <label for="pick-up-order-info-price-value-3">
-                                    Ja
-                                </label>
-                            </div>
-                            <div class="input">
+<body class="contract-signatures pick-up-order mwst">
+  <section class="pick-up-order">
+    <div class="header">
+      <p>Your Logo</p>
+      <h2>Abholauftrag</h2>
+      <div class="header__logo">
+        <img src="./images/logo.png" alt="" />
+      </div>
+    </div>
+    <div class="pick-up-order-info">
+      <div class="pick-up-order-info-wrapper">
+        <h2>Fahrerinformationen</h2>
+        <div class="pick-up-order-info-driver container">
+          <h3 id="pick-up-order-info-driver-key">Fahrer</h3>
+          <input id="pick-up-order-info-driver-value" value="John Doe" />
+        </div>
+        <div class="pick-up-order-info-vehicle container">
+          <h3 id="pick-up-order-info-vehicle-key">Fahrzeug</h3>
+          <input id="pick-up-order-info-vehicle-value"
+            value="Volkswagen Golf GTI Edition 35 VI 2.0 Automatik *BIXENON*AH" />
+        </div>
+        <div class="pick-up-order-info-note container">
+          <h3 id="pick-up-order-info-note-key">Zusätzliche Notizen</h3>
+          <textarea id="pick-up-order-info-note-value">
+Das Fahrzeug befindet sich in einem guten Zustand</textarea>
+        </div>
+      </div>
+      <div class="pick-up-order-info-wrapper">
+        <h2>Zahlungsinformationen</h2>
+        <div class="pick-up-order-info-price container">
+          <h3 id="pick-up-order-info-price-key">Kaufpreis inkl. 19% MwSt.</h3>
+          <div class="pick-up-order-info-price-body">
+            <input id="pick-up-order-info-price-value" value="2000,00" />
+            <p class="pick-up-order-info-price-cash">Euro</p>
+          </div>
+        </div>
+        <div class="pick-up-order-info-price-inputs">
+          <div class="checkBox">
+            <h3 id="pick-up-order-info-price-key">Zahlungsart</h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input type="radio" id="pick-up-order-info-price-value-1" name="pick-up-order-info-price-value"
+                  value="pick-up-order-info-price-value-1" />
+                <span class="circle"> </span>
+                <label for="pick-up-order-info-price-value-1">
+                  Überweisung
+                </label>
+              </div>
+              <div class="input">
+                <input type="radio" id="pick-up-order-info-price-value-2" name="pick-up-order-info-price-value"
+                  value="pick-up-order-info-price-value-2" />
+                <span class="circle"> </span>
+                <label for="pick-up-order-info-price-value-2"> Bar </label>
+              </div>
+            </div>
+          </div>
+          <div class="checkBox">
+            <h3 id="pick-up-order-info-price-key">Zahlungsart</h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input type="radio" id="pick-up-order-info-price-value-3" name="pick-up-order-info-price-value"
+                  value="pick-up-order-info-price-value-3" />
+                <span class="circle"> </span>
+                <label for="pick-up-order-info-price-value-3"> Ja </label>
+              </div>
+              <div class="input">
+                <input type="radio" id="pick-up-order-info-price-value-4" name="pick-up-order-info-price-value"
+                  value="pick-up-order-info-price-value-4" />
+                <span class="circle"> </span>
+                <label for="pick-up-order-info-price-value-4"> Nein </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pick-up-order-assessment">
+      <div class="title">
+        <h2>Fahrzeugskizze</h2>
+        <h2>Lackdichtstärke</h2>
+      </div>
+      <div class="pick-up-order-assessment-row">
+        <div class="pick-up-order-assessment-graphic">
+          <div class="pick-up-order-assessment-graphic-image">
+            <img src="./images/cars.png" alt="" />
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-paints">
+          <div class="pick-up-order-assessment-paint-front container">
+            <h3 id="pick-up-order-assessment-paint-front-key">Front</h3>
+            <input id="pick-up-order-assessment-paint-front-value" value="" />
+          </div>
+          <div class="pick-up-order-assessment-paint-front container">
+            <h3 id="pick-up-order-assessment-paint-front-key">Linke Seite</h3>
+            <input id="pick-up-order-assessment-paint-front-value" value="" />
+          </div>
+          <div class="pick-up-order-assessment-paint-front container">
+            <h3 id="pick-up-order-assessment-paint-front-key">Dach</h3>
+            <input id="pick-up-order-assessment-paint-front-value" value="" />
+          </div>
+          <div class="pick-up-order-assessment-paint-front container">
+            <h3 id="pick-up-order-assessment-paint-front-key">Heck</h3>
+            <input id="pick-up-order-assessment-paint-front-value" value="" />
+          </div>
+          <div class="pick-up-order-assessment-paint-front container">
+            <h3 id="pick-up-order-assessment-paint-front-key">
+              Rechte Seite
+            </h3>
+            <input id="pick-up-order-assessment-paint-front-value" value="" />
+          </div>
+          <div class="pick-up-order-assessment-paint-front container">
+            <h3 id="pick-up-order-assessment-paint-front-key">
+              Stoßstangen/Spaltemaße
+            </h3>
+            <input id="pick-up-order-assessment-paint-front-value" value="" />
+          </div>
+        </div>
+      </div>
+      <div class="title">
+        <h2>Art und Zustand</h2>
+      </div>
+      <div class="pick-up-order-assessment-condition">
+        <div class="pick-up-order-assessment-condition-visual wrapper">
+          <div class="checkBox">
+            <h3 id="pick-up-order-assessment-condition-visual-key">
+              Optischer Zustand
+            </h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-visual-value-great"
+                  name="pick-up-order-assessment-condition-visual-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-visual-value-great">Sehr gut</label>
+              </div>
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-visual-value-good"
+                  name="pick-up-order-assessment-condition-visual-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-visual-value-good">Gut</label>
+              </div>
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-visual-value-ok"
+                  name="pick-up-order-assessment-condition-visual-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-visual-value-ok">Mittel</label>
+              </div>
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-visual-value-bad"
+                  name="pick-up-order-assessment-condition-visual-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-visual-value-bad">Schlecht</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-condition-glass wrapper">
+          <div class="checkBox checkBox--border">
+            <h3 id="pick-up-order-assessment-condition-glass-key">
+              Glasschäden/Steinschläge
+            </h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-glass-value-no"
+                  name="pick-up-order-assessment-condition-glass-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-glass-value-no">Nein</label>
+              </div>
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-glass-value-yes"
+                  name="pick-up-order-assessment-condition-glass-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-glass-value-yes">Ja, hier:</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-condition-damages wrapper">
+          <div class="checkBox checkBox--border">
+            <h3 id="pick-up-order-assessment-condition-damages-key">
+              Unfallschäden/Hagelschäden
+            </h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-damages-value-no"
+                  name="pick-up-order-assessment-condition-damages-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-damages-value-no">Nein</label>
+              </div>
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-damages-value-yes"
+                  name="pick-up-order-assessment-condition-damages-value" type="radio" value="on" />
+                <div class="circle"></div>
 
-                                <input type="radio" id="pick-up-order-info-price-value-4"
-                                    name="pick-up-order-info-price-value" value="pick-up-order-info-price-value-4">
-                                <span class="circle">
-                                </span>
-                                <label for="pick-up-order-info-price-value-4">
-                                    Nein
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <label for="pick-up-order-assessment-condition-damages-value-yes">Ja, hier:</label>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="pick-up-order-assessment">
-            <div class="title">
-                <h2>
-                    Fahrzeugskizze
-                </h2>
-                <h2>
-                    Lackdichtstärke
-                </h2>
-            </div>
-            <div class="pick-up-order-assessment-row">
-                <div class="pick-up-order-assessment-graphic">
-                    <div class="pick-up-order-assessment-graphic-image">
-                        <img src="./images/cars.png" alt="">
-                    </div>
-                </div>
-                <div class="pick-up-order-assessment-paints">
-                    <div class="pick-up-order-assessment-paint-front container">
-                        <h3 id="pick-up-order-assessment-paint-front-key">Front</h3>
-                        <input id="pick-up-order-assessment-paint-front-value" value="" />
-                    </div>
-                    <div class="pick-up-order-assessment-paint-front container">
-                        <h3 id="pick-up-order-assessment-paint-front-key">Linke Seite
-                        </h3>
-                        <input id="pick-up-order-assessment-paint-front-value" value="" />
-                    </div>
-                    <div class="pick-up-order-assessment-paint-front container">
-                        <h3 id="pick-up-order-assessment-paint-front-key">Dach</h3>
-                        <input id="pick-up-order-assessment-paint-front-value" value="" />
-                    </div>
-                    <div class="pick-up-order-assessment-paint-front container">
-                        <h3 id="pick-up-order-assessment-paint-front-key">Heck</h3>
-                        <input id="pick-up-order-assessment-paint-front-value" value="" />
-                    </div>
-                    <div class="pick-up-order-assessment-paint-front container">
-                        <h3 id="pick-up-order-assessment-paint-front-key">Rechte Seite
-                        </h3>
-                        <input id="pick-up-order-assessment-paint-front-value" value="" />
-                    </div>
-                    <div class="pick-up-order-assessment-paint-front container">
-                        <h3 id="pick-up-order-assessment-paint-front-key">Stoßstangen/Spaltemaße
-                        </h3>
-                        <input id="pick-up-order-assessment-paint-front-value" value="">
-                    </div>
-                </div>
-            </div>
-            <div class="title">
-                <h2>
-                    Art und Zustand
-                </h2>
-            </div>
-            <div class="pick-up-order-assessment-condition">
-                <div class="pick-up-order-assessment-condition-visual wrapper">
-                    <div class="checkBox">
-                        <h3 id="pick-up-order-assessment-condition-visual-key">Optischer Zustand
-                        </h3>
-                        <div class="checkBox__body">
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-visual-value-great"
-                                    name="pick-up-order-assessment-condition-visual-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-visual-value-great">Sehr gut</label>
-                            </div>
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-visual-value-good"
-                                    name="pick-up-order-assessment-condition-visual-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-visual-value-good">Gut</label>
-                            </div>
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-visual-value-ok"
-                                    name="pick-up-order-assessment-condition-visual-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-visual-value-ok">Mittel</label>
-                            </div>
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-visual-value-bad"
-                                    name="pick-up-order-assessment-condition-visual-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-visual-value-bad">Schlecht</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pick-up-order-assessment-condition-glass wrapper">
-                    <div class="checkBox checkBox--border">
-                        <h3 id="pick-up-order-assessment-condition-glass-key">Glasschäden/Steinschläge</h3>
-                        <div class="checkBox__body">
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-glass-value-no"
-                                    name="pick-up-order-assessment-condition-glass-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-glass-value-no">Nein</label>
-                            </div>
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-glass-value-yes"
-                                    name="pick-up-order-assessment-condition-glass-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-glass-value-yes">Ja, hier:</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pick-up-order-assessment-condition-damages wrapper">
-                    <div class="checkBox checkBox--border">
-                        <h3 id="pick-up-order-assessment-condition-damages-key">Unfallschäden/Hagelschäden</h3>
-                        <div class="checkBox__body">
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-damages-value-no"
-                                    name="pick-up-order-assessment-condition-damages-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-damages-value-no">Nein</label>
-                            </div>
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-damages-value-yes"
-                                    name="pick-up-order-assessment-condition-damages-value" type="radio" value="on">
-                                <div class="circle"></div>
+        <div class="pick-up-order-assessment-condition-damages wrapper">
+          <div class="checkBox checkBox--border">
+            <h3 id="pick-up-order-assessment-condition-damages-key">
+              Unfallschäden/Hagelschäden
+            </h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-damages-value-no-2"
+                  name="pick-up-order-assessment-condition-damages-value-1" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-damages-value-no-2">Nein</label>
+              </div>
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-damages-value-yes-1"
+                  name="pick-up-order-assessment-condition-damages-value-1" type="radio" value="on" />
+                <div class="circle"></div>
 
-                                <label for="pick-up-order-assessment-condition-damages-value-yes">Ja, hier:</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pick-up-order-assessment-condition-damages wrapper">
-                    <div class="checkBox checkBox--border">
-                        <h3 id="pick-up-order-assessment-condition-damages-key">Unfallschäden/Hagelschäden</h3>
-                        <div class="checkBox__body">
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-damages-value-no-2"
-                                    name="pick-up-order-assessment-condition-damages-value-1" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-damages-value-no-2">Nein</label>
-                            </div>
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-damages-value-yes-1"
-                                    name="pick-up-order-assessment-condition-damages-value-1" type="radio" value="on">
-                                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-damages-value-yes">Ja, hier:</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-condition-technical wrapper">
+          <div class="checkBox">
+            <h3 id="pick-up-order-assessment-condition-technical-key">
+              Technischer Zustand
+            </h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-technical-value-great"
+                  name="pick-up-order-assessment-condition-technical-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-technical-value-great">Sehr gut</label>
+              </div>
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-technical-value-good"
+                  name="pick-up-order-assessment-condition-technical-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-technical-value-good">Gut</label>
+              </div>
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-technical-value-ok"
+                  name="pick-up-order-assessment-condition-technical-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-technical-value-ok">Mittel</label>
+              </div>
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-technical-value-bad"
+                  name="pick-up-order-assessment-condition-technical-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-technical-value-bad">Schlecht</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-condition-timing-belt wrapper">
+          <div class="checkBox checkBox--border">
+            <h3 id="pick-up-order-assessment-condition-timing-belt-key">
+              Zahnriemenwechsel
+            </h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-timing-belt-value-no"
+                  name="pick-up-order-assessment-condition-timing-belt-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-timing-belt-value-no">Nein</label>
+              </div>
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-timing-belt-value-yes"
+                  name="pick-up-order-assessment-condition-timing-belt-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-timing-belt-value-yes">Ja, hier:</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-condition-lights wrapper">
+          <div class="checkBox checkBox--border">
+            <h3 id="pick-up-order-assessment-condition-lights-key">
+              Beleuchtung
+            </h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-lights-value-no"
+                  name="pick-up-order-assessment-condition-lights-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-lights-value-no">Nein</label>
+              </div>
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-lights-value-yes"
+                  name="pick-up-order-assessment-condition-lights-value" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-lights-value-yes">Ja, hier:</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-condition-lights wrapper">
+          <div class="checkBox checkBox--border">
+            <h3 id="pick-up-order-assessment-condition-lights-key">
+              Beleuchtung
+            </h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-lights-value-no-1"
+                  name="pick-up-order-assessment-condition-lights-value-1" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-lights-value-no-1">Nein</label>
+              </div>
+              <div class="input">
+                <input id="pick-up-order-assessment-condition-lights-value-yes-1"
+                  name="pick-up-order-assessment-condition-lights-value-1" type="radio" value="on" />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-condition-lights-value-yes-1">Ja, hier:</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pick-up-order-assessment-test-drive">
+      <div class="title">
+        <h2>Probefahrt</h2>
+      </div>
+      <div class="pick-up-order-assessment-test-drive-chassis wrapper">
+        <div class="checkBox">
+          <h3 id="pick-up-order-assessment-test-drive-chassis-key">
+            Fahrwerk
+          </h3>
 
-                                <label for="pick-up-order-assessment-condition-damages-value-yes">Ja, hier:</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pick-up-order-assessment-condition-technical wrapper">
-                    <div class="checkBox">
-                        <h3 id="pick-up-order-assessment-condition-technical-key">Technischer Zustand</h3>
-                        <div class="checkBox__body">
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-technical-value-great"
-                                    name="pick-up-order-assessment-condition-technical-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-technical-value-great">Sehr
-                                    gut</label>
-                            </div>
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-technical-value-good"
-                                    name="pick-up-order-assessment-condition-technical-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-technical-value-good">Gut</label>
-                            </div>
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-technical-value-ok"
-                                    name="pick-up-order-assessment-condition-technical-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-technical-value-ok">Mittel</label>
-                            </div>
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-technical-value-bad"
-                                    name="pick-up-order-assessment-condition-technical-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-technical-value-bad">Schlecht</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pick-up-order-assessment-condition-timing-belt wrapper">
-                    <div class="checkBox checkBox--border">
-                        <h3 id="pick-up-order-assessment-condition-timing-belt-key">Zahnriemenwechsel</h3>
-                        <div class="checkBox__body">
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-timing-belt-value-no"
-                                    name="pick-up-order-assessment-condition-timing-belt-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-timing-belt-value-no">Nein</label>
-                            </div>
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-timing-belt-value-yes"
-                                    name="pick-up-order-assessment-condition-timing-belt-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-timing-belt-value-yes">Ja,
-                                    hier:</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pick-up-order-assessment-condition-lights wrapper">
-                    <div class="checkBox checkBox--border">
-                        <h3 id="pick-up-order-assessment-condition-lights-key">Beleuchtung</h3>
-                        <div class="checkBox__body">
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-lights-value-no"
-                                    name="pick-up-order-assessment-condition-lights-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-lights-value-no">Nein</label>
-                            </div>
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-lights-value-yes"
-                                    name="pick-up-order-assessment-condition-lights-value" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-lights-value-yes">Ja, hier:</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pick-up-order-assessment-condition-lights wrapper">
-                    <div class="checkBox checkBox--border">
-                        <h3 id="pick-up-order-assessment-condition-lights-key">Beleuchtung</h3>
-                        <div class="checkBox__body">
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-lights-value-no-1"
-                                    name="pick-up-order-assessment-condition-lights-value-1" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-lights-value-no-1">Nein</label>
-                            </div>
-                            <div class="input">
-                                <input id="pick-up-order-assessment-condition-lights-value-yes-1"
-                                    name="pick-up-order-assessment-condition-lights-value-1" type="radio" value="on">
-                                <div class="circle"></div>
-                                <label for="pick-up-order-assessment-condition-lights-value-yes-1">Ja, hier:</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="checkBox__body">
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-chassis-value-ok"
+                name="pick-up-order-assessment-test-drive-chassis-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-chassis-value-ok">OK</label>
             </div>
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-chassis-value-notok"
+                name="pick-up-order-assessment-test-drive-chassis-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-chassis-value-notok">Nicht OK</label>
+            </div>
+          </div>
         </div>
-        <div class="pick-up-order-assessment-test-drive">
-            <div class="title">
-                <h2>
-                    Probefahrt
-                </h2>
+      </div>
+      <div class="pick-up-order-assessment-test-drive-steering wrapper">
+        <div class="checkBox">
+          <h3 id="pick-up-order-assessment-test-drive-steering-key">
+            Lenkung
+          </h3>
+          <div class="checkBox__body">
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-steering-value-ok"
+                name="pick-up-order-assessment-test-drive-steering-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-steering-value-ok">OK</label>
             </div>
-            <div class="pick-up-order-assessment-test-drive-chassis wrapper">
-                <div class="checkBox">
-                    <h3 id="pick-up-order-assessment-test-drive-chassis-key">
-                        Fahrwerk
-                    </h3>
-
-                    <div class="checkBox__body">
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-chassis-value-ok"
-                                name="pick-up-order-assessment-test-drive-chassis-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-chassis-value-ok">OK</label>
-                        </div>
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-chassis-value-notok"
-                                name="pick-up-order-assessment-test-drive-chassis-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-chassis-value-notok">Nicht OK</label>
-                        </div>
-                    </div>
-                </div>
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-steering-value-notok"
+                name="pick-up-order-assessment-test-drive-steering-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-steering-value-notok">Nicht OK</label>
             </div>
-            <div class="pick-up-order-assessment-test-drive-steering wrapper">
-                <div class="checkBox">
-                    <h3 id="pick-up-order-assessment-test-drive-steering-key">Lenkung</h3>
-                    <div class="checkBox__body">
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-steering-value-ok"
-                                name="pick-up-order-assessment-test-drive-steering-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-steering-value-ok">OK</label>
-                        </div>
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-steering-value-notok"
-                                name="pick-up-order-assessment-test-drive-steering-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-steering-value-notok">Nicht OK</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pick-up-order-assessment-test-drive-oil wrapper">
-                <div class="checkBox">
-                    <h3 id="pick-up-order-assessment-test-drive-oil-key">Ölstand</h3>
-                    <div class="checkBox__body">
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-oil-value-ok"
-                                name="pick-up-order-assessment-test-drive-oil-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-oil-value-ok">OK</label>
-                        </div>
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-oil-value-notok"
-                                name="pick-up-order-assessment-test-drive-oil-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-oil-value-notok">Nicht OK</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pick-up-order-assessment-test-drive-brakes wrapper">
-                <div class="checkBox">
-                    <h3 id="pick-up-order-assessment-test-drive-brakes-key">Bremsen</h3>
-                    <div class="checkBox__body">
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-brakes-value-ok"
-                                name="pick-up-order-assessment-test-drive-brakes-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-brakes-value-ok">OK</label>
-                        </div>
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-brakes-value-notok"
-                                name="pick-up-order-assessment-test-drive-brakes-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-brakes-value-notok">Nicht OK</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pick-up-order-assessment-test-drive-brakes wrapper">
-                <div class="checkBox">
-                    <h3 id="pick-up-order-assessment-test-drive-brakes-key">Bremsen</h3>
-                    <div class="checkBox__body">
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-brakes-value-ok-1"
-                                name="pick-up-order-assessment-test-drive-brakes-value-1" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-brakes-value-ok-1">OK</label>
-                        </div>
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-brakes-value-notok-1"
-                                name="pick-up-order-assessment-test-drive-brakes-value-1" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-brakes-value-notok-1">Nicht OK</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pick-up-order-assessment-test-drive-tires wrapper">
-                <div class="checkBox">
-                    <h3 id="pick-up-order-assessment-test-drive-tires-key">8-fach Bereifung</h3>
-                    <div class="checkBox__body">
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-tires-value-ok"
-                                name="pick-up-order-assessment-test-drive-tires-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-tires-value-ok">OK</label>
-                        </div>
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-tires-value-notok"
-                                name="pick-up-order-assessment-test-drive-tires-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-tires-value-notok">Nicht OK</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pick-up-order-assessment-test-drive-engine wrapper">
-                <div class="checkBox">
-                    <h3 id="pick-up-order-assessment-test-drive-engine-key">Motorgeräusch</h3>
-                    <div class="checkBox__body">
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-engine-value-ok"
-                                name="pick-up-order-assessment-test-drive-engine-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-engine-value-ok">OK</label>
-                        </div>
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-engine-value-notok"
-                                name="pick-up-order-assessment-test-drive-engine-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-engine-value-notok">Nicht OK</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pick-up-order-assessment-test-drive-flywheel wrapper">
-                <div class="checkBox">
-                    <h3 id="pick-up-order-assessment-test-drive-flywheel-key">Zweimassenschwungrad</h3>
-                    <div class="checkBox__body">
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-flywheel-value-ok"
-                                name="pick-up-order-assessment-test-drive-flywheel-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-flywheel-value-ok">OK</label>
-                        </div>
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-flywheel-value-notok"
-                                name="pick-up-order-assessment-test-drive-flywheel-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-flywheel-value-notok">Nicht OK</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pick-up-order-assessment-test-drive-clutch wrapper">
-                <div class="checkBox">
-                    <h3 id="pick-up-order-assessment-test-drive-clutch-key">Kupplung</h3>
-                    <div class="checkBox__body">
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-clutch-value-ok"
-                                name="pick-up-order-assessment-test-drive-clutch-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-clutch-value-ok">OK</label>
-                        </div>
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-clutch-value-notok"
-                                name="pick-up-order-assessment-test-drive-clutch-value" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-clutch-value-notok">Nicht OK</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pick-up-order-assessment-test-drive-clutch wrapper">
-                <div class="checkBox">
-                    <h3 id="pick-up-order-assessment-test-drive-clutch-key">Kupplung</h3>
-                    <div class="checkBox__body">
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-clutch-value-ok-1"
-                                name="pick-up-order-assessment-test-drive-clutch-value-1" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-clutch-value-ok-1">OK</label>
-                        </div>
-                        <div class="input">
-                            <input id="pick-up-order-assessment-test-drive-clutch-value-notok-1"
-                                name="pick-up-order-assessment-test-drive-clutch-value-1" type="radio" value="on">
-                            <div class="circle"></div>
-                            <label for="pick-up-order-assessment-test-drive-clutch-value-notok-1">Nicht OK</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pick-up-order-assessment-test-drive-signature">
-                <div class="input">
-                    <input id="pick-up-order-assessment-signature-confirmation-value" type="checkbox" value="on">
-                    <div class="circle check">
-                    </div>
-                    <label for="pick-up-order-assessment-signature-confirmation-value">Das Fahrzeug wurde
-                        überprüft und Probe gefahren</label>
-                </div>
-                <div id="pick-up-order-assessment-signature" class="signature">
-                    Unterschrift Bewerter
-                </div>
-            </div>
+          </div>
         </div>
-        <div class="pagination">
-            1
+      </div>
+      <div class="pick-up-order-assessment-test-drive-oil wrapper">
+        <div class="checkBox">
+          <h3 id="pick-up-order-assessment-test-drive-oil-key">Ölstand</h3>
+          <div class="checkBox__body">
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-oil-value-ok"
+                name="pick-up-order-assessment-test-drive-oil-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-oil-value-ok">OK</label>
+            </div>
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-oil-value-notok"
+                name="pick-up-order-assessment-test-drive-oil-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-oil-value-notok">Nicht OK</label>
+            </div>
+          </div>
         </div>
-    </section>
-    <section class="contract" id="contract">
-        <div class="header header--lg">
-            <p>
-                Your Logo
-            </p>
-            <h2>
-                Übergabeprotokoll des abgeschlossenen KFZ-Kaufvertrags
-            </h2>
-            <div class="header__logo">
-                <img src="./images/logo.png" alt="">
+      </div>
+      <div class="pick-up-order-assessment-test-drive-brakes wrapper">
+        <div class="checkBox">
+          <h3 id="pick-up-order-assessment-test-drive-brakes-key">Bremsen</h3>
+          <div class="checkBox__body">
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-brakes-value-ok"
+                name="pick-up-order-assessment-test-drive-brakes-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-brakes-value-ok">OK</label>
             </div>
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-brakes-value-notok"
+                name="pick-up-order-assessment-test-drive-brakes-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-brakes-value-notok">Nicht OK</label>
+            </div>
+          </div>
         </div>
-        <div class="contract__body">
-            <div class="contract__body wrapper">
-                <h2>Verkäufer
-                </h2>
-                <div class="contract-seller-name container">
-                    <h3 id="contract-seller-name-key">Name/Firma</h3>
-                    <input id="contract-seller-name-value" value="Autohaus Josefs" />
-                </div>
-                <div class="contract-seller-address container">
-                    <h3 id="contract-seller-address-key">Straße, Hausnummer</h3>
-                    <input id="contract-seller-address-value" value="Oststraße 40" />
-                </div>
-                <div class="contract-seller-location container">
-                    <h3 id="contract-seller-location-key">PLZ, Ort</h3>
-                    <input id="contract-seller-location-value" value="DE-33129&nbsp;Delbrück" />
-                </div>
-                <div class="contract-seller-phone container">
-                    <h3 id="contract-seller-phone-key">Telefonnummer</h3>
-                    <input id="contract-seller-phone-value" value="Tel.: +49 (0)5250 705500247" />
-                </div>
+      </div>
+      <div class="pick-up-order-assessment-test-drive-brakes wrapper">
+        <div class="checkBox">
+          <h3 id="pick-up-order-assessment-test-drive-brakes-key">Bremsen</h3>
+          <div class="checkBox__body">
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-brakes-value-ok-1"
+                name="pick-up-order-assessment-test-drive-brakes-value-1" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-brakes-value-ok-1">OK</label>
             </div>
-            <div class="contract__body wrapper">
-                <h2>Käufer</h2>
-                <div class="contract-buyer">
-                    <div class="contract-buyer-name container">
-                        <h3 id="contract-buyer-name-key">Name/Firma</h3>
-                        <input id="contract-buyer-name-value" value="I-Contract GmbH" />
-                    </div>
-                </div>
-                <div class="contract-buyer-address container">
-                    <h3 id="contract-buyer-address-key">Straße, Hausnummer</h3>
-                    <input id="contract-buyer-address-value" value="Stettiner Str. 6" />
-                </div>
-                <div class="contract-buyer-location container">
-                    <h3 id="contract-buyer-location-key">PLZ, Ort</h3>
-                    <input id="contract-buyer-location-value" value="30926 Seelze" />
-                </div>
-                <div class="contract-buyer-phone container">
-                    <h3 id="contract-buyer-phone-key">Telefonnummer</h3>
-                    <input id="contract-buyer-phone-value" value="+49513 7938 2929" />
-                </div>
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-brakes-value-notok-1"
+                name="pick-up-order-assessment-test-drive-brakes-value-1" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-brakes-value-notok-1">Nicht OK</label>
             </div>
-            <div class="contract-purchase-price container">
-                <div class="contract-purchase-price-body"  id="mwst">
-                    <div class="contract-purchase-price-body-content">
-                        <h3>
-                            Kaufpreis in Euro
-                        </h3>
-                        <div class="contract-purchase-price-wrapper">
-                            <input id="contract-purchase-price-value" value="2000,00" />
-                            <div class="contract-purchase-price-tax ">
-                                <h3 class="hideText">
-                                    inkl. 19% MwSt.
-                                </h3>
-
-                            </div>
-                        </div>
-                    </div>
-                    <p>
-                        <strong>
-                            Nettobetrag
-                        </strong>
-                        <span>
-                            1680,67
-                        </span>
-                    </p>
-                    <p>
-                        <strong>
-                            19% MwSt.
-                        </strong>
-                        <span>
-                            1680,67
-                        </span>
-                    </p>
-                </div>
-            </div>
+          </div>
         </div>
-        <div class="contract-vehicle">
-            <div class="contract-vehicle-body">
-                <div class="title">
-                    <h2>
-                        Fahrzeugdaten
-                    </h2>
-                </div>
-                <div class="contract-vehicle-brand container">
-                    <h3 id="contract-vehicle-brand-key">Hersteller/Typ</h3>
-                    <input id="contract-vehicle-brand-value"
-                        value="Volkswagen Passat Business LED Matrix VirtuCock AHK ACC DCC" />
-                </div>
-                <div class="contract-vehicle-first-registration container">
-                    <h3 id="contract-vehicle-first-registration-key">Erstzulassung</h3>
-                    <input id="contract-vehicle-first-registration-value" value="03/2012" />
-                </div>
-                <div class="contract-vehicle-total-mileage container">
-                    <h3 id="contract-vehicle-total-mileage-key">KFZ-Gesamtfahrleistung</h3>
-                    <input id="contract-vehicle-total-mileage-value" value="83.153 km" />
-                </div>
-                <div class="contract-vehicle-number-of-owners container">
-                    <h3 id="contract-vehicle-number-of-owners-key">Anzahl der Fahrzeughalter</h3>
-                    <input id="contract-vehicle-number-of-owners-value" value="1" />
-                </div>
-                <div class="contract-vehicle-color container">
-                    <h3 id="contract-vehicle-color-key">Farbe</h3>
-                    <input id="contract-vehicle-color-value" value="Weiß" />
-                </div>
-                <div class="contract-vehicle-performance container">
-                    <h3 id="contract-vehicle-performance-key">PS/KW</h3>
-                    <input id="contract-vehicle-performance-value" value="228 kW (310 PS)">
-                </div>
-                <div class="contract-vehicle-cubic-capacity container">
-                    <h3 id="contract-vehicle-cubic-capacity-key">Hubraum</h3>
-                    <input id="contract-vehicle-cubic-capacity-value" value="1.984 cm³" />
-                </div>
-                <div class="contract-vehicle-gear-type container">
-                    <h3 id="contract-vehicle-gear-type-key">Getriebeart</h3>
-                    <input id="contract-vehicle-gear-type-value" value="Automatik" />
-                </div>
-                <div class="contract-vehicle-fuel-type container">
-                    <h3 id="contract-vehicle-fuel-type-key">Kraftstoffart</h3>
-                    <input id="contract-vehicle-fuel-type-value" value="Benzin" />
-                </div>
-                <div class="contract-vehicle-emission-class container">
-                    <h3 id="contract-vehicle-emission-class-key">Schadstoffklasse</h3>
-                    <input id="contract-vehicle-emission-class-value" value="Euro5" />
-                </div>
-                <div class="contract-vehicle-checkbook-until container">
-                    <h3 id="contract-vehicle-checkbook-until-key">Scheckheftgepflegt</h3>
-                    <input id="contract-vehicle-checkbook-until-value" value="" />
-                </div>
-                <div class="contract-vehicle-climate-control container">
-                    <h3 id="contract-vehicle-climate-control-key">Klima</h3>
-                    <input id="contract-vehicle-climate-control-value" value="2-Zonen-Klimaautomatik" />
-                </div>
-                <div class="contract-vehicle-inspection container">
-                    <h3 id="contract-vehicle-inspection-key">TÜV/AU</h3>
-                    <input id="contract-vehicle-inspection-value" value="Neu" />
-                </div>
-                <div class="contract-vehicle-vehicle-type container">
-                    <h3 for="contract-vehicle-vehicle-type-key">Fahrzeugtyp</h3>
-                    <input id="contract-vehicle-vehicle-type-value" value="Limousine" />
-                </div>
-                <div class="contract-vehicle-number-of-doors container">
-                    <h3 for="contract-vehicle-number-of-doors-key">Anzahl der Türen</h3>
-                    <input id="contract-vehicle-number-of-doors-value" value="4/5" />
-                </div>
-                <div class="contract-vehicle-eu-import container">
-                    <h3 id="contract-vehicle-eu-import-key">EU-Import</h3>
-                    <input id="contract-vehicle-eu-import-value" value="Nein" />
-                </div>
-                <div class="contract-vehicle-commercially-used container">
-                    <h3 id="contract-vehicle-commercially-used-key">Gewerblich genutzt ab EZ</h3>
-                    <input id="contract-vehicle-commercially-used-value" value="Nein" />
-                </div>
-                <div class="contract-vehicle-accident-free container pop" id="unfallfrei">
-                    <h3 for="contract-vehicle-details-options">Unfallfrei</h3>
-                    <input id="contract-vehicle-accident-free-value" value="Ja" />
-                </div>
-                <div class="contract-vehicle-repainting container pop" id="nachlackierung">
-                    <h3 for="contract-vehicle-details-options">Nachlackierung</h3>
-                    <input id="contract-vehicle-repainting-value" value="Nein" />
-                </div>
-                <div class="contract-vehicle-ready-to-drive container">
-                    <h3 id="contract-vehicle-ready-to-drive-key">Uneingeschränkt fahrbereit</h3>
-                    <input id="contract-vehicle-ready-to-drive-value" value="Ja" />
-                </div>
-                <div class="contract-vehicle-engine-gearbox-clutch container">
-                    <h3 id="contract-vehicle-engine-gearbox-clutch-key">Motor, Getriebe, Kupplung</h3>
-                    <input id="contract-vehicle-engine-gearbox-clutch-value" value="Alles in Ordnung" />
-                </div>
-                <div class="contract-vehicle-damages container pop" id="schäden">
-                    <h3 for="contract-vehicle-damages-options">Sonnstige Schäden</h3>
-                    <input id="contract-vehicle-damages-value" value="-" />
-                </div>
-                <div class="contract-vehicle-id container">
-                    <h3 id="contract-vehicle-id-key">Fahrzeug-Ident.-Nr.</h3>
-                    <input id="contract-vehicle-id-value" value="">
-                </div>
+      </div>
+      <div class="pick-up-order-assessment-test-drive-tires wrapper">
+        <div class="checkBox">
+          <h3 id="pick-up-order-assessment-test-drive-tires-key">
+            8-fach Bereifung
+          </h3>
+          <div class="checkBox__body">
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-tires-value-ok"
+                name="pick-up-order-assessment-test-drive-tires-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-tires-value-ok">OK</label>
             </div>
-            <div class="contract-vehicle-body">
-                <div class="title">
-                    <h2>
-                        Fahrzeugdetails
-                    </h2>
-                </div>
-                <div class="contract-vehicle-body-checkBoxes">
-                    <div class="checkBox">
-                        <h3 id="contract-vehicle-checkBox key">Bremsen</h3>
-                        <div class="checkBox__body" id="checkBoxes">
-                        </div>
-                    </div>
-                </div>
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-tires-value-notok"
+                name="pick-up-order-assessment-test-drive-tires-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-tires-value-notok">Nicht OK</label>
             </div>
+          </div>
         </div>
-        <div class="pagination">
-            2
-        </div>
-    </section>
-    <section class="contractDetails">
-        <div class="header">
-            <p>
-                Your Logo
-            </p>
-            <h2>
-                Übergabeprotokoll des abgeschlossenen KFZ-Kaufvertrags
-            </h2>
-            <div class="header__logo">
-                <img src="./images/logo.png" alt="">
+      </div>
+      <div class="pick-up-order-assessment-test-drive-engine wrapper">
+        <div class="checkBox">
+          <h3 id="pick-up-order-assessment-test-drive-engine-key">
+            Motorgeräusch
+          </h3>
+          <div class="checkBox__body">
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-engine-value-ok"
+                name="pick-up-order-assessment-test-drive-engine-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-engine-value-ok">OK</label>
             </div>
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-engine-value-notok"
+                name="pick-up-order-assessment-test-drive-engine-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-engine-value-notok">Nicht OK</label>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="pick-up-order-assessment-test-drive-flywheel wrapper">
+        <div class="checkBox">
+          <h3 id="pick-up-order-assessment-test-drive-flywheel-key">
+            Zweimassenschwungrad
+          </h3>
+          <div class="checkBox__body">
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-flywheel-value-ok"
+                name="pick-up-order-assessment-test-drive-flywheel-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-flywheel-value-ok">OK</label>
+            </div>
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-flywheel-value-notok"
+                name="pick-up-order-assessment-test-drive-flywheel-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-flywheel-value-notok">Nicht OK</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pick-up-order-assessment-test-drive-clutch wrapper">
+        <div class="checkBox">
+          <h3 id="pick-up-order-assessment-test-drive-clutch-key">
+            Kupplung
+          </h3>
+          <div class="checkBox__body">
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-clutch-value-ok"
+                name="pick-up-order-assessment-test-drive-clutch-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-clutch-value-ok">OK</label>
+            </div>
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-clutch-value-notok"
+                name="pick-up-order-assessment-test-drive-clutch-value" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-clutch-value-notok">Nicht OK</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pick-up-order-assessment-test-drive-clutch wrapper">
+        <div class="checkBox">
+          <h3 id="pick-up-order-assessment-test-drive-clutch-key">
+            Kupplung
+          </h3>
+          <div class="checkBox__body">
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-clutch-value-ok-1"
+                name="pick-up-order-assessment-test-drive-clutch-value-1" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-clutch-value-ok-1">OK</label>
+            </div>
+            <div class="input">
+              <input id="pick-up-order-assessment-test-drive-clutch-value-notok-1"
+                name="pick-up-order-assessment-test-drive-clutch-value-1" type="radio" value="on" />
+              <div class="circle"></div>
+              <label for="pick-up-order-assessment-test-drive-clutch-value-notok-1">Nicht OK</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pick-up-order-assessment-test-drive-signature">
+        <div class="input">
+          <input id="pick-up-order-assessment-signature-confirmation-value" type="checkbox" value="on" />
+          <div class="circle check"></div>
+          <label for="pick-up-order-assessment-signature-confirmation-value">Das Fahrzeug wurde überprüft und Probe
+            gefahren</label>
+        </div>
+        <div id="pick-up-order-assessment-signature" class="signature">
+          Unterschrift Bewerter
+        </div>
+      </div>
+    </div>
+    <div class="pagination">1</div>
+  </section>
+  <section class="contract" id="contract">
+    <div class="header header--lg">
+      <p>Your Logo</p>
+      <h2>Übergabeprotokoll des abgeschlossenen KFZ-Kaufvertrags</h2>
+      <div class="header__logo">
+        <img src="./images/logo.png" alt="" />
+      </div>
+    </div>
+    <div class="contract__body">
+      <div class="contract__body wrapper">
+        <h2>Verkäufer</h2>
+        <div class="contract-seller-name container">
+          <h3 id="contract-seller-name-key">Name/Firma</h3>
+          <input id="contract-seller-name-value" value="Autohaus Josefs" />
+        </div>
+        <div class="contract-seller-address container">
+          <h3 id="contract-seller-address-key">Straße, Hausnummer</h3>
+          <input id="contract-seller-address-value" value="Oststraße 40" />
+        </div>
+        <div class="contract-seller-location container">
+          <h3 id="contract-seller-location-key">PLZ, Ort</h3>
+          <input id="contract-seller-location-value" value="DE-33129&nbsp;Delbrück" />
+        </div>
+        <div class="contract-seller-phone container">
+          <h3 id="contract-seller-phone-key">Telefonnummer</h3>
+          <input id="contract-seller-phone-value" value="Tel.: +49 (0)5250 705500247" />
+        </div>
+      </div>
+      <div class="contract__body wrapper">
+        <h2>Käufer</h2>
+        <div class="contract-buyer">
+          <div class="contract-buyer-name container">
+            <h3 id="contract-buyer-name-key">Name/Firma</h3>
+            <input id="contract-buyer-name-value" value="I-Contract GmbH" />
+          </div>
+        </div>
+        <div class="contract-buyer-address container">
+          <h3 id="contract-buyer-address-key">Straße, Hausnummer</h3>
+          <input id="contract-buyer-address-value" value="Stettiner Str. 6" />
+        </div>
+        <div class="contract-buyer-location container">
+          <h3 id="contract-buyer-location-key">PLZ, Ort</h3>
+          <input id="contract-buyer-location-value" value="30926 Seelze" />
+        </div>
+        <div class="contract-buyer-phone container">
+          <h3 id="contract-buyer-phone-key">Telefonnummer</h3>
+          <input id="contract-buyer-phone-value" value="+49513 7938 2929" />
+        </div>
+      </div>
+      <div class="contract-purchase-price container">
+        <div class="contract-purchase-price-body" id="mwst">
+          <div class="contract-purchase-price-body-content">
+            <h3>Kaufpreis in Euro</h3>
+            <div class="contract-purchase-price-wrapper">
+              <input id="contract-purchase-price-value" value="2000,00" />
+              <div class="contract-purchase-price-tax">
+                <h3 class="hideText">inkl. 19% MwSt.</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            <strong> Nettobetrag </strong>
+            <span> 1680,67 </span>
+          </p>
+          <p>
+            <strong> 19% MwSt. </strong>
+            <span> 1680,67 </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="contract-vehicle">
+      <div class="contract-vehicle-body">
         <div class="title">
-            <h2>
-                Fahrzeugdetails
-            </h2>
+          <h2>Fahrzeugdaten</h2>
         </div>
-        <div class="contractDetails__body">
-            <div class="contractDetails-description container">
-                <h3 id="contract-vehicle-details-description-key">Beschreibung</h3>
-                <textarea id="contract-vehicle-details-description-value">
+        <div class="contract-vehicle-brand container">
+          <h3 id="contract-vehicle-brand-key">Hersteller/Typ</h3>
+          <input id="contract-vehicle-brand-value"
+            value="Volkswagen Passat Business LED Matrix VirtuCock AHK ACC DCC" />
+        </div>
+        <div class="contract-vehicle-first-registration container">
+          <h3 id="contract-vehicle-first-registration-key">Erstzulassung</h3>
+          <input id="contract-vehicle-first-registration-value" value="03/2012" />
+        </div>
+        <div class="contract-vehicle-total-mileage container">
+          <h3 id="contract-vehicle-total-mileage-key">
+            KFZ-Gesamtfahrleistung
+          </h3>
+          <input id="contract-vehicle-total-mileage-value" value="83.153 km" />
+        </div>
+        <div class="contract-vehicle-number-of-owners container">
+          <h3 id="contract-vehicle-number-of-owners-key">
+            Anzahl der Fahrzeughalter
+          </h3>
+          <input id="contract-vehicle-number-of-owners-value" value="1" />
+        </div>
+        <div class="contract-vehicle-color container">
+          <h3 id="contract-vehicle-color-key">Farbe</h3>
+          <input id="contract-vehicle-color-value" value="Weiß" />
+        </div>
+        <div class="contract-vehicle-performance container">
+          <h3 id="contract-vehicle-performance-key">PS/KW</h3>
+          <input id="contract-vehicle-performance-value" value="228 kW (310 PS)" />
+        </div>
+        <div class="contract-vehicle-cubic-capacity container">
+          <h3 id="contract-vehicle-cubic-capacity-key">Hubraum</h3>
+          <input id="contract-vehicle-cubic-capacity-value" value="1.984 cm³" />
+        </div>
+        <div class="contract-vehicle-gear-type container">
+          <h3 id="contract-vehicle-gear-type-key">Getriebeart</h3>
+          <input id="contract-vehicle-gear-type-value" value="Automatik" />
+        </div>
+        <div class="contract-vehicle-fuel-type container">
+          <h3 id="contract-vehicle-fuel-type-key">Kraftstoffart</h3>
+          <input id="contract-vehicle-fuel-type-value" value="Benzin" />
+        </div>
+        <div class="contract-vehicle-emission-class container">
+          <h3 id="contract-vehicle-emission-class-key">Schadstoffklasse</h3>
+          <input id="contract-vehicle-emission-class-value" value="Euro5" />
+        </div>
+        <div class="contract-vehicle-checkbook-until container">
+          <h3 id="contract-vehicle-checkbook-until-key">
+            Scheckheftgepflegt
+          </h3>
+          <input id="contract-vehicle-checkbook-until-value" value="" />
+        </div>
+        <div class="contract-vehicle-climate-control container">
+          <h3 id="contract-vehicle-climate-control-key">Klima</h3>
+          <input id="contract-vehicle-climate-control-value" value="2-Zonen-Klimaautomatik" />
+        </div>
+        <div class="contract-vehicle-inspection container">
+          <h3 id="contract-vehicle-inspection-key">TÜV/AU</h3>
+          <input id="contract-vehicle-inspection-value" value="Neu" />
+        </div>
+        <div class="contract-vehicle-vehicle-type container">
+          <h3 for="contract-vehicle-vehicle-type-key">Fahrzeugtyp</h3>
+          <input id="contract-vehicle-vehicle-type-value" value="Limousine" />
+        </div>
+        <div class="contract-vehicle-number-of-doors container">
+          <h3 for="contract-vehicle-number-of-doors-key">Anzahl der Türen</h3>
+          <input id="contract-vehicle-number-of-doors-value" value="4/5" />
+        </div>
+        <div class="contract-vehicle-eu-import container">
+          <h3 id="contract-vehicle-eu-import-key">EU-Import</h3>
+          <input id="contract-vehicle-eu-import-value" value="Nein" />
+        </div>
+        <div class="contract-vehicle-commercially-used container">
+          <h3 id="contract-vehicle-commercially-used-key">
+            Gewerblich genutzt ab EZ
+          </h3>
+          <input id="contract-vehicle-commercially-used-value" value="Nein" />
+        </div>
+        <div class="contract-vehicle-accident-free container" id="unfallfrei">
+          <h3 for="contract-vehicle-details-options">Unfallfrei</h3>
+          <div class="container-group">
+            <input id="contract-buyer-name-value" value="I-Contract GmbH" />
+          </div>
+        </div>
+        <div class="contract-vehicle-repainting container" id="nachlackierung">
+          <h3 for="contract-vehicle-details-options">Nachlackierung</h3>
+          <div class="container-group">
+            <input id="contract-buyer-name-value" value="Nein" />
+          </div>
+        </div>
+        <div class="contract-vehicle-ready-to-drive container">
+          <h3 id="contract-vehicle-ready-to-drive-key">
+            Uneingeschränkt fahrbereit
+          </h3>
+          <input id="contract-vehicle-ready-to-drive-value" value="Ja" />
+        </div>
+        <div class="contract-vehicle-engine-gearbox-clutch container">
+          <h3 id="contract-vehicle-engine-gearbox-clutch-key">
+            Motor, Getriebe, Kupplung
+          </h3>
+          <input id="contract-vehicle-engine-gearbox-clutch-value" value="Alles in Ordnung" />
+        </div>
+        <div class="contract-vehicle-damages container" id="schäden">
+          <h3 for="contract-vehicle-damages-options">Sonnstige Schäden</h3>
+          <div class="container-group">
+            <input id="contract-buyer-name-value" value="-" />
+          </div>
+        </div>
+        <div class="contract-vehicle-id container">
+          <h3 id="contract-vehicle-id-key">Fahrzeug-Ident.-Nr.</h3>
+          <input id="contract-vehicle-id-value" value="" />
+        </div>
+      </div>
+      <div class="contract-vehicle-body">
+        <div class="title">
+          <h2>Fahrzeugdetails</h2>
+        </div>
+        <div class="contract-vehicle-body-checkBoxes">
+          <div class="checkBox">
+            <h3 id="contract-vehicle-checkBox key">Bremsen</h3>
+            <div class="checkBox__body" id="checkBoxes"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pagination">2</div>
+  </section>
+  <section class="contractDetails">
+    <div class="header">
+      <p>Your Logo</p>
+      <h2>Übergabeprotokoll des abgeschlossenen KFZ-Kaufvertrags</h2>
+      <div class="header__logo">
+        <img src="./images/logo.png" alt="" />
+      </div>
+    </div>
+    <div class="title">
+      <h2>Fahrzeugdetails</h2>
+    </div>
+    <div class="contractDetails__body">
+      <div class="contractDetails-description container">
+        <h3 id="contract-vehicle-details-description-key">Beschreibung</h3>
+        <textarea id="contract-vehicle-details-description-value">
 Gebrauchtwagenschutz durch CarGarantie in unserem Hause geprüft (Durchsicht) Nichtraucherfahrzeug 
 Scheckheftgepflegt Irrtümer und Zwischenverkauf vorbehalten
 Änderungen, Zwischenverkauf und Irrtümer vorbehalten.</textarea>
-            </div>
-            <div class="contractDetails-agreements container">
-                <h3>Besondere Vereinbarungen</h3>
-                <textarea id="contract-special-terms-value" onkeyup="handleInput(event)">
+      </div>
+      <div class="contractDetails-agreements container">
+        <h3>Besondere Vereinbarungen</h3>
+        <textarea id="contract-special-terms-value" onkeyup="handleInput(event)">
 Gebrauchtwagenschutz durch CarGarantie in unserem Hause geprüft
 (Durchsicht) Nichtraucherfahrzeug
 Scheckheftgepflegt Irrtümer und Zwischenverkauf vorbehalten
 Änderungen, Zwischenverkauf und Irrtümer vorbehalten.</textarea>
-            </div>
-            <div class="contractDetails-general-terms container">
-                <h3>Allgemeine Vertragsbedingungen</h3>
-                <textarea id="contract-general-terms-value">
+      </div>
+      <div class="contractDetails-general-terms container">
+        <h3>Allgemeine Vertragsbedingungen</h3>
+        <textarea id="contract-general-terms-value">
 Folgende Vertragsbedingungen werden beidseitig eingewilligt.eingewilligt.
 1. Der Verkäufer übernimmt nach derFahrzeugübergabe keinerlei Garantie oder Gewährleistung für das Fahrzeug.
 2. Mündliche- undschriftliche Absagen, sind aufgrund von anfallenden Kosten, nach KFZ-Email Bestätigung nicht wirksam.3. Der Verkäufer bestätigt, dass die oben festgehaltenen Daten überprüft sind und der Richtigkeit entsprechen.
 4. Dieser Vertrag ist rechtskräftig, verbindlich und auch ohne Unterschrift gültig.
                 </textarea>
+      </div>
+    </div>
+    <div class="contractDetails-signatures contract-signatures wrapper">
+      <div class="title">
+        <h2>Unterschriften</h2>
+      </div>
+      <div class="contractDetails-signatures-row">
+        <div class="contractDetails-signatures-buyer container">
+          <div class="contractDetails-signatures-row-inputs">
+            <h3>Der Käufer bestätigt den Empfang von:</h3>
+            <div class="input">
+              <input type="checkbox" value="on" />
+              <div class="circle check"></div>
+              <label id="contract-signatures-buyer-registration-certificate-key">Zulassungsbescheinigung Teil I &amp;
+                II</label>
             </div>
-        </div>
-        <div class="contractDetails-signatures contract-signatures wrapper">
-            <div class="title">
-                <h2>
-                    Unterschriften
-                </h2>
+            <div class="input">
+              <input type="checkbox" />
+              <div class="circle check"></div>
+              <label id="contract-signatures-buyer-vehicle-and-keys-key">KFZ mit____Schlüssel(n)</label>
             </div>
-            <div class="contractDetails-signatures-row">
-                <div class="contractDetails-signatures-buyer container">
-                    <div class="contractDetails-signatures-row-inputs">
-                        <h3>Der Käufer bestätigt den Empfang von:</h3>
-                        <div class="input">
-                            <input type="checkbox" value="on">
-                            <div class="circle check"></div>
-                            <label id="contract-signatures-buyer-registration-certificate-key">Zulassungsbescheinigung
-                                Teil
-                                I
-                                &amp; II</label>
-                        </div>
-                        <div class="input">
-                            <input type="checkbox">
-                            <div class="circle check"></div>
-                            <label id="contract-signatures-buyer-vehicle-and-keys-key">KFZ mit____Schlüssel(n)</label>
-                        </div>
-                    </div>
-                    <p>
-                        Datum und Ort:
-                    </p>
-                </div>
-                <div class="contractDetails-signatures-buyer-value caption container">
-                    <label for="confirmation-signature-buyer-value">Unterschrift Käufer:</label>
-                    <input type="hidden" name="confirmation-signature-buyer-value"
-                        id="confirmation-signature-buyer-value" value="">
-                </div>
+          </div>
+          <p>Datum und Ort:</p>
+        </div>
+        <div class="contractDetails-signatures-buyer-value caption container">
+          <label for="confirmation-signature-buyer-value">Unterschrift Käufer:</label>
+          <input type="hidden" name="confirmation-signature-buyer-value" id="confirmation-signature-buyer-value"
+            value="" />
+        </div>
+      </div>
+      <div class="contractDetails-signatures-row">
+        <div class="contractDetails-signatures-seller container">
+          <div class="contractDetails-signatures-row-inputs">
+            <h3>Der Verkäufer bestätigt den Empfang von:</h3>
+            <div class="input">
+              <input type="checkbox" value="on" />
+              <div class="circle check"></div>
+              <label id="contract-signatures-seller-price-key">Kaufpreises</label>
             </div>
-            <div class="contractDetails-signatures-row">
-                <div class="contractDetails-signatures-seller container">
-                    <div class="contractDetails-signatures-row-inputs">
-                        <h3>Der Verkäufer bestätigt den Empfang von:
-                        </h3>
-                        <div class="input">
-                            <input type="checkbox" value="on">
-                            <div class="circle check"></div>
-                            <label id="contract-signatures-seller-price-key">Kaufpreises</label>
-                        </div>
-                    </div>
-                    <p>
-                        Datum und Ort:
-                    </p>
-                </div>
-                <div class="contractDetails-signatures-seller-value caption container">
-                    <label for="confirmation-signature-seller-value caption">Unterschrift Verkäufer:</label>
-                    <input type="hidden" name="confirmation-signature-seller-value"
-                        id="confirmation-signature-seller-value" value="">
-                </div>
-            </div>
+          </div>
+          <p>Datum und Ort:</p>
         </div>
-        <div class="pagination">
-            3
+        <div class="contractDetails-signatures-seller-value caption container">
+          <label for="confirmation-signature-seller-value caption">Unterschrift Verkäufer:</label>
+          <input type="hidden" name="confirmation-signature-seller-value" id="confirmation-signature-seller-value"
+            value="" />
         </div>
-    </section>
-    <section class="image">
-        <img src="./images/screen.PNG" alt="">
-        <div class="pagination">
-            4
-        </div>
-    </section>
-    <div class="popUp">
+      </div>
+    </div>
+    <div class="pagination">3</div>
+  </section>
+  <section class="imageSection">
+    <img src="./images/cars.png" alt="" />
+    <div class="pagination">4</div>
+  </section>
+  <!-- <div class="popUp">
         <div class="popUp__inner">
             <div class="popUpItem" data-pop="unfallfrei">
                 <div class="popUpItem__header">
@@ -2069,143 +1947,165 @@ Folgende Vertragsbedingungen werden beidseitig eingewilligt.eingewilligt.
             </div>
             <div class="popUp__inner-close"></div>
         </div>
-    </div>
-    <!-- js -->
-    <script >
-        // data
-const array = [
-  "Start/Stopp-Automatik",
-  "Abstandswarner",
-  "Blendfreies Fernlicht",
-  "Totwinkel-Assistent",
-  "Schiebedach",
-  "ABS",
-  "Start/Stopp-Automatik",
-  "Abstandswarner",
-  "Blendfreies Fernlicht",
-  "Totwinkel-Assistent",
-  "Schiebedach",
-  "ABS",
-  "Start/Stopp-Automatik",
-  "Abstandswarner",
-  "Blendfreies Fernlicht",
-  "Totwinkel-Assistent",
-  "Schiebedach",
-  "ABS",
-  "Start/Stopp-Automatik",
-  "Abstandswarner",
-  "Blendfreies Fernlicht",
-  "Totwinkel-Assistent",
-  "Schiebedach",
-  "ABS",
-  "Start/Stopp-Automatik",
-  "Abstandswarner",
-  "Blendfreies Fernlicht",
-  "Totwinkel-Assistent",
-  "Schiebedach",
-  "ABS",
-];
-const createCheckboxes = (array, variant = "A") => {
-  let checkBoxes = document.querySelector("#checkBoxes");
-  checkBoxes.innerHTML = "";
-  if (variant === "A") {
-    array.forEach((element, index) => {
-      let input = document.createElement("div");
-      input.classList.add("input");
-      input.innerHTML = `
+    </div> -->
+  <!-- js -->
+  <script>
+    // data
+    let testJSON =
+      '[ "Start/Stopp-Automatik","Abstandswarner", "Blendfreies Fernlicht", "Totwinkel-Assistent","Schiebedach", "ABS","Start/Stopp-Automatik", "Abstandswarner","Blendfreies Fernlicht","Totwinkel-Assistent","Schiebedach","ABS", "Start/Stopp-Automatik","Abstandswarner", "Blendfreies Fernlicht", "Totwinkel-Assistent","Schiebedach","ABS","Start/Stopp-Automatik","Abstandswarner","Blendfreies Fernlicht","Totwinkel-Assistent","Schiebedach","ABS","Start/Stopp-Automatik","Abstandswarner","Blendfreies Fernlicht","Totwinkel-Assistent","Schiebedach","ABS"]';
+    let array = [
+      "Start/Stopp-Automatik",
+      "Abstandswarner",
+      "Blendfreies Fernlicht",
+      "Totwinkel-Assistent",
+      "Schiebedach",
+      "ABS",
+      "Start/Stopp-Automatik",
+      "Abstandswarner",
+      "Blendfreies Fernlicht",
+      "Totwinkel-Assistent",
+      "Schiebedach",
+      "ABS",
+      "Start/Stopp-Automatik",
+      "Abstandswarner",
+      "Blendfreies Fernlicht",
+      "Totwinkel-Assistent",
+      "Schiebedach",
+      "ABS",
+      "Start/Stopp-Automatik",
+      "Abstandswarner",
+      "Blendfreies Fernlicht",
+      "Totwinkel-Assistent",
+      "Schiebedach",
+      "ABS",
+      "Start/Stopp-Automatik",
+      "Abstandswarner",
+      "Blendfreies Fernlicht",
+      "Totwinkel-Assistent",
+      "Schiebedach",
+      "ABS",
+    ];
+
+    let checkBoxes = document.querySelector("#checkBoxes");
+
+    const createCheckboxes = (data, variant = "A") => {
+      checkBoxes.innerHTML = "";
+      const array = typeof data === "string" ? JSON.parse(data) : data;
+      console.log("array", array);
+      if (variant === "A") {
+        array.forEach((element, index) => {
+          let input = document.createElement("div");
+          input.classList.add("input");
+          input.innerHTML = `
       <input  id="${index}" name="${parseInt(index / 6)}" type="radio">
       <div class="circle"></div>
       <label for="${index}">
       ${element}
         </label>
    `;
-      checkBoxes.appendChild(input);
-    });
-  } else {
-    let input = document.createElement("div");
-    input.classList.add("input--text");
-    let textarea = document.createElement("textarea");
-    textarea.innerHTML = array.join(", ");
-    input.innerHTML = textarea.outerHTML;
-    checkBoxes.appendChild(input);
-  }
-};
-// Input ebale/disable
-const inputControl = (inputState = false) => {
-  let contract = document.getElementById("contract");
-  let contractInput = contract.querySelectorAll("input");
-  let contractTexts = contract.querySelectorAll("textarea");
-  contractInput.forEach((input) => {
-    if (inputState) {
-      input.setAttribute("disabled", "");
-    } else {
-      input.removeAttribute("disabled");
-    }
-  });
-  contractTexts.forEach((contractText) => {
-    if (inputState) {
-      contractText.setAttribute("disabled", "");
-    } else {
-      contractText.removeAttribute("disabled");
-    }
-  });
-};
-// Pop------------------------------------
-const popControl = (inputState = false) => {
-  if (inputState) {
-    let pops = document.querySelectorAll(".pop");
-    let popUp = document.querySelector(".popUp");
-    let popUpItems = document.querySelectorAll(".popUpItem");
-    pops.forEach((pop) => {
-      let popDisbale = pop.querySelector("input");
-      popDisbale.setAttribute("disabled", "");
-      pop.addEventListener("click", () => {
-        let popId = pop.getAttribute("id");
-        let popClose = popUp.querySelector(".popUp__inner-close");
-        popUp.classList.add("active");
-        popUpItems.forEach((popUpItem) => {
-          let popUpItem__id = popUpItem.getAttribute("data-pop");
-          if (popId == popUpItem__id) {
-            popUpItem.classList.add("active");
-          } else {
-            popUpItem.classList.remove("active");
-          }
+          checkBoxes.appendChild(input);
         });
-        popClose.addEventListener("click", () => {
-          popUp.classList.remove("active");
-        });
+      } else {
+        let input = document.createElement("div");
+        input.classList.add("input--text");
+        let textarea = document.createElement("textarea");
+        textarea.innerHTML = array.join(", ");
+        input.innerHTML = textarea.outerHTML;
+        checkBoxes.appendChild(input);
+      }
+    };
+
+    // Input ebale/disable
+    let contract = document.getElementById("contract");
+    let contractInput = contract.querySelectorAll("input");
+    let contractTexts = contract.querySelectorAll("textarea");
+    let inputControl = (isEnabled = false) => {
+      contractInput.forEach((input) => {
+        if (!isEnabled) {
+          input.setAttribute("disabled", "");
+        } else {
+          input.removeAttribute("disabled");
+        }
       });
-    });
-  }
-};
-// Set new filed Data
-const filedArray = ["filed-1", "filed-2", "field-3", "filed-4"];
-const setFieldData = (filedArray, filedState = true) => {
-  let filedData = document.querySelector(".contract-vehicle-body");
-  if (filedState) {
-    filedArray.forEach((element) => {
-      let container = document.createElement("div");
-      container.classList.add("container");
-      container.innerHTML = `<h3 for="contract-vehicle-damages-options">${element}</h3><input>`;
-      filedData.appendChild(container);
-    });
-  }
-};
+      contractTexts.forEach((contractText) => {
+        if (!isEnabled) {
+          contractText.setAttribute("disabled", "");
+        } else {
+          contractText.removeAttribute("disabled");
+        }
+      });
+    };
+    let inputState = false;
+    const addInputs = (field, array) => {
+      const container = document.getElementById(field);
+      let inputs = container.querySelector(".container-group");
+      inputs.innerHTML = "";
+      array.forEach((element) => {
+        let newInput = document.createElement("input");
+        newInput.setAttribute("type", "text");
+        newInput.value = element;
+        newInput.id = element;
+        inputs.appendChild(newInput);
+      });
+    };
 
-// Hide mwst
-const hideMwst = (mwstState = true) => {
-  if (mwstState) {
-    let mwst = document.querySelector("#mwst");
-    mwst.classList.add("active");
-  }
-};
-hideMwst();
-setFieldData(filedArray);
-inputControl();
-popControl();
-createCheckboxes(array);
+    // // Pop------------------------------------
+    // if (inputState == false) {
+    //   let pops = document.querySelectorAll(".pop");
+    //   let popUp = document.querySelector(".popUp");
+    //   let popUpItems = document.querySelectorAll(".popUpItem");
+    //   pops.forEach((pop) => {
+    //     let popDisbale = pop.querySelector("input");
+    //     popDisbale.setAttribute("disabled", "");
+    //     pop.addEventListener("click", () => {
+    //       let popId = pop.getAttribute("id");
+    //       let popClose = popUp.querySelector(".popUp__inner-close");
+    //       popUp.classList.add("active");
+    //       popUpItems.forEach((popUpItem) => {
+    //         let popUpItem__id = popUpItem.getAttribute("data-pop");
+    //         if (popId == popUpItem__id) {
+    //           popUpItem.classList.add("active");
+    //         } else {
+    //           popUpItem.classList.remove("active");
+    //         }
+    //       });
+    //       popClose.addEventListener("click", () => {
+    //         popUp.classList.remove("active");
+    //       });
+    //     });
+    //   });
+    // }
 
-    </script>
+    // Set new filed Data
+    const filedArray = ["field1", "field2", "field3", "field4"];
+    const setFieldData = (filedArray, filedState = true) => {
+      let filedData = document.querySelector(".contract-vehicle-body");
+      if (filedState) {
+        filedArray.forEach((element) => {
+          let container = document.createElement("div");
+          container.classList.add("container");
+          container.innerHTML = `<h3 for="contract-vehicle-damages-options">${element}</h3><input>`;
+          filedData.appendChild(container);
+        });
+      }
+    };
+
+    // Hide mwst
+    const setMwstState = (mwstState = true) => {
+      let mwst = document.querySelector("#mwst");
+      if (mwstState) {
+        mwst.classList.add("active");
+      } else mwst.classList.remove("active");
+    };
+
+    // setMwstState(true|false);
+    // setFieldData(filedArray);
+    // inputControl(true|false);
+    // addInputs('nachlackierung',['test1','test2','test3'])
+    // addInputs('unfallfrei',['test1','test2','test3'])
+    // addInputs('schäden',['test1','test2','test3'])
+    createCheckboxes(array);
+  </script>
 </body>
 
 </html>
