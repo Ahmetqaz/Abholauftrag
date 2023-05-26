@@ -112,6 +112,7 @@ inputControl();
 //     });
 //   });
 // }
+
 // Set new filed Data
 // const filedArray = ["ja", "ja", "ja", "ja"];
 // const setFieldData = (filedArray, filedState = true) => {
@@ -133,10 +134,6 @@ const hideMwst = (mwstState = false) => {
     mwst.classList.add("active");
   }
 };
-
-
-
-
 
 hideMwst();
 // setFieldData(filedArray);
