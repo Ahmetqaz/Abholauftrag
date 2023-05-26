@@ -65,10 +65,11 @@ const createCheckboxes = (data, variant = "A") => {
 
 // Input ebale/disable
 let inputState = false;
-  let contract = document.getElementById("contract");
-  let contractInput = contract.querySelectorAll("input");
-  let contractTexts = contract.querySelectorAll("textarea");
-let inputControl = () => {
+let contract = document.getElementById("contract");
+let contractInput = contract.querySelectorAll("input");
+let contractTexts = contract.querySelectorAll("textarea");
+
+let inputControl = (inputState) => {
   contractInput.forEach((input) => {
     if (inputState) {
       input.setAttribute("disabled", "");
@@ -84,10 +85,11 @@ let inputControl = () => {
     }
   });
 };
-inputControl();
 
 // Pop------------------------------------
-if (inputState == false) {
+// Pop------------------------------------
+const popControl = (inputState = false) => {
+  if (inputState) {
     let pops = document.querySelectorAll(".pop");
     let popUp = document.querySelector(".popUp");
     let popUpItems = document.querySelectorAll(".popUpItem");
@@ -114,10 +116,36 @@ if (inputState == false) {
   }
 };
 
+if (inputState == false) {
+  let pops = document.querySelectorAll(".pop");
+  let popUp = document.querySelector(".popUp");
+  let popUpItems = document.querySelectorAll(".popUpItem");
+  pops.forEach((pop) => {
+    let popDisbale = pop.querySelector("input");
+    popDisbale.setAttribute("disabled", "");
+    pop.addEventListener("click", () => {
+      let popId = pop.getAttribute("id");
+      let popClose = popUp.querySelector(".popUp__inner-close");
+      popUp.classList.add("active");
+      popUpItems.forEach((popUpItem) => {
+        let popUpItem__id = popUpItem.getAttribute("data-pop");
+        if (popId == popUpItem__id) {
+          popUpItem.classList.add("active");
+        } else {
+          popUpItem.classList.remove("active");
+        }
+      });
+      popClose.addEventListener("click", () => {
+        popUp.classList.remove("active");
+      });
+    });
+  });
+}
+
 // Set new filed Data
 const filedArray = ["filed-1", "filed-2", "field-3", "filed-4"];
 const setFieldData = (filedArray, filedState = true) => {
-let filedData = document.querySelector(".contract-vehicle-body");
+  let filedData = document.querySelector(".contract-vehicle-body");
   if (filedState) {
     filedArray.forEach((element) => {
       let container = document.createElement("div");
@@ -129,6 +157,6 @@ let filedData = document.querySelector(".contract-vehicle-body");
 };
 
 setFieldData(filedArray);
-inputControl();
-popControl();
+inputControl(inputState);
+popControl(inputState);
 createCheckboxes(array);
