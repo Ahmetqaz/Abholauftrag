@@ -10,7 +10,7 @@
 </head>
 
 <body class="contract-signatures pick-up-order mwst">
-  <section class="pick-up-order">
+  <section class="pick-up-order" id="pick-up-order">
     <div class="header">
       <p>Your Logo</p>
       <h2>Abholauftrag</h2>
@@ -18,7 +18,7 @@
         <img src="./images/logo.png" alt="" />
       </div>
     </div>
-    <div class="pick-up-order-info">
+    <div class="pick-up-order-info" id="pick-up-order-info">
       <div class="pick-up-order-info-wrapper">
         <h2>Fahrerinformationen</h2>
         <div class="pick-up-order-info-driver container">
@@ -86,51 +86,53 @@ Das Fahrzeug befindet sich in einem guten Zustand</textarea>
       </div>
     </div>
     <div class="pick-up-order-assessment">
-      <div class="title">
-        <h2>Fahrzeugskizze</h2>
-        <h2>Lackdichtstärke</h2>
-      </div>
-      <div class="pick-up-order-assessment-row">
-        <div class="pick-up-order-assessment-graphic">
-          <div class="pick-up-order-assessment-graphic-image">
-            <img src="./images/cars.png" alt="" />
-          </div>
+      <div class="pick-up-order-assessment-wrapper" id="pick-up-order-assessment">
+        <div class="title">
+          <h2>Fahrzeugskizze</h2>
+          <h2>Lackdichtstärke</h2>
         </div>
-        <div class="pick-up-order-assessment-paints">
-          <div class="pick-up-order-assessment-paint-front container">
-            <h3 id="pick-up-order-assessment-paint-front-key">Front</h3>
-            <input id="pick-up-order-assessment-paint-front-value" value="" />
+        <div class="pick-up-order-assessment-row">
+          <div class="pick-up-order-assessment-graphic">
+            <div class="pick-up-order-assessment-graphic-image">
+              <img src="./images/cars.png" alt="" />
+            </div>
           </div>
-          <div class="pick-up-order-assessment-paint-front container">
-            <h3 id="pick-up-order-assessment-paint-front-key">Linke Seite</h3>
-            <input id="pick-up-order-assessment-paint-front-value" value="" />
-          </div>
-          <div class="pick-up-order-assessment-paint-front container">
-            <h3 id="pick-up-order-assessment-paint-front-key">Dach</h3>
-            <input id="pick-up-order-assessment-paint-front-value" value="" />
-          </div>
-          <div class="pick-up-order-assessment-paint-front container">
-            <h3 id="pick-up-order-assessment-paint-front-key">Heck</h3>
-            <input id="pick-up-order-assessment-paint-front-value" value="" />
-          </div>
-          <div class="pick-up-order-assessment-paint-front container">
-            <h3 id="pick-up-order-assessment-paint-front-key">
-              Rechte Seite
-            </h3>
-            <input id="pick-up-order-assessment-paint-front-value" value="" />
-          </div>
-          <div class="pick-up-order-assessment-paint-front container">
-            <h3 id="pick-up-order-assessment-paint-front-key">
-              Stoßstangen/Spaltemaße
-            </h3>
-            <input id="pick-up-order-assessment-paint-front-value" value="" />
+          <div class="pick-up-order-assessment-paints">
+            <div class="pick-up-order-assessment-paint-front container">
+              <h3 id="pick-up-order-assessment-paint-front-key">Front</h3>
+              <input id="pick-up-order-assessment-paint-front-value" value="" />
+            </div>
+            <div class="pick-up-order-assessment-paint-front container">
+              <h3 id="pick-up-order-assessment-paint-front-key">Linke Seite</h3>
+              <input id="pick-up-order-assessment-paint-front-value" value="" />
+            </div>
+            <div class="pick-up-order-assessment-paint-front container">
+              <h3 id="pick-up-order-assessment-paint-front-key">Dach</h3>
+              <input id="pick-up-order-assessment-paint-front-value" value="" />
+            </div>
+            <div class="pick-up-order-assessment-paint-front container">
+              <h3 id="pick-up-order-assessment-paint-front-key">Heck</h3>
+              <input id="pick-up-order-assessment-paint-front-value" value="" />
+            </div>
+            <div class="pick-up-order-assessment-paint-front container">
+              <h3 id="pick-up-order-assessment-paint-front-key">
+                Rechte Seite
+              </h3>
+              <input id="pick-up-order-assessment-paint-front-value" value="" />
+            </div>
+            <div class="pick-up-order-assessment-paint-front container">
+              <h3 id="pick-up-order-assessment-paint-front-key">
+                Stoßstangen/Spaltemaße
+              </h3>
+              <input id="pick-up-order-assessment-paint-front-value" value="" />
+            </div>
           </div>
         </div>
       </div>
       <div class="title">
         <h2>Art und Zustand</h2>
       </div>
-      <div class="pick-up-order-assessment-condition">
+      <div class="pick-up-order-assessment-condition" id="pick-up-order-assessment-condition">
         <div class="pick-up-order-assessment-condition-visual wrapper">
           <div class="checkBox">
             <h3 id="pick-up-order-assessment-condition-visual-key">
@@ -327,7 +329,7 @@ Das Fahrzeug befindet sich in einem guten Zustand</textarea>
         </div>
       </div>
     </div>
-    <div class="pick-up-order-assessment-test-drive">
+    <div class="pick-up-order-assessment-test-drive" id="pick-up-order-assessment-test-drive">
       <div class="title">
         <h2>Probefahrt</h2>
       </div>
@@ -558,7 +560,7 @@ Das Fahrzeug befindet sich in einem guten Zustand</textarea>
         <img src="./images/logo.png" alt="" />
       </div>
     </div>
-    <div class="contract__body">
+    <div class="contract__body" id="contract__body">
       <div class="contract__body wrapper">
         <h2>Verkäufer</h2>
         <div class="contract-seller-name container">
@@ -622,7 +624,7 @@ Das Fahrzeug befindet sich in einem guten Zustand</textarea>
       </div>
     </div>
     <div class="contract-vehicle">
-      <div class="contract-vehicle-body">
+      <div class="contract-vehicle-body" id="contract-vehicle-body">
         <div class="title">
           <h2>Fahrzeugdaten</h2>
         </div>
@@ -742,7 +744,7 @@ Das Fahrzeug befindet sich in einem guten Zustand</textarea>
         <div class="title">
           <h2>Fahrzeugdetails</h2>
         </div>
-        <div class="contract-vehicle-body-checkBoxes">
+        <div class="contract-vehicle-body-checkBoxes" id="contract-vehicle-body-checkBoxes">
           <div class="checkBox">
             <h3 id="contract-vehicle-checkBox key">Bremsen</h3>
             <div class="checkBox__body" id="checkBoxes"></div>
@@ -752,7 +754,7 @@ Das Fahrzeug befindet sich in einem guten Zustand</textarea>
     </div>
     <div class="pagination">2</div>
   </section>
-  <section class="contractDetails">
+  <section class="contractDetails" id="contractDetails">
     <div class="header">
       <p>Your Logo</p>
       <h2>Übergabeprotokoll des abgeschlossenen KFZ-Kaufvertrags</h2>
@@ -763,7 +765,7 @@ Das Fahrzeug befindet sich in einem guten Zustand</textarea>
     <div class="title">
       <h2>Fahrzeugdetails</h2>
     </div>
-    <div class="contractDetails__body">
+    <div class="contractDetails__body" id="contractDetails__body">
       <div class="contractDetails-description container">
         <h3 id="contract-vehicle-details-description-key">Beschreibung</h3>
         <textarea id="contract-vehicle-details-description-value">
@@ -789,7 +791,7 @@ Folgende Vertragsbedingungen werden beidseitig eingewilligt.eingewilligt.
                 </textarea>
       </div>
     </div>
-    <div class="contractDetails-signatures contract-signatures wrapper">
+    <div class="contractDetails-signatures contract-signatures wrapper" id="contractDetails-signatures">
       <div class="title">
         <h2>Unterschriften</h2>
       </div>
@@ -838,7 +840,14 @@ Folgende Vertragsbedingungen werden beidseitig eingewilligt.eingewilligt.
     </div>
     <div class="pagination">3</div>
   </section>
-  <section class="imageSection">
+  <section class="imageSection" id="imageSection">
+    <div class="header">
+      <p>Your Logo</p>
+      <h2>Übergabeprotokoll des abgeschlossenen KFZ-Kaufvertrags</h2>
+      <div class="header__logo">
+        <img src="./images/logo.png" alt="" />
+      </div>
+    </div>
     <img src="./images/cars.png" alt="" />
     <div class="pagination">4</div>
   </section>

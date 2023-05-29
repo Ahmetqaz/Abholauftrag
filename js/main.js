@@ -153,3 +153,18 @@ const setMwstState = (mwstState = true) => {
 // addInputs('unfallfrei',['test1','test2','test3'])
 // addInputs('schäden',['test1','test2','test3'])
 createCheckboxes(array);
+
+const pageSections = ["pick-up-order-info","contract","contractDetails"];
+const pageDesign = {
+  type1: [],
+  type2: [],
+  type3: [],
+};
+
+const toggleSections = (array) => {
+  pageSections.forEach((section) => {
+    section.classList.toggle("hidden", array.indexOf(section.id) === -1);
+  });
+};
+
+

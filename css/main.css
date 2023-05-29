@@ -1033,7 +1033,10 @@ li {
 
 .imageSection {
   width: 100%;
-  padding: 60px 0;
+  padding: 2.2mm 5.8mm 4.3mm;
+}
+.imageSection .header {
+  margin-bottom: 20px;
 }
 .imageSection img {
   width: 100%;
@@ -1053,6 +1056,10 @@ li {
 }
 .input--wrapper input {
   width: 100% !important;
+}
+
+.hidden {
+  display: none !important;
 }
 
 @media print {

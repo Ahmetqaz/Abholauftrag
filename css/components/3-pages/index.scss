@@ -466,7 +466,11 @@
 }
 .imageSection {
   width: 100%;
-  padding: 60px 0;
+  padding: 2.2mm 5.8mm 4.3mm;
+  .header{
+    margin-bottom: 20px;
+
+  }
   img {
     width: 100%;
     height: auto;
@@ -480,4 +484,7 @@
   input {
     width: 100% !important;
   }
+}
+.hidden{
+  display: none !important;
 }
