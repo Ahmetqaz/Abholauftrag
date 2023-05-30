@@ -885,6 +885,10 @@ li {
 .contract-vehicle .container-group input {
   width: 100%;
 }
+.contract-vehicle .container > textarea {
+  width: calc(100% - 113px);
+  min-height: 50px;
+}
 .contract-vehicle .container h3 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -893,6 +897,9 @@ li {
       -ms-flex-align: center;
           align-items: center;
   min-height: 27px;
+}
+.contract-vehicle .container._wide {
+  width: 100%;
 }
 .contract-vehicle-brand input {
   width: calc(100% - 105px);
