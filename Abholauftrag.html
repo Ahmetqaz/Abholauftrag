@@ -999,6 +999,11 @@
       width: 100%;
     }
 
+    .contract-vehicle .container>textarea {
+      width: calc(100% - 113px);
+      min-height: 50px;
+    }
+
     .contract-vehicle .container h3 {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1007,6 +1012,10 @@
       -ms-flex-align: center;
       align-items: center;
       min-height: 27px;
+    }
+
+    .contract-vehicle .container._wide {
+      width: 100%;
     }
 
     .contract-vehicle-brand input {
@@ -2171,23 +2180,13 @@ Folgende Vertragsbedingungen werden beidseitig eingewilligt.eingewilligt.
     };
 
     // Input ebale/disable
-    let contract = document.getElementById("contract");
-    let contractInput = contract.querySelectorAll("input");
-    let contractTexts = contract.querySelectorAll("textarea");
+
     let inputControl = (isEnabled = false) => {
-      contractInput.forEach((input) => {
-        if (!isEnabled) {
-          input.setAttribute("disabled", "");
-        } else {
-          input.removeAttribute("disabled");
-        }
+      document.querySelectorAll("input").forEach((input) => {
+        input.toggleAttribute("disabled", !isEnabled);
       });
-      contractTexts.forEach((contractText) => {
-        if (!isEnabled) {
-          contractText.setAttribute("disabled", "");
-        } else {
-          contractText.removeAttribute("disabled");
-        }
+      document.querySelectorAll("textarea").forEach((input) => {
+        input.toggleAttribute("disabled", !isEnabled);
       });
     };
     let inputState = false;
@@ -2203,34 +2202,25 @@ Folgende Vertragsbedingungen werden beidseitig eingewilligt.eingewilligt.
         inputs.appendChild(newInput);
       });
     };
+    const addInput = (keyName, valueName, type) => {
+      let inputsWrapper = document.querySelector(".contract-vehicle-body");
+      let container = document.createElement("div");
+      let keyNameLower = (keyName + "").toLowerCase();
+      let valueNameLower = (valueName + "").toLowerCase();
 
-    // // Pop------------------------------------
-    // if (inputState == false) {
-    //   let pops = document.querySelectorAll(".pop");
-    //   let popUp = document.querySelector(".popUp");
-    //   let popUpItems = document.querySelectorAll(".popUpItem");
-    //   pops.forEach((pop) => {
-    //     let popDisbale = pop.querySelector("input");
-    //     popDisbale.setAttribute("disabled", "");
-    //     pop.addEventListener("click", () => {
-    //       let popId = pop.getAttribute("id");
-    //       let popClose = popUp.querySelector(".popUp__inner-close");
-    //       popUp.classList.add("active");
-    //       popUpItems.forEach((popUpItem) => {
-    //         let popUpItem__id = popUpItem.getAttribute("data-pop");
-    //         if (popId == popUpItem__id) {
-    //           popUpItem.classList.add("active");
-    //         } else {
-    //           popUpItem.classList.remove("active");
-    //         }
-    //       });
-    //       popClose.addEventListener("click", () => {
-    //         popUp.classList.remove("active");
-    //       });
-    //     });
-    //   });
-    // }
+      container.className = `container ${type % 2 !== 0 ? "_wide" : "_small"}`;
+      container.innerHTML = `<h3 id="${keyNameLower}-key">${keyName}</h3>`;
 
+      let input =
+        type > 2 ?
+        document.createElement("textarea") :
+        document.createElement("input");
+      input.id = `${valueNameLower}-value`;
+      input.value = valueName;
+
+      container.appendChild(input);
+      inputsWrapper.appendChild(container);
+    };
     // Set new filed Data
     const filedArray = ["field1", "field2", "field3", "field4"];
     const setFieldData = (filedArray, filedState = true) => {
@@ -2253,26 +2243,90 @@ Folgende Vertragsbedingungen werden beidseitig eingewilligt.eingewilligt.
       } else mwst.classList.remove("active");
     };
 
+    createCheckboxes(array);
+
+    const pageSections = [
+      "pick-up-order",
+      "pick-up-order-header",
+      "pick-up-order-info",
+      "pick-up-order-assessment",
+      "pick-up-order-assessment-test-drive",
+      "contract",
+      "contract-header",
+      "contract__body",
+      "contract-purchase-price",
+      "contract-vehicle-body",
+      "contract-vehicle-list",
+      "contractDetails",
+      "contractDetails-header",
+      "contractDetails__body",
+      "contractDetails-signatures",
+      "imageSection",
+    ];
+    const pageTemplate = {
+      all: {
+        showAll: true,
+        type: "A",
+      },
+      contract: {
+        sections: [
+          "contract",
+          "contract-header",
+          "contract__body",
+          "contract-purchase-price",
+          "contract-vehicle-body",
+          "contract-vehicle-list",
+          "contractDetails",
+          "contractDetails-header",
+          "contractDetails__body",
+        ],
+        type: "B",
+      },
+      contractSignatures: {
+        sections: [
+          "contract",
+          "contract-header",
+          "contract__body",
+          "contract-purchase-price",
+          "contract-vehicle-body",
+          "contract-vehicle-list",
+          "contractDetails",
+          "contractDetails-header",
+          "contractDetails__body",
+          "contractDetails-signatures",
+        ],
+        type: "B",
+      },
+    };
+
+    const toggleSections = ({
+      showAll = false,
+      sections: activeSections,
+      type,
+    }) => {
+      pageSections.forEach((section) => {
+        if (showAll) document.getElementById(section).classList.remove("hidden");
+        else
+          document
+          .getElementById(section)
+          .classList.toggle("hidden", activeSections.indexOf(section) === -1);
+      });
+      createCheckboxes(array, type);
+    };
+
     // setMwstState(true|false);
     // setFieldData(filedArray);
     // inputControl(true|false);
     // addInputs('nachlackierung',['test1','test2','test3'])
     // addInputs('unfallfrei',['test1','test2','test3'])
     // addInputs('schäden',['test1','test2','test3'])
-    createCheckboxes(array);
-
-    const pageSections = ["pick-up-order-info", "contract", "contractDetails"];
-    const pageDesign = {
-      type1: [],
-      type2: [],
-      type3: [],
-    };
-
-    const toggleSections = (array) => {
-      pageSections.forEach((section) => {
-        section.classList.toggle("hidden", array.indexOf(section.id) === -1);
-      });
-    };
+    // toggleSections(pageTemplate.all);
+    // toggleSections(pageTemplate.contract);
+    // toggleSections(pageTemplate.contractSignatures);
+    // addInput("test", "test", 1);
+    // addInput("test", "test", 2);
+    // addInput("test", "test", 3);
+    // addInput("test", "test", 4 );
   </script>
 </body>
 

@@ -207,7 +207,7 @@ const toggleSections = ({
 // toggleSections(pageTemplate.all);
 // toggleSections(pageTemplate.contract);
 // toggleSections(pageTemplate.contractSignatures);
+// addInput("test", "test", 1);
 // addInput("test", "test", 2);
-// addInput("test", "test", 2);
-// addInput("test", "test", 4);
+// addInput("test", "test", 3);
 // addInput("test", "test", 4 );
