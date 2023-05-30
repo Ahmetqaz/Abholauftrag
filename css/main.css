@@ -1038,6 +1038,9 @@ li {
 .imageSection .header {
   margin-bottom: 20px;
 }
+.imageSection .title {
+  margin-bottom: 15px;
+}
 .imageSection img {
   width: 100%;
   height: auto;
