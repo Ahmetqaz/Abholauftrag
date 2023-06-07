@@ -1,0 +1,302 @@
+:root {
+  --font-family: "Monda", "Arial", serif;
+  --font-family-input: var(--font-family);
+  --font-family-headline: var(--font-family);
+
+  --label-font-size: 18px;
+  --label-color: #222;
+  --label-padding: 10px 0 0 0;
+
+  --input-padding: 12px;
+  --input-font-size: 16px;
+  --input-color: #000000;
+  --input-background: #f7f7f7;
+  --input-focus-background: #fff;
+  --input-padding: 8px;
+  --input-border-width: 1px;
+  --input-border-style: solid;
+  --input-border-color: #c4c4c4;
+
+  --container-border: 0;
+  --container-margin: 0;
+  --container-columns: 1fr;
+  --container-columns-double: 1fr;
+  --container-gap: 0 2rem;
+
+  --headline-font-size: 1.7rem;
+  --headline-font-weight: bold;
+  --headline-margin: 0;
+  --headline-color: #4e7ba2;
+  --headline-padding: 10px 0;
+  --headline-background: #fff;
+  --headline-border: 0;
+  --headline-border-color: #c4c4c4;
+}
+
+html {
+  font-family: var(--font-family);
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+.wrapper {
+  margin: 0 auto;
+  max-width: 1280px;
+  background-color: white;
+  margin: 2rem;
+}
+.wrapper > .container > :first-child {
+  margin-top: 0;
+}
+.wrapper > .image {
+  height: 200px;
+  overflow: hidden;
+  background-image: url("train.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+.wrapper > .image:after {
+  content: "";
+  background-color: #4e7ba2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.5;
+}
+.wrapper > .container {
+  padding: 3rem 4rem;
+  background-color: white;
+}
+
+ul.connectionDetails {
+  padding: 0px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  position: relative;
+}
+
+li {
+  list-style: none;
+}
+
+ul.connectionDetails li.sectionDeparture {
+  padding-top: 0px;
+}
+
+ul.connectionDetails li.sectionArrival {
+  padding-top: 1px;
+}
+
+#infoLayerJourney ul {
+  padding-left: 10px;
+}
+
+ul.connectionDetails {
+  display: flex;
+  flex-direction: column;
+  color: #282d37;
+}
+
+li:first-child div.conDetailsRow_dep,
+li:last-child div.conDetailsRow_arr {
+  color: #282d37;
+  font-size: 15px;
+  line-height: 15px;
+  font-family: "Monda", sans-serif;
+  font-weight: bold;
+}
+
+div.conDetailsRow_dep,
+div.conDetailsRow_arr {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  font-family: "Monda", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #282d37;
+  position: relative;
+}
+
+.delayOnTime {
+  font-size: 1em;
+  color: #508b1b;
+}
+
+div.conDetailsRow_dep div.platform div,
+div.conDetailsRow_arr div.platform div,
+div.conDetailsRow_dep div.platform div,
+div.conDetailsRow_arr div.platform div {
+  background-color: #0a1e6e;
+  color: #fff;
+  font-family: "Monda", sans-serif;
+  font-size: 12px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 20px;
+  padding: 2px 4px;
+}
+
+div.conDetailsRow_dep div.platform div.platformred,
+div.conDetailsRow_arr div.platform div.platformred,
+div.conDetailsRow_dep div.platform div.platformred,
+div.conDetailsRow_arr div.platform div.platformred {
+  background-color: #c50014;
+}
+
+div.detailsintermediate div:last-child,
+div.detailsintermediate div:last-child {
+  display: flex;
+  align-items: center;
+}
+
+div.moreDetailsLink,
+div.capacity {
+  display: none;
+}
+
+.sectionDuration,
+div.detailContainer .detailCancelled.jnyCancelled {
+  position: absolute;
+  right: 37px;
+  width: 80px;
+  bottom: 0;
+  transform: translateY(35%);
+  font-size: 12px;
+  line-height: 16px;
+  color: #646973;
+}
+
+sectionDuration {
+  font-family: "Monda", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  color: #646973;
+}
+
+#infoLayerJourney div.conDetailsRow_dep div.time,
+#infoLayerJourney div.conDetailsRow_arr div.time,
+#infoLayerJourney div.detailsintermediate div.time,
+div.conDetailsRow_dep div.time,
+div.conDetailsRow_arr div.time,
+div.detailsintermediate div.time {
+  flex: 0 0 0px;
+  padding-right: 37px;
+  text-align: right;
+  position: relative;
+}
+
+div.conDetailsRow_dep div.station,
+div.conDetailsRow_arr div.station,
+div.conDetailsRow_dep div.station,
+div.conDetailsRow_arr div.station {
+  flex-grow: 2;
+}
+
+div.conDetailsRow_product .direction,
+div.conDetailsRow_product .capacity {
+  margin-top: 8px;
+}
+
+ul.connectionDetails li .moreDetailsLink,
+#infoLayerJourney div.conDetailsRow_product,
+div.conDetailsRow_product {
+  font-family: "Monda", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #282d37;
+  padding-top: 5px;
+}
+
+#content div.connectionStations div.station:first-child,
+#content ul.connectionDetails li:first-child div.stationIcon {
+  background-image: url("https://www.img-bahn.de/s3/prod/v/img_responsive/20dp_icon_journey_start_grey300.svg");
+}
+
+[target="train"] {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: black;
+}
+
+[title="Umsteigezeit anpassen"] {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: black;
+}
+
+div.conDetailsRow_product .direction {
+  background-image: url(https://www.img-bahn.de/s3/prod/v/img_responsive/20dp_icon_navigation_arrow-forward-small14.svg);
+  background-repeat: no-repeat;
+  background-position: left 1px;
+  background-size: 20px 20px;
+  padding-left: 29px;
+}
+
+ul.connectionDetails div.stationIcon,
+ul.connectionDetails div.stationIcon {
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 20px 20px;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -2px;
+  right: 11px;
+}
+
+ul.connectionDetails li:first-child div.stationIcon {
+  background-image: url(https://www.img-bahn.de/s3/prod/v/img_responsive/20dp_icon_journey_intermediary-stop_grey300.svg);
+}
+
+ul.connectionDetails li:last-child div.stationIcon {
+  background-image: url(https://www.img-bahn.de/s3/prod/v/img_responsive/20dp_icon_journey_destination-filled_grey300.svg);
+  z-index: 5;
+}
+
+ul.connectionDetails li.intermediate,
+ul.connectionDetails li.intermediate {
+  background-color: #f0f3f5;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  font-family: "Monda", sans-serif;
+  font-size: 12px;
+  color: #646973;
+  display: flex;
+}
+
+ul.connectionDetails li {
+  padding: 5px 215px 5px 21px;
+  background-color: #ffffff;
+}
+
+div.detailsintermediate,
+div.detailsintermediate {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  position: relative;
+  flex: 1;
+}
+
+#infoLayerJourney div.conDetailsRow_dep div.time,
+#infoLayerJourney div.conDetailsRow_arr div.time,
+#infoLayerJourney div.detailsintermediate div.time,
+div.conDetailsRow_dep div.time,
+div.conDetailsRow_arr div.time,
+div.detailsintermediate div.time {
+  flex: 0 0 120px;
+  padding-right: 37px;
+  text-align: right;
+  position: relative;
+}

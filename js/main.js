@@ -183,6 +183,15 @@ const pageTemplate = {
   },
 };
 
+const resetPagination = () => {
+  let pageCounter = 1;
+  document.querySelectorAll(".pagination").forEach((item) => {
+    const parent = item.parentElement;
+    if (parent.classList.contains("hidden")) return;
+    item.innerHTML = pageCounter;
+    pageCounter++;
+  });
+};
 const toggleSections = ({
   showAll = false,
   sections: activeSections,
@@ -195,9 +204,25 @@ const toggleSections = ({
         .getElementById(section)
         .classList.toggle("hidden", activeSections.indexOf(section) === -1);
   });
+
   createCheckboxes(array, type);
+  resetPagination();
 };
 
+window.onbeforeprint = () => {
+  console.log("onbeforeprint");
+  document.querySelectorAll("textarea").forEach((textarea) => {
+    textarea.style.height = "auto !important";
+    textarea.style.minHeight = "unset";
+    textarea.style.height = `${textarea.scrollHeight + 8}px`;
+  });
+};
+window.onafterprint = () => {
+  console.log("onafterprint");
+  document
+    .querySelectorAll("textarea")
+    .forEach((textarea) => (textarea.style = ""));
+};
 // setMwstState(true|false);
 // setFieldData(filedArray);
 // inputControl(true|false);
