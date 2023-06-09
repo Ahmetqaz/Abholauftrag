@@ -8,7 +8,8 @@
     <title>Home</title>
   </head>
 
-  <body class="contract-signatures pick-up-order mwst">
+  <!-- <body class="contract-signatures pick-up-order mwst"> -->
+  <body>
     <section class="pick-up-order" id="pick-up-order">
       <div class="header" id="pick-up-order-header">
         <p>Your Logo</p>
@@ -17,7 +18,7 @@
           <img src="./images/logo.png" alt="" />
         </div>
       </div>
-      <div class="pick-up-order-info" id="pick-up-order-info">
+      <div class="pick-up-order-info whiteBox" id="pick-up-order-info">
         <div class="pick-up-order-info-wrapper">
           <h2>Fahrerinformationen</h2>
           <div class="pick-up-order-info-driver container">
@@ -885,7 +886,7 @@ Das Fahrzeug befindet sich in einem guten Zustand</textarea
           <img src="./images/logo.png" alt="" />
         </div>
       </div>
-      <div class="contract__body" id="contract__body">
+      <div class="contract__body whiteBox" id="contract__body">
         <div class="contract__body wrapper">
           <h2>Verkäufer</h2>
           <div class="contract-seller-name container">
@@ -1240,14 +1241,105 @@ Folgende Vertragsbedingungen werden beidseitig eingewilligt.eingewilligt.
       <div class="title">
         <h2>Fahrzeugdetails</h2>
       </div>
-      <div class="imageSection__body">
+      <div class="imageSection__body bahn">
         <!-- <img src="./images/cars.png" alt="" /> -->
-        <iframe
-          class="frame"
-          src="RailConnection.html"
-          frameborder="0"
-          title="RailConnection"
-        ></iframe>
+        <div class="wrapper">
+          <div class="container">
+            <div id="infoLayerJourney" class="HafasInfoLayer HFShide">
+              <div class="layerClose">
+                <a
+                  class="closeIcon"
+                  title="Schließen"
+                  href="javascript:closeLayer('infoLayerJourney');"
+                >
+                  <span class="icons-close-big"></span>
+                </a>
+              </div>
+              <h2>Ihre Reisedaten</h2>
+              <div class="headline">Hinfahrt am 02.06.23</div>
+              <ul class="connectionDetails">
+                <li class="sectionDeparture">
+                  <div class="conDetailsRow_dep">
+                    <div class="time boldText hasCapacity">
+                      22:34<br /><br /><span
+                        class="delay underline"
+                        onmouseover="mouesoverText('Verspätung eines vorausfahrenden Zuges', this, 'risTT')"
+                        onmouseout="removeMouseoverText('risTT');"
+                        >22:48</span
+                      ><span class="sectionDuration">1h 44min</span>
+                      <div class="stationIcon"></div>
+                    </div>
+                    <div class="conDetailsRow_time station boldText">
+                      Hannover Hbf
+                      <div class="conDetailsRow_product">
+                        <div class="products">
+                          <img
+                            src="https://www.img-bahn.de/s3/prod/v/img_responsive/20dp_icon_transportation_ICE.svg"
+                            class="middle"
+                            alt=""
+                          />
+                          <span style="white-space: nowrap">
+                            <a
+                              href="https://reiseauskunft.bahn.de/bin/traininfo.exe/dn/440070/378842/899544/303082/80?ld=4330&amp;protocol=https:&amp;seqnr=3&amp;ident=l2.0886430.1685735433&amp;date=02.06.23&amp;station_evaId=8000152&amp;station_type=dep&amp;currentReferrer=tp&amp;rt=1&amp;rtMode=DB-HYBRID&amp;&amp;time=22:34&amp;currentJourneyClass=2&amp;"
+                              target="train"
+                              title="Fahrtinformationen zu ICE  947"
+                              >ICE 947</a
+                            ><br /><br /><a
+                              href="https://reiseauskunft.bahn.de/bin/traininfo.exe/dn/389517/362329/902870/321596/80?ld=4330&amp;protocol=https:&amp;seqnr=3&amp;ident=l2.0886430.1685735433&amp;rt=1&amp;date=02.06.23&amp;station_evaId=8000152&amp;station_type=dep&amp;rtMode=DB-HYBRID&amp;currentReferrer=tp&amp;rt=1&amp;time=22:34"
+                              target="train"
+                              >ICE 957</a
+                            >
+                          </span>
+                        </div>
+                        <div class="direction">Berlin Ostbahnhof</div>
+                        <div class="capacity">
+                          <img
+                            src="https://www.img-bahn.de/s3/prod/v/img_responsive/20dp_icons_journey_capacity-indicator-medium.svg"
+                            height="20"
+                            width="20"
+                            title="Mittlere Auslastung&nbsp;erwartet"
+                            class="middle"
+                          />Mittlere Auslastung&nbsp;erwartet
+                        </div>
+                      </div>
+                    </div>
+                    <div class="nowrap platform">
+                      <div class="">Gl. 9</div>
+                    </div>
+                  </div>
+                  <div class="moreDetailsLink">
+                    <a
+                      href="https://reiseauskunft.bahn.de/bin/query.exe/dn?ld=4330&amp;protocol=https:&amp;seqnr=3&amp;ident=l2.0886430.1685735433&amp;rt=1&amp;&amp;"
+                      rel="HWAI:CONNECTION{C1-0}[id=C1-0][HwaiConId=C1-0][HwaiDetailStatus=journeyGuide];"
+                      class="iconLink openMoreInformation"
+                      >Weitere Informationen<span></span
+                    ></a>
+                  </div>
+                </li>
+                <li class="dateDivider">
+                  <div class="dateDividerLine"></div>
+                  <div class="time dateChange"><span>+ 1 Tag</span></div>
+                </li>
+                <li class="sectionArrival">
+                  <div class="conDetailsRow_arr">
+                    <div class="time boldText">
+                      00:18<br /><br /><span class="delay">00:25</span>
+                      <div class="stationIcon"></div>
+                    </div>
+                    <div class="station">
+                      <div class="detailSectionContent">
+                        <div class="station boldText">Berlin Hbf</div>
+                      </div>
+                    </div>
+                    <div class="nowrap platform">
+                      <div>Gl. 11</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="pagination">4</div>
     </section>

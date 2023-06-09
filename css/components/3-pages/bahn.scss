@@ -35,11 +35,17 @@
 
 .bahn {
   font-family: var(--font-family);
+  font-size: 16px;
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.6em;
+  }
   .wrapper {
     margin: 0 auto;
     max-width: 1280px;
     background-color: white;
-    margin: 2rem;
+    margin: 0.5rem 0;
   }
   .wrapper > .container > :first-child {
     margin-top: 0;
@@ -65,16 +71,10 @@
   }
   .wrapper > .container {
     display: block !important;
-    padding: 3rem 4rem;
+    padding: 3rem 1rem;
+    max-width: 600px;
+    margin: 0 auto;
     background-color: white;
-  }
-
-  ul.connectionDetails {
-    padding: 0px 0;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    position: relative;
   }
 
   li {
@@ -94,9 +94,12 @@
   }
 
   ul.connectionDetails {
+    position: relative;
     display: flex;
     flex-direction: column;
     color: #282d37;
+    gap: 0.4em;
+    padding: 0.4em 0;
   }
 
   li:first-child div.conDetailsRow_dep,
@@ -271,7 +274,7 @@
   }
 
   ul.connectionDetails li {
-    padding: 5px 215px 5px 21px;
+    padding: 5px 20px 5px 20px;
     background-color: #ffffff;
   }
 

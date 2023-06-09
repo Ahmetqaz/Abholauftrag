@@ -4,18 +4,23 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  span,
-  input,
-  textarea {
-    border: 1px solid $primary;
-    background: $white;
-    font-size: $font-size;
-    border-radius: 1.5mm;
-    padding: 1mm 2mm;
-    color: $black;
-    font-weight: normal;
-    resize: none;
-    white-space: unset;
+
+  .pick-up-order &,
+  .contract &,
+  .contractDetails & {
+    span,
+    input,
+    textarea {
+      border: 1px solid $primary;
+      background: $white;
+      font-size: $font-size;
+      border-radius: 1.5mm;
+      padding: 1mm 2mm;
+      color: $black;
+      font-weight: normal;
+      resize: none;
+      white-space: unset;
+    }
   }
 }
 .input {
@@ -87,7 +92,7 @@
     resize: none;
     white-space: unset;
   }
-  &--text{
+  &--text {
     textarea {
       border: 1px solid $primary;
       background: $white;
@@ -182,13 +187,13 @@
     width: 50%;
     box-shadow: 0 5px 5px rgba(#000000, 0.2);
     z-index: 2;
-    &-close{
+    &-close {
       position: absolute;
       top: 15px;
       right: 20px;
       width: 20px;
       height: 20px;
-      &::before{
+      &::before {
         content: "";
         width: 100%;
         height: 2px;
@@ -196,9 +201,9 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50% , -50%) rotate(45deg);
+        transform: translate(-50%, -50%) rotate(45deg);
       }
-      &::after{
+      &::after {
         content: "";
         width: 100%;
         height: 2px;
@@ -206,7 +211,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50% , -50%) rotate(-45deg);
+        transform: translate(-50%, -50%) rotate(-45deg);
       }
     }
   }
@@ -222,13 +227,13 @@
     border-color: $gray;
     font-size: 8pt;
   }
-  &.active{
+  &.active {
     opacity: 1;
     pointer-events: all;
   }
-  &Item{
+  &Item {
     display: none;
-    &.active{
+    &.active {
       display: block;
     }
   }

@@ -39,7 +39,6 @@ let checkBoxes = document.querySelector("#checkBoxes");
 const createCheckboxes = (data, variant = "A") => {
   checkBoxes.innerHTML = "";
   const array = typeof data === "string" ? JSON.parse(data) : data;
-  console.log("array", array);
   if (variant === "A") {
     array.forEach((element, index) => {
       let input = document.createElement("div");

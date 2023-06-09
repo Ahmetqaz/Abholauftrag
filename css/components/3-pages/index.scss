@@ -233,6 +233,9 @@
       color: $primary;
       font-size: $font-size-title;
     }
+    &.whiteBox {
+      margin: 2mm 0;
+    }
   }
   &-purchase-price {
     width: 100%;
@@ -480,15 +483,18 @@
   .title {
     margin-bottom: 15px;
   }
-  img {
-    width: 100%;
-    height: auto;
-  }
+
   &__body {
     .frame {
       width: 100%;
       height: 140mm;
       overflow: hidden;
+    }
+    &-image {
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }
@@ -508,4 +514,10 @@
 }
 .hidden {
   display: none !important;
+}
+
+@media not print {
+  body {
+    zoom: 1.3;
+  }
 }
