@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap");
       @font-face {
@@ -87,10 +86,10 @@
       }
 
       /*** 
-        ====================================================================
-            Global Settings
-        ====================================================================
-         ***/
+  ====================================================================
+      Global Settings
+  ====================================================================
+   ***/
       body {
         font-family: "Tahoma", sans-serif;
         font-size: 6.8pt;
@@ -358,82 +357,23 @@
         transform: translateX(-50%);
       }
 
-      .popUp {
-        position: fixed;
+      .ratioImage {
+        position: relative;
+        padding-bottom: 65%;
         width: 100%;
-        height: 100%;
+      }
+      .ratioImage img {
+        position: absolute;
         top: 0;
         left: 0;
-        -webkit-backdrop-filter: blur(2px);
-        backdrop-filter: blur(2px);
-        background: rgba(0, 0, 0, 0.2);
-        opacity: 0;
-        pointer-events: none;
-      }
-      .popUp__inner {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        background: #fff;
-        border-radius: 16px;
-        padding: 20px 40px 30px;
-        width: 50%;
-        -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-        z-index: 2;
-      }
-      .popUp__inner-close {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        width: 20px;
-        height: 20px;
-      }
-      .popUp__inner-close::before {
-        content: "";
         width: 100%;
-        height: 2px;
-        background: #e96d24;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%) rotate(45deg);
-        transform: translate(-50%, -50%) rotate(45deg);
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
       }
-      .popUp__inner-close::after {
-        content: "";
-        width: 100%;
-        height: 2px;
-        background: #e96d24;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%) rotate(-45deg);
-        transform: translate(-50%, -50%) rotate(-45deg);
-      }
-      .popUp h2 {
-        text-align: center;
-        font-weight: bold;
-        font-size: 11pt;
-        margin-bottom: 10px;
-      }
-      .popUp textarea {
-        min-height: 200px;
-        width: 100%;
-        border-color: #707070;
-        font-size: 8pt;
-      }
-      .popUp.active {
-        opacity: 1;
-        pointer-events: all;
-      }
-      .popUpItem {
-        display: none;
-      }
-      .popUpItem.active {
-        display: block;
+      .ratioImage--contain img {
+        -o-object-fit: contain;
+        object-fit: contain;
       }
 
       .pick-up-order {
@@ -806,8 +746,8 @@
         display: -ms-flexbox;
         display: flex;
       }
-      .contract-purchase-price-body.active h3.hideText {
-        display: none;
+      .contract-purchase-price-body.active .hideText {
+        display: none !important;
       }
       .contract-purchase-price-body.active input {
         max-width: 100px;
@@ -1038,6 +978,9 @@
       .contractDetails-signatures .input .circle {
         border-color: #1e1f24;
       }
+      .contractDetails-signatures .ratioImage {
+        padding-bottom: 30%;
+      }
       .contractDetails .header {
         margin-bottom: 15px;
       }
@@ -1092,11 +1035,6 @@
         display: none !important;
       }
 
-      @media not print {
-        body {
-          zoom: 1.3;
-        }
-      }
       :root {
         --font-family: "Monda", "Arial", serif;
         --font-family-input: var(--font-family);
@@ -1398,7 +1336,15 @@
         position: relative;
       }
 
+      @media not print {
+        body {
+          zoom: 1.3;
+        }
+      }
       @media print {
+        body {
+          zoom: 0.93;
+        }
         section {
           page-break-after: always;
           margin: 0;
@@ -1410,9 +1356,8 @@
         margin: 0;
       }
     </style>
+    <title>Home</title>
   </head>
-
-  <!-- <body class="contract-signatures pick-up-order mwst"> -->
   <body>
     <section class="pick-up-order" id="pick-up-order">
       <div class="header" id="pick-up-order-header">
@@ -2794,12 +2739,12 @@ Folgende Vertragsbedingungen werden beidseitig eingewilligt.eingewilligt.
             let input = document.createElement("div");
             input.classList.add("input");
             input.innerHTML = `
-          <input  id="${index}" name="${parseInt(index / 6)}" type="radio">
-          <div class="circle"></div>
-          <label for="${index}">
-          ${element}
-            </label>
-       `;
+      <input  id="${index}" name="${parseInt(index / 6)}" type="radio">
+      <div class="circle"></div>
+      <label for="${index}">
+      ${element}
+        </label>
+   `;
             checkBoxes.appendChild(input);
           });
         } else {

@@ -91,7 +91,9 @@ const addInput = (keyName, valueName, type) => {
   let keyNameLower = (keyName + "").toLowerCase();
   let valueNameLower = (valueName + "").toLowerCase();
 
-  container.className = `container ${type % 2 !== 0 ? "_wide" : "_small"}`;
+  container.className = `container ${
+    type % 2 !== 0 ? "_wide" : "_small"
+  } js-new-item`;
   container.innerHTML = `<h3 id="${keyNameLower}-key">${keyName}</h3>`;
 
   let input =
@@ -104,6 +106,20 @@ const addInput = (keyName, valueName, type) => {
   container.appendChild(input);
   inputsWrapper.appendChild(container);
 };
+const clearAll = () => {
+  document.querySelectorAll(".js-new-item").forEach((item) => item.remove());
+  document.querySelectorAll("input").forEach((item) => {
+    item.value = "";
+  });
+  document.querySelectorAll("textarea").forEach((textarea) => {
+    textarea.value = "";
+    textarea.innerText = "";
+  });
+  document.querySelectorAll("checkbox").forEach((checkbox) => {
+    checkbox.checked = false;
+  });
+};
+
 // Set new filed Data
 const filedArray = ["field1", "field2", "field3", "field4"];
 const setFieldData = (filedArray, filedState = true) => {
@@ -181,7 +197,15 @@ const pageTemplate = {
     type: "B",
   },
 };
-
+const resizeTextArea = (textarea) => {
+  textarea.style.height = "auto !important";
+  textarea.style.minHeight = "unset";
+  if (textarea.scrollHeight > parseInt(getComputedStyle(textarea).height))
+    textarea.style.height = `${textarea.scrollHeight + 8}px`;
+};
+const resetTexts = () => {
+  document.querySelectorAll(".js-resize").forEach(resizeTextArea);
+};
 const resetPagination = () => {
   let pageCounter = 1;
   document.querySelectorAll(".pagination").forEach((item) => {
@@ -207,14 +231,11 @@ const toggleSections = ({
   createCheckboxes(array, type);
   resetPagination();
 };
+resetTexts();
 
 window.onbeforeprint = () => {
   console.log("onbeforeprint");
-  document.querySelectorAll("textarea").forEach((textarea) => {
-    textarea.style.height = "auto !important";
-    textarea.style.minHeight = "unset";
-    textarea.style.height = `${textarea.scrollHeight + 8}px`;
-  });
+  document.querySelectorAll("textarea").forEach(resizeTextArea);
 };
 window.onafterprint = () => {
   console.log("onafterprint");

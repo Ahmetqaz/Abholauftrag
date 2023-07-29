@@ -286,10 +286,8 @@
         p {
           display: flex;
         }
-        h3 {
-          &.hideText {
-            display: none;
-          }
+        .hideText {
+          display: none !important;
         }
         input {
           max-width: 100px;
@@ -461,6 +459,9 @@
           border-color: $black;
         }
       }
+      .ratioImage {
+        padding-bottom: 30%;
+      }
     }
     .header {
       margin-bottom: 15px;
@@ -514,10 +515,4 @@
 }
 .hidden {
   display: none !important;
-}
-
-@media not print {
-  body {
-    zoom: 1.3;
-  }
 }

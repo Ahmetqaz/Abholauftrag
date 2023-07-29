@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://app.i-contract.net/ct/css/main.css">
+
+    <title>Home</title>
+  </head>
+
+  <body>
+    <section class="pick-up-order hidden" id="pick-up-order">
+      <div class="header hidden" id="pick-up-order-header">
+        <p></p>
+        <h2>Abholauftrag</h2>
+        <div class="header__logo">
+          <img
+            id="contract-logo"
+            src="data:image/png;base64,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"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="pick-up-order-info whiteBox hidden" id="pick-up-order-info">
+        <div class="pick-up-order-info-wrapper">
+          <h2>Fahrerinformationen</h2>
+          <div class="pick-up-order-info-driver container">
+            <h3 id="pick-up-order-info-driver-key">Fahrer</h3>
+            <input id="pick-up-order-info-driver-value" value="" />
+          </div>
+          <div class="pick-up-order-info-vehicle container">
+            <h3 id="pick-up-order-info-vehicle-key">Fahrzeug</h3>
+            <input id="pick-up-order-info-vehicle-value" value="" />
+          </div>
+          <div class="pick-up-order-info-note container">
+            <h3 id="pick-up-order-info-note-key">Zusätzliche Notizen</h3>
+            <textarea id="pick-up-order-info-note-value"></textarea>
+          </div>
+        </div>
+        <div class="pick-up-order-info-wrapper">
+          <h2>Zahlungsinformationen</h2>
+          <div class="pick-up-order-info-price container">
+            <h3 id="pick-up-order-info-price-key">Kaufpreis inkl. 19% MwSt.</h3>
+            <div class="pick-up-order-info-price-body">
+              <input id="pick-up-order-info-price-value" value="" />
+              <p class="pick-up-order-info-price-cash">Euro</p>
+            </div>
+          </div>
+          <div class="pick-up-order-info-price-inputs">
+            <div class="checkBox">
+              <h3 id="pick-up-order-info-price-key">Zahlungsart</h3>
+              <div class="checkBox__body">
+                <div class="input">
+                  <input
+                    type="radio"
+                    id="contract-vehicle-payment-method-value-1"
+                    name="pick-up-order-info-price-value"
+                    value="pick-up-order-info-price-value-1"
+                  />
+                  <span class="circle"> </span>
+                  <label for="pick-up-order-info-price-value-1">
+                    Überweisung
+                  </label>
+                </div>
+                <div class="input">
+                  <input
+                    type="radio"
+                    id="contract-vehicle-payment-method-value-2"
+                    name="pick-up-order-info-price-value"
+                    value="pick-up-order-info-price-value-2"
+                  />
+                  <span class="circle"> </span>
+                  <label for="pick-up-order-info-price-value-2"> Bar </label>
+                </div>
+              </div>
+            </div>
+            <div class="checkBox">
+              <h3 id="pick-up-order-info-price-key">Zugelassen</h3>
+              <div class="checkBox__body">
+                <div class="input">
+                  <input
+                    type="radio"
+                    id="pick-up-order-info-price-value-3"
+                    name="pick-up-order-info-price-value"
+                    value="pick-up-order-info-price-value-3"
+                  />
+                  <span class="circle"> </span>
+                  <label for="pick-up-order-info-price-value-3"> Ja </label>
+                </div>
+                <div class="input">
+                  <input
+                    type="radio"
+                    id="pick-up-order-info-price-value-4"
+                    name="pick-up-order-info-price-value"
+                    value="pick-up-order-info-price-value-4"
+                  />
+                  <span class="circle"> </span>
+                  <label for="pick-up-order-info-price-value-4"> Nein </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pick-up-order-assessment" id="">
+        <div
+          class="pick-up-order-assessment-wrapper hidden"
+          id="pick-up-order-assessment"
+        >
+          <div class="title">
+            <h2>Fahrzeugskizze</h2>
+            <h2>Lackdichtstärke</h2>
+          </div>
+          <div class="pick-up-order-assessment-row">
+            <div class="pick-up-order-assessment-graphic">
+              <div class="pick-up-order-assessment-graphic-image">
+                <img
+                  id="pick-up-order-assessment-graphic"
+                  src="./images/cars.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="pick-up-order-assessment-paints">
+              <div class="pick-up-order-assessment-paint-front container">
+                <h3 id="pick-up-order-assessment-paint-front-key">Front</h3>
+                <input
+                  id="pick-up-order-assessment-paint-front-value"
+                  value=""
+                />
+              </div>
+              <div class="pick-up-order-assessment-paint-front container">
+                <h3 id="pick-up-order-assessment-paint-front-key">
+                  Linke Seite
+                </h3>
+                <input
+                  id="pick-up-order-assessment-paint-front-value"
+                  value=""
+                />
+              </div>
+              <div class="pick-up-order-assessment-paint-front container">
+                <h3 id="pick-up-order-assessment-paint-front-key">Dach</h3>
+                <input
+                  id="pick-up-order-assessment-paint-front-value"
+                  value=""
+                />
+              </div>
+              <div class="pick-up-order-assessment-paint-front container">
+                <h3 id="pick-up-order-assessment-paint-front-key">Heck</h3>
+                <input
+                  id="pick-up-order-assessment-paint-front-value"
+                  value=""
+                />
+              </div>
+              <div class="pick-up-order-assessment-paint-front container">
+                <h3 id="pick-up-order-assessment-paint-front-key">
+                  Rechte Seite
+                </h3>
+                <input
+                  id="pick-up-order-assessment-paint-front-value"
+                  value=""
+                />
+              </div>
+              <div class="pick-up-order-assessment-paint-front container">
+                <h3 id="pick-up-order-assessment-paint-front-key">
+                  Stoßstangen/Spaltemaße
+                </h3>
+                <input
+                  id="pick-up-order-assessment-paint-front-value"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="title">
+          <h2>Art und Zustand</h2>
+        </div>
+        <div
+          class="pick-up-order-assessment-condition"
+          id="pick-up-order-assessment-condition"
+        >
+          <div class="pick-up-order-assessment-condition-visual wrapper">
+            <div class="checkBox">
+              <h3 id="pick-up-order-assessment-condition-visual-key">
+                Optischer Zustand
+              </h3>
+              <div class="checkBox__body">
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-visual-value-great"
+                    name="pick-up-order-assessment-condition-visual-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-visual-value-great"
+                    >Sehr gut</label
+                  >
+                </div>
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-visual-value-good"
+                    name="pick-up-order-assessment-condition-visual-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-visual-value-good"
+                    >Gut</label
+                  >
+                </div>
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-visual-value-ok"
+                    name="pick-up-order-assessment-condition-visual-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-visual-value-ok"
+                    >Mittel</label
+                  >
+                </div>
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-visual-value-bad"
+                    name="pick-up-order-assessment-condition-visual-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-visual-value-bad"
+                    >Schlecht</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pick-up-order-assessment-condition-glass wrapper">
+            <div class="checkBox checkBox--border">
+              <h3 id="pick-up-order-assessment-condition-glass-key">
+                Glasschäden/Steinschläge
+              </h3>
+              <div class="checkBox__body">
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-glass-value-no"
+                    name="pick-up-order-assessment-condition-glass-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label for="pick-up-order-assessment-condition-glass-value-no"
+                    >Nein</label
+                  >
+                </div>
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-glass-value-yes"
+                    name="pick-up-order-assessment-condition-glass-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-glass-value-yes"
+                    >Ja, hier:</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pick-up-order-assessment-condition-damages wrapper">
+            <div class="checkBox checkBox--border">
+              <h3 id="pick-up-order-assessment-condition-damages-key">
+                Unfallschäden/Hagelschäden
+              </h3>
+              <div class="checkBox__body">
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-damages-value-no"
+                    name="pick-up-order-assessment-condition-damages-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-damages-value-no"
+                    >Nein</label
+                  >
+                </div>
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-damages-value-yes"
+                    name="pick-up-order-assessment-condition-damages-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+
+                  <label
+                    for="pick-up-order-assessment-condition-damages-value-yes"
+                    >Ja, hier:</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pick-up-order-assessment-condition-damages wrapper">
+            <div class="checkBox checkBox--border">
+              <h3 id="pick-up-order-assessment-condition-damages-key">
+                Unfallschäden/Hagelschäden
+              </h3>
+              <div class="checkBox__body">
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-damages-value-no-2"
+                    name="pick-up-order-assessment-condition-damages-value-1"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-damages-value-no-2"
+                    >Nein</label
+                  >
+                </div>
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-damages-value-yes-1"
+                    name="pick-up-order-assessment-condition-damages-value-1"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+
+                  <label
+                    for="pick-up-order-assessment-condition-damages-value-yes"
+                    >Ja, hier:</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pick-up-order-assessment-condition-technical wrapper">
+            <div class="checkBox">
+              <h3 id="pick-up-order-assessment-condition-technical-key">
+                Technischer Zustand
+              </h3>
+              <div class="checkBox__body">
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-technical-value-great"
+                    name="pick-up-order-assessment-condition-technical-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-technical-value-great"
+                    >Sehr gut</label
+                  >
+                </div>
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-technical-value-good"
+                    name="pick-up-order-assessment-condition-technical-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-technical-value-good"
+                    >Gut</label
+                  >
+                </div>
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-technical-value-ok"
+                    name="pick-up-order-assessment-condition-technical-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-technical-value-ok"
+                    >Mittel</label
+                  >
+                </div>
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-technical-value-bad"
+                    name="pick-up-order-assessment-condition-technical-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-technical-value-bad"
+                    >Schlecht</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pick-up-order-assessment-condition-timing-belt wrapper">
+            <div class="checkBox checkBox--border">
+              <h3 id="pick-up-order-assessment-condition-timing-belt-key">
+                Zahnriemenwechsel
+              </h3>
+              <div class="checkBox__body">
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-timing-belt-value-no"
+                    name="pick-up-order-assessment-condition-timing-belt-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-timing-belt-value-no"
+                    >Nein</label
+                  >
+                </div>
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-timing-belt-value-yes"
+                    name="pick-up-order-assessment-condition-timing-belt-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-timing-belt-value-yes"
+                    >Ja, hier:</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pick-up-order-assessment-condition-lights wrapper">
+            <div class="checkBox checkBox--border">
+              <h3 id="pick-up-order-assessment-condition-lights-key">
+                Beleuchtung
+              </h3>
+              <div class="checkBox__body">
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-lights-value-no"
+                    name="pick-up-order-assessment-condition-lights-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-lights-value-no"
+                    >Nein</label
+                  >
+                </div>
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-lights-value-yes"
+                    name="pick-up-order-assessment-condition-lights-value"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-lights-value-yes"
+                    >Ja, hier:</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pick-up-order-assessment-condition-lights wrapper">
+            <div class="checkBox checkBox--border">
+              <h3 id="pick-up-order-assessment-condition-lights-key">
+                Beleuchtung
+              </h3>
+              <div class="checkBox__body">
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-lights-value-no-1"
+                    name="pick-up-order-assessment-condition-lights-value-1"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-lights-value-no-1"
+                    >Nein</label
+                  >
+                </div>
+                <div class="input">
+                  <input
+                    id="pick-up-order-assessment-condition-lights-value-yes-1"
+                    name="pick-up-order-assessment-condition-lights-value-1"
+                    type="radio"
+                    value="on"
+                  />
+                  <div class="circle"></div>
+                  <label
+                    for="pick-up-order-assessment-condition-lights-value-yes-1"
+                    >Ja, hier:</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pick-up-order-assessment-test-drive hidden"
+        id="pick-up-order-assessment-test-drive"
+      >
+        <div class="title">
+          <h2>Probefahrt</h2>
+        </div>
+        <div class="pick-up-order-assessment-test-drive-chassis wrapper">
+          <div class="checkBox">
+            <h3 id="pick-up-order-assessment-test-drive-chassis-key">
+              Fahrwerk
+            </h3>
+
+            <div class="checkBox__body">
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-chassis-value-ok"
+                  name="pick-up-order-assessment-test-drive-chassis-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label
+                  for="pick-up-order-assessment-test-drive-chassis-value-ok"
+                  >OK</label
+                >
+              </div>
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-chassis-value-notok"
+                  name="pick-up-order-assessment-test-drive-chassis-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label
+                  for="pick-up-order-assessment-test-drive-chassis-value-notok"
+                  >Nicht OK</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-test-drive-steering wrapper">
+          <div class="checkBox">
+            <h3 id="pick-up-order-assessment-test-drive-steering-key">
+              Lenkung
+            </h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-steering-value-ok"
+                  name="pick-up-order-assessment-test-drive-steering-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label
+                  for="pick-up-order-assessment-test-drive-steering-value-ok"
+                  >OK</label
+                >
+              </div>
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-steering-value-notok"
+                  name="pick-up-order-assessment-test-drive-steering-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label
+                  for="pick-up-order-assessment-test-drive-steering-value-notok"
+                  >Nicht OK</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-test-drive-oil wrapper">
+          <div class="checkBox">
+            <h3 id="pick-up-order-assessment-test-drive-oil-key">Ölstand</h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-oil-value-ok"
+                  name="pick-up-order-assessment-test-drive-oil-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-test-drive-oil-value-ok"
+                  >OK</label
+                >
+              </div>
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-oil-value-notok"
+                  name="pick-up-order-assessment-test-drive-oil-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-test-drive-oil-value-notok"
+                  >Nicht OK</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-test-drive-brakes wrapper">
+          <div class="checkBox">
+            <h3 id="pick-up-order-assessment-test-drive-brakes-key">Bremsen</h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-brakes-value-ok"
+                  name="pick-up-order-assessment-test-drive-brakes-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-test-drive-brakes-value-ok"
+                  >OK</label
+                >
+              </div>
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-brakes-value-notok"
+                  name="pick-up-order-assessment-test-drive-brakes-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label
+                  for="pick-up-order-assessment-test-drive-brakes-value-notok"
+                  >Nicht OK</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-test-drive-brakes wrapper">
+          <div class="checkBox">
+            <h3 id="pick-up-order-assessment-test-drive-brakes-key">Felgen</h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-brakes-value-ok-1"
+                  name="pick-up-order-assessment-test-drive-brakes-value-1"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label
+                  for="pick-up-order-assessment-test-drive-brakes-value-ok-1"
+                  >Beschädigt</label
+                >
+              </div>
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-brakes-value-notok-1"
+                  name="pick-up-order-assessment-test-drive-brakes-value-1"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label
+                  for="pick-up-order-assessment-test-drive-brakes-value-notok-1"
+                  >Nicht beschädigt</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-test-drive-tires wrapper">
+          <div class="checkBox">
+            <h3 id="pick-up-order-assessment-test-drive-tires-key">
+              8-fach Bereifung
+            </h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-tires-value-ok"
+                  name="pick-up-order-assessment-test-drive-tires-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-test-drive-tires-value-ok"
+                  >Ja</label
+                >
+              </div>
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-tires-value-notok"
+                  name="pick-up-order-assessment-test-drive-tires-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label
+                  for="pick-up-order-assessment-test-drive-tires-value-notok"
+                  >Nein</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-test-drive-engine wrapper">
+          <div class="checkBox">
+            <h3 id="pick-up-order-assessment-test-drive-engine-key">
+              Motorgeräusch
+            </h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-engine-value-ok"
+                  name="pick-up-order-assessment-test-drive-engine-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-test-drive-engine-value-ok"
+                  >OK</label
+                >
+              </div>
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-engine-value-notok"
+                  name="pick-up-order-assessment-test-drive-engine-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label
+                  for="pick-up-order-assessment-test-drive-engine-value-notok"
+                  >Nicht OK</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-test-drive-flywheel wrapper">
+          <div class="checkBox">
+            <h3 id="pick-up-order-assessment-test-drive-flywheel-key">
+              Zweimassenschwungrad
+            </h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-flywheel-value-ok"
+                  name="pick-up-order-assessment-test-drive-flywheel-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label
+                  for="pick-up-order-assessment-test-drive-flywheel-value-ok"
+                  >OK</label
+                >
+              </div>
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-flywheel-value-notok"
+                  name="pick-up-order-assessment-test-drive-flywheel-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label
+                  for="pick-up-order-assessment-test-drive-flywheel-value-notok"
+                  >Nicht OK</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-test-drive-clutch wrapper">
+          <div class="checkBox">
+            <h3 id="pick-up-order-assessment-test-drive-clutch-key">
+              Kupplung
+            </h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-clutch-value-ok"
+                  name="pick-up-order-assessment-test-drive-clutch-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label for="pick-up-order-assessment-test-drive-clutch-value-ok"
+                  >OK</label
+                >
+              </div>
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-clutch-value-notok"
+                  name="pick-up-order-assessment-test-drive-clutch-value"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label
+                  for="pick-up-order-assessment-test-drive-clutch-value-notok"
+                  >Nicht OK</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-test-drive-clutch wrapper">
+          <div class="checkBox">
+            <h3 id="pick-up-order-assessment-test-drive-clutch-key">
+              Kofferraumabdeckung
+            </h3>
+            <div class="checkBox__body">
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-clutch-value-ok-1"
+                  name="pick-up-order-assessment-test-drive-clutch-value-1"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label
+                  for="pick-up-order-assessment-test-drive-clutch-value-ok-1"
+                  >Vorhanden</label
+                >
+              </div>
+              <div class="input">
+                <input
+                  id="pick-up-order-assessment-test-drive-clutch-value-notok-1"
+                  name="pick-up-order-assessment-test-drive-clutch-value-1"
+                  type="radio"
+                  value="on"
+                />
+                <div class="circle"></div>
+                <label
+                  for="pick-up-order-assessment-test-drive-clutch-value-notok-1"
+                  >Nicht vorhanden</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick-up-order-assessment-test-drive-signature">
+          <div class="input">
+            <input
+              id="pick-up-order-assessment-signature-confirmation-value"
+              type="checkbox"
+              value="on"
+            />
+            <div class="circle check"></div>
+            <label for="pick-up-order-assessment-signature-confirmation-value"
+              >Das Fahrzeug wurde überprüft und Probe gefahren</label
+            >
+          </div>
+          <div id="pick-up-order-assessment-signature" class="signature">
+            Unterschrift Bewerter
+          </div>
+        </div>
+      </div>
+      <div class="pagination">1</div>
+    </section>
+    <section class="contract" id="contract">
+      <div class="header header--lg" id="contract-header">
+        <p></p>
+        <h2>Übergabeprotokoll des abgeschlossenen KFZ-Kaufvertrags</h2>
+        <div class="header__logo">
+          <img
+            src="data:image/png;base64,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"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="contract__body whiteBox" id="contract__body">
+        <div class="contract__body wrapper">
+          <h2>Käufer</h2>
+          <div class="contract-buyer">
+            <div class="contract-buyer-name container">
+              <h3 id="contract-buyer-name-key">Name/Firma</h3>
+              <input id="contract-buyer-name-value" value="I-Contract GmbH" />
+            </div>
+          </div>
+          <div class="contract-buyer-address container">
+            <h3 id="contract-buyer-address-key">Straße, Hausnummer</h3>
+            <input id="contract-buyer-address-value" value="Stettiner Str. 6" />
+          </div>
+          <div class="contract-buyer-location container">
+            <h3 id="contract-buyer-location-key">PLZ, Ort</h3>
+            <input id="contract-buyer-location-value" value="30926 Seelze" />
+          </div>
+          <div class="contract-buyer-phone container">
+            <h3 id="contract-buyer-phone-key">Telefonnummer</h3>
+            <input id="contract-buyer-phone-value" value="+49513 7938 2929" />
+          </div>
+          <div class="contract-buyer-mail container">
+            <h3 id="contract-buyer-mail-key">E-Mail</h3>
+            <input id="contract-buyer-mail-value" value="test@i-contract.de" />
+          </div>
+        </div>
+        <div class="contract__body wrapper">
+          <h2 class="flex-header">
+            Verkäufer<span
+              >Kundennummer:
+              <strong id="contract-seller-customer-number">2642</strong></span
+            >
+          </h2>
+          <div class="contract-seller-name container">
+            <h3 id="contract-seller-name-key">Name/Firma</h3>
+            <input id="contract-seller-name-value" value="Max Mustermann" />
+          </div>
+          <div class="contract-seller-address container">
+            <h3 id="contract-seller-address-key">Straße, Hausnummer</h3>
+            <input
+              id="contract-seller-address-value"
+              value="Holsteiner Chaussee 190"
+            />
+          </div>
+          <div class="contract-seller-location container">
+            <h3 id="contract-seller-location-key">PLZ, Ort</h3>
+            <input
+              id="contract-seller-location-value"
+              value="DE-22457&nbsp;Hamburg"
+            />
+          </div>
+          <div class="contract-seller-phone container">
+            <h3 id="contract-seller-phone-key">Telefonnummer</h3>
+            <input
+              id="contract-seller-phone-value"
+              value="Tel.: +49 (0)40 6077365292"
+            />
+          </div>
+          <div class="contract-seller-mail container">
+            <h3 id="contract-seller-mail-key">E-Mail</h3>
+            <input id="contract-seller-mail-value" value="test@i-contract.de" />
+          </div>
+        </div>
+
+        <div
+          class="contract-purchase-price container"
+          id="contract-purchase-price"
+        >
+          <div class="contract-purchase-price-body active" id="mwst">
+            <div class="contract-purchase-price-body-content">
+              <h3>Kaufpreis in Euro</h3>
+              <div class="contract-purchase-price-wrapper">
+                <input
+                  id="contract-purchase-price-value"
+                  onkeyup="calculatePrice()"
+                  value="4500"
+                />
+                <div class="contract-purchase-price-tax hideText">
+                  <h3>inkl. 19% MwSt.</h3>
+                </div>
+              </div>
+            </div>
+            <p>
+              <strong> Nettobetrag </strong>
+              <span id="contract-purchase-taxfree-value">3781.51</span>
+            </p>
+            <p>
+              <strong> 19% MwSt. </strong>
+              <span id="contract-purchase-tax-value">718.49</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="contract-vehicle">
+        <div class="contract-vehicle-body" id="contract-vehicle-body">
+          <div class="title">
+            <h2>Fahrzeugdaten</h2>
+          </div>
+          <div class="contract-vehicle-brand container">
+            <h3 id="contract-vehicle-brand-key">Hersteller/Typ</h3>
+            <input
+              id="contract-vehicle-brand-value"
+              value="Audi A6 2.0 TDI ultra XENON+GRA+SIDEASSIST+"
+            />
+          </div>
+          <div class="contract-vehicle-first-registration container">
+            <h3 id="contract-vehicle-first-registration-key">Erstzulassung</h3>
+            <input
+              id="contract-vehicle-first-registration-value"
+              value="05/2014"
+            />
+          </div>
+          <div class="contract-vehicle-total-mileage container">
+            <h3 id="contract-vehicle-total-mileage-key">
+              KFZ-Gesamtfahrleistung
+            </h3>
+            <input
+              id="contract-vehicle-total-mileage-value"
+              value="80.490&nbsp;km"
+            />
+          </div>
+          <div class="contract-vehicle-number-of-owners container">
+            <h3 id="contract-vehicle-number-of-owners-key">
+              Anzahl der Fahrzeughalter
+            </h3>
+            <input id="contract-vehicle-number-of-owners-value" value="1" />
+          </div>
+          <div class="contract-vehicle-color container">
+            <h3 id="contract-vehicle-color-key">Farbe</h3>
+            <input id="contract-vehicle-color-value" value="Schwarz Metallic" />
+          </div>
+          <div class="contract-vehicle-performance container">
+            <h3 id="contract-vehicle-performance-key">PS/KW</h3>
+            <input
+              id="contract-vehicle-performance-value"
+              value="140&nbsp;kW&nbsp;(190&nbsp;PS)"
+            />
+          </div>
+          <div class="contract-vehicle-cubic-capacity container">
+            <h3 id="contract-vehicle-cubic-capacity-key">Hubraum</h3>
+            <input
+              id="contract-vehicle-cubic-capacity-value"
+              value="1.968&nbsp;cm³"
+            />
+          </div>
+          <div class="contract-vehicle-gear-type container">
+            <h3 id="contract-vehicle-gear-type-key">Getriebeart</h3>
+            <input id="contract-vehicle-gear-type-value" value="Automatik" />
+          </div>
+          <div class="contract-vehicle-fuel-type container">
+            <h3 id="contract-vehicle-fuel-type-key">Kraftstoffart</h3>
+            <input id="contract-vehicle-fuel-type-value" value="Diesel" />
+          </div>
+          <div class="contract-vehicle-emission-class container">
+            <h3 id="contract-vehicle-emission-class-key">Schadstoffklasse</h3>
+            <input id="contract-vehicle-emission-class-value" value="Euro6" />
+          </div>
+          <div class="contract-vehicle-checkbook-until container">
+            <h3 id="contract-vehicle-checkbook-until-key">
+              Scheckheftgepflegt
+            </h3>
+            <input
+              id="contract-vehicle-checkbook-until-value"
+              value="09/2022"
+            />
+          </div>
+          <div class="contract-vehicle-climate-control container">
+            <h3 id="contract-vehicle-climate-control-key">Klima</h3>
+            <input
+              id="contract-vehicle-climate-control-value"
+              value="2-Zonen-Klimaautomatik"
+            />
+          </div>
+          <div class="contract-vehicle-inspection container">
+            <h3 id="contract-vehicle-inspection-key">TÜV/AU</h3>
+            <input id="contract-vehicle-inspection-value" value="09/2022" />
+          </div>
+          <div class="contract-vehicle-vehicle-type container">
+            <h3 for="contract-vehicle-vehicle-type-key">Fahrzeugtyp</h3>
+            <input id="contract-vehicle-vehicle-type-value" value="Limousine" />
+          </div>
+          <div class="contract-vehicle-number-of-doors container">
+            <h3 for="contract-vehicle-number-of-doors-key">Anzahl der Türen</h3>
+            <input id="contract-vehicle-number-of-doors-value" value="5" />
+          </div>
+          <div class="contract-vehicle-eu-import container">
+            <h3 id="contract-vehicle-eu-import-key">EU-Import</h3>
+            <input id="contract-vehicle-eu-import-value" value="Nein" />
+          </div>
+          <div class="contract-vehicle-commercially-used container">
+            <h3 id="contract-vehicle-commercially-used-key">
+              Gewerblich genutzt ab EZ
+            </h3>
+            <input id="contract-vehicle-commercially-used-value" value="Nein" />
+          </div>
+          <div class="contract-vehicle-accident-free container" id="unfallfrei">
+            <h3 for="contract-vehicle-details-options">Unfallfrei</h3>
+            <div class="container-group">
+              <input id="contract-vehicle-accident-free-value" value="Ja" />
+            </div>
+          </div>
+          <div
+            class="contract-vehicle-repainting container"
+            id="nachlackierung"
+          >
+            <h3 for="contract-vehicle-details-options">Nachlackierung</h3>
+            <div class="container-group">
+              <input id="contract-vehicle-repainting-value" value="Nein" />
+            </div>
+          </div>
+          <div class="contract-vehicle-ready-to-drive container">
+            <h3 id="contract-vehicle-ready-to-drive-key">
+              Uneingeschränkt fahrbereit
+            </h3>
+            <input id="contract-vehicle-ready-to-drive-value" value="Ja" />
+          </div>
+          <div class="contract-vehicle-engine-gearbox-clutch container">
+            <h3 id="contract-vehicle-engine-gearbox-clutch-key">
+              Motor, Getriebe, Kupplung
+            </h3>
+            <input
+              id="contract-vehicle-engine-gearbox-clutch-value"
+              value="Alles in Ordnung"
+            />
+          </div>
+          <div class="contract-vehicle-damages container" id="schäden">
+            <h3 for="contract-vehicle-damages-options">Sonnstige Schäden</h3>
+            <div class="container-group">
+              <input id="contract-vehicle-damages-value" value="Keine" />
+            </div>
+          </div>
+          <div class="contract-vehicle-id container">
+            <h3 id="contract-vehicle-id-key">Fahrzeug-Ident.-Nr.</h3>
+            <input id="contract-vehicle-id-value" value="VWVZZZ1234567890000" />
+          </div>
+          <div class="container _small">
+            <h3 id="contract-vehicle-Test123-key">Test123</h3>
+            <input id="contract-vehicle-Test123-valueTemp" value="" />
+          </div>
+        </div>
+        <div class="contract-vehicle-body" id="contract-vehicle-list">
+          <div class="title">
+            <h2>Fahrzeugdetails</h2>
+          </div>
+          <div
+            class="contract-vehicle-body-checkBoxes"
+            id="contract-vehicle-body-checkBoxes"
+          >
+            <div class="checkBox">
+              <h3 id="contract-vehicle-checkBox key">Ausstattung</h3>
+              <div class="checkBox__body" id="checkBoxes">
+                <div class="input--text">
+                  <textarea id="contract-vehicle-details-options-value">
+ABS, Armlehne, Bi-Xenon Scheinwerfer, Bordcomputer, CD-Spieler, Elektr. Fensterheber, Elektr. Seitenspiegel, Elektr. Wegfahrsperre, ESP, Garantie, Isofix, Lederlenkrad, LED-Tagfahrlicht, Leichtmetallfelgen, Lichtsensor, Multifunktionslenkrad, Nebelscheinwerfer, Pannenkit, Partikelfilter, Regensensor, Reifendruckkontrolle, Scheckheftgepflegt, Scheinwerferreinigung, Servolenkung, Sportfahrwerk, Start/Stopp-Automatik, Tempomat, Totwinkel-Assistent, Traktionskontrolle, Tuner/Radio, Zentralverriegelung</textarea
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pagination">1</div>
+    </section>
+    <section class="contractDetails" id="contractDetails">
+      <div class="header" id="contractDetails-header">
+        <p></p>
+        <h2>Übergabeprotokoll des abgeschlossenen KFZ-Kaufvertrags</h2>
+        <div class="header__logo">
+          <img
+            src="data:image/png;base64,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"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="title">
+        <h2>Fahrzeugdetails</h2>
+      </div>
+      <div class="contractDetails__body" id="contractDetails__body">
+        <div class="contractDetails-description container">
+          <h3 id="contract-vehicle-details-description-key">Beschreibung</h3>
+          <textarea id="contract-vehicle-details-description-value">
+Fahrzeug-Nr.: N147546Media: Radio MMI Controller auf Mittelkonsole CD-PlayerKomfort: Klimaautomatik LED (Teil)-Rückleuchten LED Tagfahrlicht ISOFIX Kindersitzbefestigung Spiegel elektrisch klappbar elektrische Parkbremse Scheinwerferreinigungsanlage (SRA) 12V Steckdose Bordcomputer elektr. Spiegel beheizt elektrische Fensterheber Sitzhöhen- / Lenkradverstellung Servolenkung teilbare Rücksitzbank/-Lehne Xenon Plus Allwetter-/Schlechtwetterlicht Fahrer Informations System (FIS) Blinkleuchten seitlich in die Außenspiegel integriert LED (Teil-) Blinker Zentralverriegelung mit Fernbedienung (2-Zonen Klimaautomatik) ATA / Aussentemperaturanzeige Drehzahlmesser MittelarmlehneAssistenzsysteme: Tempomat AutoHold Funktion/Halteassistent Lichtsensor Regensensor Audi side assist / Spurwechselassistent inklusive Audi pre sense rear AnfahrassistentExterieur: Alufelgen Reifenkontrollanzeige Singleframe PannensetGetriebe: S tronicPolster: Stoff anthrazitInterieur: Lederlenkrad Multifunktionslenkrad Mittelkonsole mit Getränkehalter Aluoptik Bedienelemente am Lenkrad Deckenleuchte Handschuhfach verschließbar Leseleuchte(n) Zierteile in Klavierlack-OptikGepäck- / Ladehilfen: Gepäcknetz(e)Sicherheit: Bremsassistent (BAS) Kopfairbagsystem Seitenairbags vorn Antiblockiersystem (ABS) Antriebsschlupfregelung (ASR) elektronische Differenzialsperre (EDS) elektronisches Stabilitäts Programm (ESP) Fahrerairbag Wegfahrsperre Audi drive select Beifahrerairbag Audi pre sense basic SideguardAbgasreinigung / Umwelt: Start/Stopp Automatic EURO VI Partikelfilter Rekuperation Umweltplakette 4Garantie: Garantie Volkswagen - Das WeltAutoSonstiges: Erstbesitz Scheckheft Finanzierungsbeispiel: *Ein AutoCredit-Finanzierungsbeispiel der Volkswagen Bank GmbH, Gifhorner Str. 57, 38112 Braunschweig für Privatkunden und Geschäftskunden: 201,99 EUR monatl. Rate, 3,94 Prozent eff. Jahreszins bei 48 Monaten Laufzeit, einer Anzahlung von 3.589,80 EUR, einer jährlichen Laufleistung von 10.000 km und einer Schlussrate von 7.482,82 EUR. (Sollzins gebunden p.a. 3,87 Prozent, Bruttokreditbetrag: 17.178,34 EUR, Nettokreditbetrag: 15.359,20 EUR) Zwischenverkauf und Irrtümer für dieses Angebot sind ausdrücklich vorbehalten. Die Fahrzeugbeschreibung dient lediglich der allgemeinen Identifizierung des Fahrzeuges und stellt keine Gewährleistung im kaufrechtlichen Sinne dar. Ausschlaggebend sind einzig und allein die Vereinbarungen in der Auftragsbestätigung oder im Kaufvertrag. Den genauen Ausstattungsumfang erhalten Sie von unserem Verkaufspersonal. Bitte kontaktieren Sie uns.</textarea
+          >
+        </div>
+        <div class="contractDetails-agreements container">
+          <h3>Besondere Vereinbarungen</h3>
+          <textarea
+            id="contract-special-terms-value"
+            onkeyup="handleInput(event)"
+          >
+• Die Fahrzeugübergabe findet bis/am 10.06.2023 in DE-22457&nbsp;Hamburg gegen Bargeld statt.
+• Das Fahrzeug wird nur unter der Vorlage der Kundennummer: 2642 nach einem kurzen Gebrauchtwagencheck ausgehändigt.</textarea
+          >
+        </div>
+        <div class="contractDetails-general-terms container">
+          <h3>Allgemeine Vertragsbedingungen</h3>
+          <textarea id="contract-general-terms-value">
+Folgende Vertragsbedingungen werden beidseitig eingewilligt.eingewilligt.
+1. Der Verkäufer übernimmt nach derFahrzeugübergabe keinerlei Garantie oder Gewährleistung für das Fahrzeug.
+2. Mündliche- undschriftliche Absagen, sind aufgrund von anfallenden Kosten, nach KFZ-Email Bestätigung nicht wirksam.
+3. Der Verkäufer bestätigt, dass die oben festgehaltenen Daten überprüft sind und der Richtigkeit entsprechen.
+4. Dieser Vertrag ist rechtskräftig, verbindlich und auch ohne Unterschrift gültig.
+                </textarea
+          >
+        </div>
+      </div>
+      <div
+        class="contractDetails-signatures contract-signatures wrapper hidden"
+        id="contractDetails-signatures"
+      >
+        <div class="title">
+          <h2>Unterschriften</h2>
+        </div>
+        <div class="contractDetails-signatures-row">
+          <div class="contractDetails-signatures-buyer container">
+            <div class="contractDetails-signatures-row-inputs">
+              <h3>Der Käufer bestätigt den Empfang von:</h3>
+              <div class="input">
+                <input type="checkbox" value="on" />
+                <div class="circle check"></div>
+                <label
+                  id="contract-signatures-buyer-registration-certificate-key"
+                  >Zulassungsbescheinigung Teil I &amp; II</label
+                >
+              </div>
+              <div class="input">
+                <input type="checkbox" />
+                <div class="circle check"></div>
+                <label id="contract-signatures-buyer-vehicle-and-keys-key"
+                  >KFZ mit____Schlüssel(n)</label
+                >
+              </div>
+            </div>
+            <p>Datum und Ort:</p>
+          </div>
+          <div class="contractDetails-signatures-buyer-value caption container">
+            <label for="confirmation-signature-buyer-value"
+              >Unterschrift Käufer:</label
+            >
+            <input
+              type="hidden"
+              name="confirmation-signature-buyer-value"
+              id="confirmation-signature-buyer-value"
+              value=""
+            />
+          </div>
+        </div>
+        <div class="contractDetails-signatures-row">
+          <div class="contractDetails-signatures-seller container">
+            <div class="contractDetails-signatures-row-inputs">
+              <h3>Der Verkäufer bestätigt den Empfang von:</h3>
+              <div class="input">
+                <input type="checkbox" value="on" />
+                <div class="circle check"></div>
+                <label id="contract-signatures-seller-price-key"
+                  >Kaufpreises</label
+                >
+              </div>
+            </div>
+            <p>Datum und Ort:</p>
+          </div>
+          <div
+            class="contractDetails-signatures-seller-value caption container"
+          >
+            <label for="confirmation-signature-seller-value caption"
+              >Unterschrift Verkäufer:</label
+            >
+            <input
+              type="hidden"
+              name="confirmation-signature-seller-value"
+              id="confirmation-signature-seller-value"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="pagination">2</div>
+    </section>
+    <section class="imageSection hidden" id="imageSection">
+      <div class="header">
+        <p></p>
+        <h2>Übergabeprotokoll des abgeschlossenen KFZ-Kaufvertrags</h2>
+        <div class="header__logo">
+          <img
+            src="data:image/png;base64,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"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="title">
+        <h2>Bahnverbindung</h2>
+      </div>
+      <div class="imageSetion__body bahn">
+        <div class="wrapper">
+          <div class="container" id="rail_connection_container"></div>
+        </div>
+      </div>
+      <div class="pagination">4</div>
+    </section>
+    <script src="https://app.i-contract.net/ct/js/main.js"></script>
+  </body>
+</html>

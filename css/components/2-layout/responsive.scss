@@ -1,5 +1,14 @@
 // Media
+@media not print {
+  body {
+    zoom: 1.3;
+  }
+}
+
 @media print {
+  body {
+    zoom: 0.93;
+  }
   section {
     page-break-after: always;
     margin: 0;
