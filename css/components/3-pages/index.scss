@@ -1,3 +1,12 @@
+.flex-header {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-header span {
+  font-size: 0.8em !important;
+  color: rgb(233, 109, 36);
+  text-decoration: underline;
+}
 // Pick-up
 .pick-up-order {
   display: flex;
@@ -222,6 +231,11 @@
   }
 }
 // Contract
+#contract-purchase-price-value{
+	font-size: 9pt;
+	color: #e96d24;
+	font-weight: bold;
+}
 .contract {
   &__body {
     display: flex;
@@ -271,11 +285,12 @@
         font-size: 10pt;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         display: none;
         span {
           display: block;
-          border: unset;
+          border: none !important;
           background-color: unset;
           padding: 0 0 2.7mm 0;
           font-size: inherit;
@@ -286,8 +301,8 @@
         p {
           display: flex;
         }
-        .hideText {
-          display: none !important;
+        h3.hideText {
+          display: none;
         }
         input {
           max-width: 100px;
@@ -368,9 +383,6 @@
       }
       &._wide {
         width: 100%;
-      }
-      &._move-to-end {
-        order: 1;
       }
     }
     &-brand {
@@ -474,6 +486,8 @@
         min-height: 140px;
         padding: 2.7mm 1.5mm;
         white-space: unset;
+        font-family: Verdana, sans-serif; /* BR */
+        font-size: 9px; /* BR */
       }
     }
   }
@@ -519,3 +533,4 @@
 .hidden {
   display: none !important;
 }
+

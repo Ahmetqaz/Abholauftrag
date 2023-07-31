@@ -245,6 +245,10 @@ li {
   font-weight: normal;
   resize: none;
   white-space: unset;
+  font-family: Verdana, sans-serif;
+  /* BR */
+  font-size: 9px;
+  /* BR */
 }
 
 .checkBox {
@@ -370,6 +374,21 @@ li {
   color: #1e1f24;
   font-weight: normal;
   white-space: unset;
+}
+
+.flex-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-header span {
+  font-size: 0.8em !important;
+  color: #e96d24;
+  text-decoration: underline;
 }
 
 .pick-up-order {
@@ -652,6 +671,12 @@ li {
   color: #e96d24;
 }
 
+#contract-purchase-price-value {
+  font-size: 9pt;
+  color: #e96d24;
+  font-weight: bold;
+}
+
 .contract__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -725,13 +750,12 @@ li {
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
   display: none;
 }
 .contract-purchase-price-body p span {
   display: block;
-  border: unset;
+  border: none !important;
   background-color: unset;
   padding: 0 0 2.7mm 0;
   font-size: inherit;
@@ -742,8 +766,8 @@ li {
   display: -ms-flexbox;
   display: flex;
 }
-.contract-purchase-price-body.active .hideText {
-  display: none !important;
+.contract-purchase-price-body.active h3.hideText {
+  display: none;
 }
 .contract-purchase-price-body.active input {
   max-width: 100px;
@@ -844,11 +868,6 @@ li {
 }
 .contract-vehicle .container._wide {
   width: 100%;
-}
-.contract-vehicle .container._move-to-end {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
 }
 .contract-vehicle-brand input {
   width: calc(100% - 105px);
@@ -988,6 +1007,10 @@ li {
   min-height: 140px;
   padding: 2.7mm 1.5mm;
   white-space: unset;
+  font-family: Verdana, sans-serif;
+  /* BR */
+  font-size: 9px;
+  /* BR */
 }
 
 .imageSection {
@@ -1345,6 +1368,7 @@ li {
   body {
     zoom: 0.93;
   }
+
   section {
     page-break-after: always;
     margin: 0;
