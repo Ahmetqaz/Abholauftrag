@@ -26,6 +26,17 @@ h6 {
   font-weight: bold;
 }
 
+.flex-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-header span {
+    font-size: 0.8em !important;
+	color: rgb(233, 109, 36);
+	text-decoration: underline;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -70,6 +81,12 @@ button:focus {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.3);
+}
+
+#contract-purchase-price-value{
+	font-size: 9pt;
+	color: #e96d24;
+	font-weight: bold;
 }
 
 /*** 
@@ -245,6 +262,8 @@ li {
   font-weight: normal;
   resize: none;
   white-space: unset;
+  font-family: Verdana, sans-serif; /* BR */
+  font-size: 9px; /* BR */
 }
 
 .checkBox {
@@ -726,12 +745,12 @@ li {
           flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+         
   display: none;
 }
 .contract-purchase-price-body p span {
   display: block;
-  border: unset;
+  border: none !important;
   background-color: unset;
   padding: 0 0 2.7mm 0;
   font-size: inherit;
@@ -742,8 +761,8 @@ li {
   display: -ms-flexbox;
   display: flex;
 }
-.contract-purchase-price-body.active .hideText {
-  display: none !important;
+.contract-purchase-price-body.active h3.hideText {
+  display: none;
 }
 .contract-purchase-price-body.active input {
   max-width: 100px;
@@ -844,11 +863,6 @@ li {
 }
 .contract-vehicle .container._wide {
   width: 100%;
-}
-.contract-vehicle .container._move-to-end {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
 }
 .contract-vehicle-brand input {
   width: calc(100% - 105px);
@@ -988,6 +1002,8 @@ li {
   min-height: 140px;
   padding: 2.7mm 1.5mm;
   white-space: unset;
+  font-family: Verdana, sans-serif;/* BR */
+  font-size: 9px;/* BR */
 }
 
 .imageSection {

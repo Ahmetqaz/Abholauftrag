@@ -369,6 +369,9 @@
       &._wide {
         width: 100%;
       }
+      &._move-to-end {
+        order: 1;
+      }
     }
     &-brand {
       input {
